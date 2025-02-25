@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter B Sound Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F4FF 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .current-letter {
+            font-size: 120px;
+            margin: 40px;
+        }
+
+        .question {
+            font-size: 24px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .answer-button {
+            font-size: 24px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .yes-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .no-button {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .answer-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-sound {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .score-display {
+            font-size: 24px;
+            color: #333;
+            margin: 20px;
+        }
+
+        .feedback {
+            font-size: 24px;
+            height: 30px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .correct {
+            animation: correct 0.5s;
+        }
+
+        @keyframes correct {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .incorrect {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .progress-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .streak-display {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .streak-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 10px;
+        }
+
+        .streak-box {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .streak-box.filled {
+            background-color: #4a90e2;
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .winner-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1001;
+        }
+
+        .play-again {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 The Sound Game: Level 3 🎮</h1>
+        
+        <div class="progress-container">
+            <div class="streak-display">
+                Current Streak: <span id="streak">0</span> / 12
+            </div>
+            <div class="streak-boxes">
+                <!-- Will be filled by JavaScript -->
+            </div>
+        </div>
+
+        <button class="play-sound" id="playSound">
+            🔊 Listen to the Sound
+        </button>
+
+        <div id="currentLetter" class="current-letter"></div>
+        
+        <div class="question">
+            Can this letter make the sound you heard?
+        </div>
+
+        <div class="button-container">
+            <button class="answer-button yes-button" id="yesButton">Yes!</button>
+            <button class="answer-button no-button" id="noButton">No!</button>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+        let streak = 0;
+        const audioB = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3');
+        const audioD = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3');
+        const audioF = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/f.mp3');
+        const letters = ['b', 'B', 'd', 'D', 'f', 'F', 'h', 'H'];
+        let currentLetterIndex = 0;
+        let currentSound = 'b';  // Track which sound we're playing ('b', 'd', or 'f')
+
+        function createStreakBoxes() {
+            const container = document.querySelector('.streak-boxes');
+            container.innerHTML = '';
+            for (let i = 0; i < 12; i++) {  // Increased to 12 boxes
+                const box = document.createElement('div');
+                box.className = 'streak-box';
+                container.appendChild(box);
+            }
+        }
+
+        function updateStreakDisplay() {
+            document.getElementById('streak').textContent = streak;
+            const boxes = document.querySelectorAll('.streak-box');
+            boxes.forEach((box, index) => {
+                box.classList.toggle('filled', index < streak);
+            });
+        }
+
+        function showWinnerMessage() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎉 Congratulations! 🎉</h1>
+                <h2>You completed Level 3!</h2>
+                <button class="play-sound" onclick="resetGame()">Play Again</button>
+            `;
+        }
+
+        function resetGame() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎮 The Sound Game: Level 3 🎮</h1>
+                
+                <div class="progress-container">
+                    <div class="streak-display">
+                        Current Streak: <span id="streak">0</span> / 12
+                    </div>
+                    <div class="streak-boxes">
+                    </div>
+                </div>
+
+                <button class="play-sound" id="playSound">
+                    🔊 Listen to the Sound
+                </button>
+
+                <div id="currentLetter" class="current-letter"></div>
+                
+                <div class="question">
+                    Can this letter make the sound you heard?
+                </div>
+
+                <div class="button-container">
+                    <button class="answer-button yes-button" id="yesButton">Yes!</button>
+                    <button class="answer-button no-button" id="noButton">No!</button>
+                </div>
+
+                <div class="feedback" id="feedback"></div>
+            `;
+
+            // Reset game state
+            streak = 0;
+            currentLetterIndex = 0;
+            currentSound = 'b';  // Reset to starting with b sound
+            
+            // Reinitialize event listeners
+            initializeEventListeners();
+            
+            // Setup initial game state
+            createStreakBoxes();
+            updateStreakDisplay();
+            showNextLetter();
+        }
+
+        function initializeEventListeners() {
+            document.getElementById('playSound').addEventListener('click', () => {
+                switch(currentSound) {
+                    case 'b':
+                        audioB.play();
+                        break;
+                    case 'd':
+                        audioD.play();
+                        break;
+                    case 'f':
+                        audioF.play();
+                        break;
+                }
+            });
+
+            document.getElementById('yesButton').addEventListener('click', () => checkAnswer(true));
+            document.getElementById('noButton').addEventListener('click', () => checkAnswer(false));
+        }
+
+        function showNextLetter() {
+            const letterDisplay = document.getElementById('currentLetter');
+            letterDisplay.textContent = letters[currentLetterIndex];
+            document.getElementById('feedback').textContent = '';
+            // Play sound automatically with new letter
+            switch(currentSound) {
+                case 'b':
+                    audioB.play();
+                    break;
+                case 'd':
+                    audioD.play();
+                    break;
+                case 'f':
+                    audioF.play();
+                    break;
+            }
+        }
+
+        function checkAnswer(isYes) {
+            const currentLetter = letters[currentLetterIndex];
+            const isCorrectB = (currentLetter === 'b' || currentLetter === 'B');
+            const isCorrectD = (currentLetter === 'd' || currentLetter === 'D');
+            const isCorrectF = (currentLetter === 'f' || currentLetter === 'F');
+            const letterDisplay = document.getElementById('currentLetter');
+            const feedback = document.getElementById('feedback');
+
+            // Check if current letter matches current sound
+            const matchesCurrentSound = 
+                (currentSound === 'b' && isCorrectB) || 
+                (currentSound === 'd' && isCorrectD) || 
+                (currentSound === 'f' && isCorrectF);
+
+            // Check if answer was correct
+            const answeredCorrectly = (isYes === matchesCurrentSound);
+
+            if (answeredCorrectly) {
+                streak++;
+                feedback.style.color = '#4CAF50';
+                feedback.textContent = '🎉 Correct!';
+                letterDisplay.classList.add('correct');
+                
+                if (streak === 12) {
+                    showWinnerMessage();
+                    return;
+                }
+            } else {
+                streak = 0;
+                feedback.style.color = '#FF6B6B';
+                feedback.textContent = '❌ Try again!';
+                letterDisplay.classList.add('incorrect');
+            }
+
+            updateStreakDisplay();
+
+            setTimeout(() => {
+                letterDisplay.classList.remove('correct', 'incorrect');
+                currentLetterIndex = (currentLetterIndex + 1) % letters.length;
+                // Cycle through sounds b -> d -> f -> b
+                switch(currentSound) {
+                    case 'b':
+                        currentSound = 'd';
+                        break;
+                    case 'd':
+                        currentSound = 'f';
+                        break;
+                    case 'f':
+                        currentSound = 'b';
+                        break;
+                }
+                showNextLetter();
+            }, 1000);
+        }
+
+        // Initialize the game
+        createStreakBoxes();
+        updateStreakDisplay();
+        initializeEventListeners();
+        showNextLetter();
+    </script>
+</body>
+</html>
