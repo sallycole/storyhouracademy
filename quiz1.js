@@ -98,7 +98,7 @@ function showStartScreen() {
     const container = document.querySelector('.container');
     container.innerHTML = `
         <h1>Mastery Test of Single-Sound Consonants</h1>
-        <p class="instructions">Listen to the sound and click the letter that represents the sound.</p>
+        <p class="instructions">Listen to the sound and click the letter or phonogram that represents the sound.</p>
         <div class="quiz-controls">
             <button id="startQuiz" class="play-button">
                 Start Quiz
@@ -113,7 +113,7 @@ function startQuiz() {
     const container = document.querySelector('.container');
     container.innerHTML = `
         <h1>Mastery Test of Single-Sound Consonants</h1>
-        <p class="instructions">Listen to the sound and click the letter that represents the sound.</p>
+        <p class="instructions">Listen to the sound and click the letter or phonogram that represents the sound.</p>
         <div class="quiz-controls">
             <button id="playSound" class="play-button">
                 Replay Sound
