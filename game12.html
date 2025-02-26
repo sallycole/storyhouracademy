@@ -143,7 +143,7 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>🎮 The Sound Game: Level 11 🎮</h1>
+        <h1>🎮 The Sound Game: Level 12 🎮</h1>
         
         <div class="instructions">
             Click the sound icon to play a phonogram sound. Then, drag it onto the box with the phonogram that represents that sound.
@@ -151,7 +151,7 @@
 
         <div class="progress-container">
             <div class="streak-display">
-                Current Streak: <span id="streak">0</span> / 18
+                Current Streak: <span id="streak">0</span> / 20
             </div>
             <div class="streak-boxes">
                 <!-- Will be filled by JavaScript -->
@@ -177,6 +177,7 @@
                 <div class="bucket" data-letter="n">Nn</div>
                 <div class="bucket" data-letter="p">Pp</div>
                 <div class="bucket" data-letter="qu">Qu<br>qu</div>
+                <div class="bucket" data-letter="r">Rr</div>
             </div>
         </div>
 
@@ -197,12 +198,13 @@
         const audioN = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3');
         const audioP = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/p.mp3');
         const audioQu = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/qu.mp3');
+        const audioR = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/r.mp3');
         let currentSound = 'b';
 
         function createStreakBoxes() {
             const container = document.querySelector('.streak-boxes');
             container.innerHTML = '';
-            for (let i = 0; i < 18; i++) {  // Increased to 18 boxes
+            for (let i = 0; i < 20; i++) {  // Increased to 20 boxes
                 const box = document.createElement('div');
                 box.className = 'streak-box';
                 container.appendChild(box);
@@ -230,15 +232,16 @@
                 case 'n': audioN.play(); break;
                 case 'p': audioP.play(); break;
                 case 'qu': audioQu.play(); break;
+                case 'r': audioR.play(); break;
             }
             soundsPlayed.add(currentSound);
         }
 
         function getNextSound() {
-            const sounds = ['b', 'd', 'f', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu'];
+            const sounds = ['b', 'd', 'f', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu', 'r'];
             let nextSound;
 
-            if (soundsPlayed.size < sounds.length && streak < 18) {
+            if (soundsPlayed.size < sounds.length && streak < 20) {
                 const unplayedSounds = sounds.filter(sound => !soundsPlayed.has(sound));
                 nextSound = unplayedSounds[Math.floor(Math.random() * unplayedSounds.length)];
             } else {
@@ -253,7 +256,7 @@
             const container = document.querySelector('.game-container');
             container.innerHTML = `
                 <h1>🎉 Congratulations! 🎉</h1>
-                <h2>You completed Level 11!</h2>
+                <h2>You completed Level 12!</h2>
                 <button class="play-sound" onclick="resetGame()">Play Again</button>
             `;
         }
@@ -267,7 +270,7 @@
                 feedback.style.color = '#4CAF50';
                 feedback.textContent = '🎉 Correct!';
                 
-                if (streak === 18) {  // Increased to 18
+                if (streak === 20) {  // Increased to 20
                     showWinnerMessage();
                     return;
                 }
@@ -323,7 +326,7 @@
         function resetGame() {
             const container = document.querySelector('.game-container');
             container.innerHTML = `
-                <h1>🎮 The Sound Game: Level 11 🎮</h1>
+                <h1>🎮 The Sound Game: Level 12 🎮</h1>
                 
                 <div class="instructions">
                     Click the sound icon to play a phonogram sound. Then, drag it onto the box with the phonogram that represents that sound.
@@ -331,7 +334,7 @@
 
                 <div class="progress-container">
                     <div class="streak-display">
-                        Current Streak: <span id="streak">0</span> / 18
+                        Current Streak: <span id="streak">0</span> / 20
                     </div>
                     <div class="streak-boxes">
                     </div>
@@ -356,6 +359,7 @@
                         <div class="bucket" data-letter="n">Nn</div>
                         <div class="bucket" data-letter="p">Pp</div>
                         <div class="bucket" data-letter="qu">Qu<br>qu</div>
+                        <div class="bucket" data-letter="r">Rr</div>
                     </div>
                 </div>
 
