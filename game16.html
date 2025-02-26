@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Sound Sorting Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F4FF 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .progress-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .streak-display {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .streak-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 10px;
+        }
+
+        .streak-box {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .streak-box.filled {
+            background-color: #4a90e2;
+        }
+
+        .draggable-sound {
+            width: 100px;
+            height: 100px;
+            background-color: #4a90e2;
+            border-radius: 50%;
+            margin: 20px auto;
+            cursor: grab;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+            user-select: none;
+        }
+
+        .draggable-sound:active {
+            cursor: grabbing;
+        }
+
+        .buckets-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .bucket-row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .bucket {
+            width: 120px;
+            height: 160px;
+            background: #f0f0f0;
+            border: 3px dashed #666;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: background-color 0.3s;
+        }
+
+        .bucket.drag-over {
+            background-color: #e0e0e0;
+            border-style: solid;
+        }
+
+        .feedback {
+            font-size: 24px;
+            height: 30px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .correct {
+            animation: correct 0.5s;
+        }
+
+        @keyframes correct {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .incorrect {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .instructions {
+            font-size: 20px;
+            color: #333;
+            margin: 20px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 The Sound Game: Level 16 🎮</h1>
+        
+        <div class="instructions">
+            Click the sound icon to play a phonogram sound. Then, drag it onto the box with the phonogram that represents that sound.
+        </div>
+
+        <div class="progress-container">
+            <div class="streak-display">
+                Current Streak: <span id="streak">0</span> / 20
+            </div>
+            <div class="streak-boxes">
+                <!-- Will be filled by JavaScript -->
+            </div>
+        </div>
+
+        <div id="soundElement" class="draggable-sound" draggable="true">
+            🔊
+        </div>
+
+        <div class="buckets-container">
+            <div class="bucket-row">
+                <div class="bucket" data-letter="b">Bb</div>
+                <div class="bucket" data-letter="d">Dd</div>
+                <div class="bucket" data-letter="f">Ff</div>
+                <div class="bucket" data-letter="h">Hh</div>
+                <div class="bucket" data-letter="j">Jj</div>
+                <div class="bucket" data-letter="k">Kk</div>
+            </div>
+            <div class="bucket-row">
+                <div class="bucket" data-letter="l">Ll</div>
+                <div class="bucket" data-letter="m">Mm</div>
+                <div class="bucket" data-letter="n">Nn</div>
+                <div class="bucket" data-letter="p">Pp</div>
+                <div class="bucket" data-letter="qu">Qu<br>qu</div>
+            </div>
+            <div class="bucket-row">
+                <div class="bucket" data-letter="r">Rr</div>
+                <div class="bucket" data-letter="t">Tt</div>
+                <div class="bucket" data-letter="v">Vv</div>
+                <div class="bucket" data-letter="w">Ww</div>
+                <div class="bucket" data-letter="z">Zz</div>
+            </div>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+        let streak = 0;
+        let soundsPlayed = new Set();
+        const audioB = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3');
+        const audioD = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3');
+        const audioF = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/f.mp3');
+        const audioH = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/h.mp3');
+        const audioJ = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/j.mp3');
+        const audioK = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/k.mp3');
+        const audioL = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/l.mp3');
+        const audioM = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/m.mp3');
+        const audioN = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3');
+        const audioP = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/p.mp3');
+        const audioQu = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/qu.mp3');
+        const audioR = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/r.mp3');
+        const audioT = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/t.mp3');
+        const audioV = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/v.mp3');
+        const audioW = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/w.mp3');
+        const audioZ = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/z.mp3');
+        let currentSound = 'b';
+
+        function createStreakBoxes() {
+            const container = document.querySelector('.streak-boxes');
+            container.innerHTML = '';
+            for (let i = 0; i < 20; i++) {  // Increased to 20 boxes
+                const box = document.createElement('div');
+                box.className = 'streak-box';
+                container.appendChild(box);
+            }
+        }
+
+        function updateStreakDisplay() {
+            document.getElementById('streak').textContent = streak;
+            const boxes = document.querySelectorAll('.streak-box');
+            boxes.forEach((box, index) => {
+                box.classList.toggle('filled', index < streak);
+            });
+        }
+
+        function playCurrentSound() {
+            switch(currentSound) {
+                case 'b': audioB.play(); break;
+                case 'd': audioD.play(); break;
+                case 'f': audioF.play(); break;
+                case 'h': audioH.play(); break;
+                case 'j': audioJ.play(); break;
+                case 'k': audioK.play(); break;
+                case 'l': audioL.play(); break;
+                case 'm': audioM.play(); break;
+                case 'n': audioN.play(); break;
+                case 'p': audioP.play(); break;
+                case 'qu': audioQu.play(); break;
+                case 'r': audioR.play(); break;
+                case 't': audioT.play(); break;
+                case 'v': audioV.play(); break;
+                case 'w': audioW.play(); break;
+                case 'z': audioZ.play(); break;
+            }
+            soundsPlayed.add(currentSound);
+        }
+
+        function getNextSound() {
+            const sounds = ['b', 'd', 'f', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu', 'r', 't', 'v', 'w', 'z'];
+            let nextSound;
+
+            if (soundsPlayed.size < sounds.length && streak < 20) {
+                const unplayedSounds = sounds.filter(sound => !soundsPlayed.has(sound));
+                nextSound = unplayedSounds[Math.floor(Math.random() * unplayedSounds.length)];
+            } else {
+                do {
+                    nextSound = sounds[Math.floor(Math.random() * sounds.length)];
+                } while (nextSound === currentSound);
+            }
+            return nextSound;
+        }
+
+        function showWinnerMessage() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎉 Congratulations! 🎉</h1>
+                <h2>You completed Level 16!</h2>
+                <button class="play-sound" onclick="resetGame()">Play Again</button>
+            `;
+        }
+
+        function checkAnswer(selectedBucket) {
+            const feedback = document.getElementById('feedback');
+            const isCorrect = selectedBucket === currentSound;
+
+            if (isCorrect) {
+                streak++;
+                feedback.style.color = '#4CAF50';
+                feedback.textContent = '🎉 Correct!';
+                
+                if (streak === 20) {  // Increased to 20
+                    showWinnerMessage();
+                    return;
+                }
+            } else {
+                streak = 0;
+                soundsPlayed.clear();  // Reset played sounds on mistake
+                feedback.style.color = '#FF6B6B';
+                feedback.textContent = '❌ Try again!';
+            }
+
+            updateStreakDisplay();
+            
+            setTimeout(() => {
+                feedback.textContent = '';
+                currentSound = getNextSound();
+                playCurrentSound();
+            }, 1000);
+        }
+
+        function initializeDragAndDrop() {
+            const soundElement = document.getElementById('soundElement');
+            const buckets = document.querySelectorAll('.bucket');
+
+            soundElement.addEventListener('click', playCurrentSound);
+
+            soundElement.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', 'sound');
+                setTimeout(() => soundElement.style.opacity = '0.5', 0);
+            });
+
+            soundElement.addEventListener('dragend', () => {
+                soundElement.style.opacity = '1';
+            });
+
+            buckets.forEach(bucket => {
+                bucket.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    bucket.classList.add('drag-over');
+                });
+
+                bucket.addEventListener('dragleave', () => {
+                    bucket.classList.remove('drag-over');
+                });
+
+                bucket.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    bucket.classList.remove('drag-over');
+                    checkAnswer(bucket.dataset.letter);
+                });
+            });
+        }
+
+        function resetGame() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎮 The Sound Game: Level 16 🎮</h1>
+                
+                <div class="instructions">
+                    Click the sound icon to play a phonogram sound. Then, drag it onto the box with the phonogram that represents that sound.
+                </div>
+
+                <div class="progress-container">
+                    <div class="streak-display">
+                        Current Streak: <span id="streak">0</span> / 20
+                    </div>
+                    <div class="streak-boxes">
+                    </div>
+                </div>
+
+                <div id="soundElement" class="draggable-sound" draggable="true">
+                    🔊
+                </div>
+
+                <div class="buckets-container">
+                    <div class="bucket-row">
+                        <div class="bucket" data-letter="b">Bb</div>
+                        <div class="bucket" data-letter="d">Dd</div>
+                        <div class="bucket" data-letter="f">Ff</div>
+                        <div class="bucket" data-letter="h">Hh</div>
+                        <div class="bucket" data-letter="j">Jj</div>
+                        <div class="bucket" data-letter="k">Kk</div>
+                    </div>
+                    <div class="bucket-row">
+                        <div class="bucket" data-letter="l">Ll</div>
+                        <div class="bucket" data-letter="m">Mm</div>
+                        <div class="bucket" data-letter="n">Nn</div>
+                        <div class="bucket" data-letter="p">Pp</div>
+                        <div class="bucket" data-letter="qu">Qu<br>qu</div>
+                    </div>
+                    <div class="bucket-row">
+                        <div class="bucket" data-letter="r">Rr</div>
+                        <div class="bucket" data-letter="t">Tt</div>
+                        <div class="bucket" data-letter="v">Vv</div>
+                        <div class="bucket" data-letter="w">Ww</div>
+                        <div class="bucket" data-letter="z">Zz</div>
+                    </div>
+                </div>
+
+                <div class="feedback" id="feedback"></div>
+            `;
+
+            streak = 0;
+            soundsPlayed.clear();
+            currentSound = 'b';
+            createStreakBoxes();
+            updateStreakDisplay();
+            initializeDragAndDrop();
+            playCurrentSound();
+        }
+
+        // Initialize the game
+        createStreakBoxes();
+        updateStreakDisplay();
+        initializeDragAndDrop();
+        playCurrentSound();
+    </script>
+</body>
+</html>
