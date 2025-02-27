@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consonant Digraph Sound Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F4FF 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .current-letter {
+            font-size: 120px;
+            margin: 40px;
+        }
+
+        .question {
+            font-size: 24px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .answer-button {
+            font-size: 24px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .yes-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .no-button {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .answer-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-sound {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .score-display {
+            font-size: 24px;
+            color: #333;
+            margin: 20px;
+        }
+
+        .feedback {
+            font-size: 24px;
+            height: 30px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .correct {
+            animation: correct 0.5s;
+        }
+
+        @keyframes correct {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .incorrect {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .progress-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .streak-display {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .streak-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 10px;
+        }
+
+        .streak-box {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .streak-box.filled {
+            background-color: #4a90e2;
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .winner-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1001;
+        }
+
+        .play-again {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .digraph {
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 Consonant Digraph Sound Game: Level 1 🎮</h1>
+        
+        <div class="progress-container">
+            <div class="streak-display">
+                Current Streak: <span id="streak">0</span> / 10
+            </div>
+            <div class="streak-boxes">
+                <!-- Will be filled by JavaScript -->
+            </div>
+        </div>
+
+        <button class="play-sound" id="playSound">
+            🔊 Listen to the Sound
+        </button>
+
+        <div id="currentLetter" class="current-letter"></div>
+        
+        <div class="question">
+            Can this make the sound you heard?
+        </div>
+
+        <div class="button-container">
+            <button class="answer-button yes-button" id="yesButton">Yes!</button>
+            <button class="answer-button no-button" id="noButton">No!</button>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+        let streak = 0;
+        const audioCk = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/ck.mp3');
+        
+        // Available phonograms (distractors)
+        const distractors = ['b', 'd', 'f', 'h', 'j', 'l', 'm', 'n', 'p', 'qu', 'r', 't', 'v', 'w', 'z'];
+        
+        // Current set of letters to cycle through
+        let currentLetters = [];
+        let currentLetterIndex = 0;
+
+        function createStreakBoxes() {
+            const container = document.querySelector('.streak-boxes');
+            container.innerHTML = '';
+            for (let i = 0; i < 10; i++) {
+                const box = document.createElement('div');
+                box.className = 'streak-box';
+                container.appendChild(box);
+            }
+        }
+
+        function updateStreakDisplay() {
+            document.getElementById('streak').textContent = streak;
+            const boxes = document.querySelectorAll('.streak-box');
+            boxes.forEach((box, index) => {
+                box.classList.toggle('filled', index < streak);
+            });
+        }
+
+        function getRandomDistractors(count) {
+            // Shuffle the distractors array
+            const shuffled = [...distractors].sort(() => 0.5 - Math.random());
+            // Return the first 'count' elements
+            return shuffled.slice(0, count);
+        }
+
+        function createNewLetterSet() {
+            // Create a larger set of letters with approximately 1/3 being "ck"
+            // This ensures "ck" appears about once every 3 choices on average
+            
+            // Start with an empty array
+            currentLetters = [];
+            
+            // We'll create a set of 12 choices (4 "ck" and 8 distractors)
+            // This gives us approximately 1/3 "ck" appearances
+            
+            // Add 4 "ck" entries
+            for (let i = 0; i < 4; i++) {
+                currentLetters.push('ck');
+            }
+            
+            // Add 8 random distractors (allowing repeats)
+            for (let i = 0; i < 8; i++) {
+                const randomIndex = Math.floor(Math.random() * distractors.length);
+                currentLetters.push(distractors[randomIndex]);
+            }
+            
+            // Shuffle thoroughly to ensure no pattern
+            for (let i = 0; i < 3; i++) {
+                currentLetters = currentLetters.sort(() => 0.5 - Math.random());
+            }
+            
+            // Reset the index
+            currentLetterIndex = 0;
+        }
+
+        function showWinnerMessage() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎉 Congratulations! 🎉</h1>
+                <h2>You've mastered the <span class="digraph">"ck"</span> sound!</h2>
+                <p>You correctly identified the "ck" sound 10 times in a row!</p>
+                <button class="play-sound" onclick="resetGame()">Play Again</button>
+            `;
+        }
+
+        function resetGame() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎮 Consonant Digraph Sound Game: Level 1 🎮</h1>
+                
+                <div class="progress-container">
+                    <div class="streak-display">
+                        Current Streak: <span id="streak">0</span> / 10
+                    </div>
+                    <div class="streak-boxes">
+                    </div>
+                </div>
+
+                <button class="play-sound" id="playSound">
+                    🔊 Listen to the Sound
+                </button>
+
+                <div id="currentLetter" class="current-letter"></div>
+                
+                <div class="question">
+                    Can this make the sound you heard?
+                </div>
+
+                <div class="button-container">
+                    <button class="answer-button yes-button" id="yesButton">Yes!</button>
+                    <button class="answer-button no-button" id="noButton">No!</button>
+                </div>
+
+                <div class="feedback" id="feedback"></div>
+            `;
+
+            // Reset game state
+            streak = 0;
+            
+            // Reinitialize event listeners
+            initializeEventListeners();
+            
+            // Setup initial game state
+            createStreakBoxes();
+            updateStreakDisplay();
+            createNewLetterSet();
+            showNextLetter();
+        }
+
+        function initializeEventListeners() {
+            document.getElementById('playSound').addEventListener('click', () => {
+                audioCk.play();
+            });
+
+            document.getElementById('yesButton').addEventListener('click', () => checkAnswer(true));
+            document.getElementById('noButton').addEventListener('click', () => checkAnswer(false));
+        }
+
+        function showNextLetter() {
+            const letterDisplay = document.getElementById('currentLetter');
+            letterDisplay.textContent = currentLetters[currentLetterIndex];
+            document.getElementById('feedback').textContent = '';
+            // Play sound automatically with new letter
+            audioCk.play();
+        }
+
+        function checkAnswer(isYes) {
+            const currentLetter = currentLetters[currentLetterIndex];
+            const isCorrectCk = (currentLetter === 'ck');
+            const letterDisplay = document.getElementById('currentLetter');
+            const feedback = document.getElementById('feedback');
+
+            if ((isYes && isCorrectCk) || (!isYes && !isCorrectCk)) {
+                streak++;
+                feedback.style.color = '#4CAF50';
+                feedback.textContent = '🎉 Correct!';
+                letterDisplay.classList.add('correct');
+                
+                if (streak === 10) {
+                    showWinnerMessage();
+                    return;
+                }
+            } else {
+                streak = 0;
+                feedback.style.color = '#FF6B6B';
+                feedback.textContent = '❌ Try again!';
+                letterDisplay.classList.add('incorrect');
+            }
+
+            updateStreakDisplay();
+
+            setTimeout(() => {
+                letterDisplay.classList.remove('correct', 'incorrect');
+                currentLetterIndex++;
+                
+                // If we've gone through all letters in the current set, create a new set
+                if (currentLetterIndex >= currentLetters.length) {
+                    createNewLetterSet();
+                }
+                
+                showNextLetter();
+            }, 1000);
+        }
+
+        // Initialize the game
+        createStreakBoxes();
+        updateStreakDisplay();
+        createNewLetterSet();
+        initializeEventListeners();
+        showNextLetter();
+    </script>
+</body>
+</html>
