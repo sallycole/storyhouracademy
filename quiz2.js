@@ -144,8 +144,29 @@ function showFinalResults() {
         <ul style="list-style: none; padding: 0;">
     `;
     
+    // Map sounds to their IPA representations
+    const soundToIPA = {
+        'b': '/b/',
+        'd': '/d/',
+        'f': '/f/',
+        'h': '/h/',
+        'j': '/dʒ/',  // Changed from /j/ to /dʒ/
+        'k': '/k/',
+        'l': '/l/',
+        'm': '/m/',
+        'n': '/n/',
+        'p': '/p/',
+        'qu': '/kw/',
+        'r': '/ɹ/',   // Changed from /r/ to /ɹ/
+        't': '/t/',
+        'v': '/v/',
+        'w': '/w/',
+        'z': '/z/'
+    };
+    
     results.forEach(result => {
-        const displaySound = result.sound === 'qu' ? '/kw/' : `/${result.sound}/`;
+        // Use the IPA mapping or fallback to the original format
+        const displaySound = soundToIPA[result.sound] || `/${result.sound}/`;
         const displaySelected = result.selected === 'qu' ? 'Qu' : result.selected.toUpperCase();
         
         resultsHTML += `
