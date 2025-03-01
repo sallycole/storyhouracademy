@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Letter Sorting Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F4FF 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 900px;
+            width: 95%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .instructions-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .instructions {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.4;
+            flex: 1;
+            text-align: left;
+        }
+
+        .audio-icon {
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #4a90e2;
+            transition: transform 0.2s;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+
+        .stat-box {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 10px 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .letter-tiles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .letter-tile {
+            width: 60px;
+            height: 60px;
+            background-color: #f8f8f8;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .letter-tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .letter-tile:active {
+            cursor: grabbing;
+        }
+
+        .sorting-boxes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .sorting-box {
+            border: 3px dashed;
+            border-radius: 15px;
+            padding: 15px;
+            min-height: 100px;
+            margin: 0 auto;
+            width: 90%;
+            position: relative;
+        }
+
+        .sorting-box-label {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .consonant-box {
+            border-color: #4a90e2;
+        }
+
+        .consonant-box .sorting-box-label {
+            color: #4a90e2;
+        }
+
+        .vowel-box {
+            border-color: #e74c3c;
+        }
+
+        .vowel-box .sorting-box-label {
+            color: #e74c3c;
+        }
+
+        .sometimes-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .sometimes-box {
+            border-color: #9b59b6;
+            background: linear-gradient(to right, rgba(231, 76, 60, 0.1), rgba(74, 144, 226, 0.1));
+            width: 50%;
+            margin: 0;
+            flex: 1;
+        }
+
+        .sometimes-box .sorting-box-label {
+            color: #9b59b6;
+        }
+
+        .letter-slots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .letter-slot {
+            width: 60px;
+            height: 60px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feedback {
+            font-size: 24px;
+            height: 30px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .finish-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .finish-button:hover {
+            background-color: #45a049;
+        }
+
+        .finish-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .play-again-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .play-again-button:hover {
+            background-color: #3a80d2;
+        }
+
+        .dropped-letter {
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            background-color: #f8f8f8;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .results-container {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .results-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .result-item {
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        .error-box {
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            min-width: 120px;
+        }
+
+        .error-count {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 5px;
+        }
+
+        .error-label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 The Letter Sorting Game 🎮</h1>
+        
+        <div class="instructions-container">
+            <div class="audio-icon" id="audioInstructions" title="Listen to instructions">🔊</div>
+            <div class="instructions">
+                Drag each letter to the correct box. Put consonant letters in the blue outlined box. Put vowel letters in the red outlined box. Put the letter y in the special purple box because sometimes it's a vowel and sometimes it's a consonant.
+            </div>
+            <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sorting-instructions.mp3" preload="auto"></audio>
+        </div>
+
+        <div class="letter-tiles-container" id="letterTiles">
+            <!-- Letter tiles will be inserted here by JavaScript -->
+        </div>
+
+        <div class="sorting-boxes-container">
+            <div class="sorting-box consonant-box" id="consonantBox">
+                <div class="sorting-box-label">Consonant Letters</div>
+                <div class="letter-slots" id="consonantSlots">
+                    <!-- Consonant slots will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="sorting-box vowel-box" id="vowelBox">
+                <div class="sorting-box-label">Vowel Letters</div>
+                <div class="letter-slots" id="vowelSlots">
+                    <!-- Vowel slots will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="sometimes-container">
+                <div class="sorting-box sometimes-box" id="sometimesBox">
+                    <div class="sorting-box-label">Sometimes a Vowel Letter, Sometimes a Consonant Letter</div>
+                    <div class="letter-slots" id="sometimesSlots">
+                        <!-- Special slot for 'y' will be inserted here by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="error-box">
+                    <span class="error-label">Errors</span>
+                    <span class="error-count" id="errorCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+        
+        <button class="finish-button" id="finishButton" disabled>Finish</button>
+    </div>
+
+    <script>
+        // Define the letters and their categories
+        const letters = ['Aa', 'Bb', 'Cc', 'Dd', 'Ee', 'Ff', 'Gg', 'Hh', 'Ii', 'Jj', 'Kk', 'Ll', 'Mm', 'Nn', 'Oo', 'Pp', 'Qq', 'Rr', 'Ss', 'Tt', 'Uu', 'Vv', 'Ww', 'Xx', 'Yy', 'Zz'];
+        const vowels = ['Aa', 'Ee', 'Ii', 'Oo', 'Uu'];
+        const sometimes = ['Yy'];
+        const consonants = letters.filter(letter => !vowels.includes(letter) && !sometimes.includes(letter));
+        
+        // Track the current state
+        let correctPlacements = 0;
+        let totalLetters = letters.length;
+        let errorCount = 0;
+        let correctConsonants = 0;
+        let correctVowels = 0;
+        let correctSometimes = 0;
+        
+        // Create letter tiles
+        function createLetterTiles() {
+            const container = document.getElementById('letterTiles');
+            
+            // Shuffle the letters
+            const shuffledLetters = [...letters];
+            for (let i = shuffledLetters.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledLetters[i], shuffledLetters[j]] = [shuffledLetters[j], shuffledLetters[i]];
+            }
+            
+            shuffledLetters.forEach(letter => {
+                const tile = document.createElement('div');
+                tile.className = 'letter-tile';
+                tile.textContent = letter;
+                tile.draggable = true;
+                tile.dataset.letter = letter;
+                
+                // Add drag events
+                tile.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', letter);
+                    setTimeout(() => tile.style.opacity = '0.5', 0);
+                });
+                
+                tile.addEventListener('dragend', () => {
+                    tile.style.opacity = '1';
+                });
+                
+                container.appendChild(tile);
+            });
+        }
+        
+        // Create slots for each category
+        function createLetterSlots() {
+            // Create consonant slots - dynamically calculate the number needed
+            const consonantSlots = document.getElementById('consonantSlots');
+            const consonantCount = consonants.length; // This will be 20 with the full alphabet
+            for (let i = 0; i < consonantCount; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'letter-slot';
+                consonantSlots.appendChild(slot);
+            }
+            
+            // Create vowel slots
+            const vowelSlots = document.getElementById('vowelSlots');
+            for (let i = 0; i < 5; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'letter-slot';
+                vowelSlots.appendChild(slot);
+            }
+            
+            // Create sometimes slot
+            const sometimesSlots = document.getElementById('sometimesSlots');
+            const slot = document.createElement('div');
+            slot.className = 'letter-slot';
+            sometimesSlots.appendChild(slot);
+        }
+        
+        // Initialize drag and drop functionality
+        function initializeDragAndDrop() {
+            const consonantBox = document.getElementById('consonantBox');
+            const vowelBox = document.getElementById('vowelBox');
+            const sometimesBox = document.getElementById('sometimesBox');
+            
+            const boxes = [consonantBox, vowelBox, sometimesBox];
+            
+            boxes.forEach(box => {
+                box.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    box.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+                });
+                
+                box.addEventListener('dragleave', () => {
+                    box.style.backgroundColor = '';
+                });
+                
+                box.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    box.style.backgroundColor = '';
+                    
+                    const letter = e.dataTransfer.getData('text/plain');
+                    const letterTile = document.querySelector(`.letter-tile[data-letter="${letter}"]`);
+                    
+                    // Check if the letter is placed in the correct box
+                    let isCorrect = false;
+                    
+                    if (box === consonantBox && consonants.includes(letter)) {
+                        isCorrect = true;
+                        correctConsonants++;
+                    } else if (box === vowelBox && vowels.includes(letter)) {
+                        isCorrect = true;
+                        correctVowels++;
+                    } else if (box === sometimesBox && sometimes.includes(letter)) {
+                        isCorrect = true;
+                        correctSometimes++;
+                    }
+                    
+                    if (isCorrect) {
+                        // Find the appropriate slot based on alphabetical order
+                        const slots = box.querySelectorAll('.letter-slot');
+                        let targetSlotIndex = -1;
+                        
+                        if (box === vowelBox) {
+                            // For vowels, place in order: Aa, Ee, Ii, Oo, Uu
+                            targetSlotIndex = vowels.indexOf(letter);
+                        } else if (box === consonantBox) {
+                            // For consonants, find the alphabetical position
+                            const sortedConsonants = [...consonants].sort();
+                            targetSlotIndex = sortedConsonants.indexOf(letter);
+                        } else if (box === sometimesBox) {
+                            // For 'y', there's only one slot
+                            targetSlotIndex = 0;
+                        }
+                        
+                        if (targetSlotIndex !== -1 && targetSlotIndex < slots.length) {
+                            const targetSlot = slots[targetSlotIndex];
+                            
+                            // Check if the slot is already filled
+                            if (targetSlot.hasChildNodes()) {
+                                // Slot is already filled, show feedback
+                                const feedback = document.getElementById('feedback');
+                                feedback.textContent = 'This position is already filled!';
+                                feedback.style.color = 'orange';
+                                
+                                // Add shake animation to the letter tile
+                                letterTile.classList.add('shake');
+                                setTimeout(() => {
+                                    letterTile.classList.remove('shake');
+                                    feedback.textContent = '';
+                                }, 1000);
+                                
+                                return;
+                            }
+                            
+                            // Create a new element for the dropped letter
+                            const droppedLetter = document.createElement('div');
+                            droppedLetter.className = 'dropped-letter';
+                            droppedLetter.textContent = letter;
+                            
+                            // Add to the slot
+                            targetSlot.appendChild(droppedLetter);
+                            
+                            // Remove the original tile
+                            letterTile.remove();
+                            
+                            // Update progress
+                            correctPlacements++;
+                            
+                            // Show feedback
+                            const feedback = document.getElementById('feedback');
+                            feedback.textContent = 'Correct!';
+                            feedback.style.color = 'green';
+                            
+                            // Check if all letters are placed
+                            if (correctPlacements === totalLetters) {
+                                document.getElementById('finishButton').disabled = false;
+                                feedback.textContent = "Great job! You've sorted all the letters correctly!";
+                            }
+                            
+                            setTimeout(() => {
+                                feedback.textContent = '';
+                            }, 1500);
+                        }
+                    } else {
+                        // Increment error count
+                        errorCount++;
+                        document.getElementById('errorCount').textContent = errorCount;
+                        
+                        // Show incorrect feedback and shake the letter tile
+                        const feedback = document.getElementById('feedback');
+                        feedback.textContent = 'Try again!';
+                        feedback.style.color = 'red';
+                        
+                        // Add shake animation to the letter tile
+                        letterTile.classList.add('shake');
+                        setTimeout(() => {
+                            letterTile.classList.remove('shake');
+                            feedback.textContent = '';
+                        }, 1000);
+                    }
+                });
+            });
+        }
+        
+        // Show results screen
+        function showResults() {
+            const container = document.querySelector('.game-container');
+            
+            container.innerHTML = `
+                <h1>🎮 The Letter Sorting Game 🎮</h1>
+                
+                <div class="results-container">
+                    <div class="results-title">Your Results</div>
+                    
+                    <div class="result-item">
+                        You made ${errorCount} errors during the game.
+                    </div>
+                    
+                    <div class="result-item">
+                        Overall score: ${Math.max(0, 100 - (errorCount * 5))}%
+                    </div>
+                </div>
+                
+                <button class="play-again-button" id="playAgainButton">Play Again</button>
+            `;
+            
+            // Add event listener to the play again button
+            document.getElementById('playAgainButton').addEventListener('click', resetGame);
+        }
+        
+        // Reset the game
+        function resetGame() {
+            // Reset counters
+            correctPlacements = 0;
+            errorCount = 0;
+            correctConsonants = 0;
+            correctVowels = 0;
+            correctSometimes = 0;
+            
+            // Reset the container
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎮 The Letter Sorting Game 🎮</h1>
+                
+                <div class="instructions-container">
+                    <div class="audio-icon" id="audioInstructions" title="Listen to instructions">🔊</div>
+                    <div class="instructions">
+                        Drag each letter to the correct box. Put consonant letters in the blue outlined box. Put vowel letters in the red outlined box. Put the letter y in the special purple box because sometimes it's a vowel and sometimes it's a consonant.
+                    </div>
+                    <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sorting-instructions.mp3" preload="auto"></audio>
+                </div>
+                
+                <div class="letter-tiles-container" id="letterTiles">
+                    <!-- Letter tiles will be inserted here by JavaScript -->
+                </div>
+                
+                <div class="sorting-boxes-container">
+                    <div class="sorting-box consonant-box" id="consonantBox">
+                        <div class="sorting-box-label">Consonant Letters</div>
+                        <div class="letter-slots" id="consonantSlots">
+                            <!-- Consonant slots will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="sorting-box vowel-box" id="vowelBox">
+                        <div class="sorting-box-label">Vowel Letters</div>
+                        <div class="letter-slots" id="vowelSlots">
+                            <!-- Vowel slots will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="sometimes-container">
+                        <div class="sorting-box sometimes-box" id="sometimesBox">
+                            <div class="sorting-box-label">Sometimes a Vowel Letter, Sometimes a Consonant Letter</div>
+                            <div class="letter-slots" id="sometimesSlots">
+                                <!-- Special slot for 'y' will be inserted here by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="error-box">
+                            <span class="error-label">Errors</span>
+                            <span class="error-count" id="errorCount">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feedback" id="feedback"></div>
+                
+                <button class="finish-button" id="finishButton" disabled>Finish</button>
+            `;
+            
+            // Initialize the game again
+            initializeGame();
+        }
+        
+        // Initialize the game
+        function initializeGame() {
+            createLetterTiles();
+            createLetterSlots();
+            initializeDragAndDrop();
+            
+            // Set up finish button
+            document.getElementById('finishButton').addEventListener('click', showResults);
+            
+            // Set up audio instructions
+            document.getElementById('audioInstructions').addEventListener('click', function() {
+                const audio = document.getElementById('instructionsAudio');
+                audio.currentTime = 0; // Reset to beginning
+                audio.play();
+            });
+        }
+        
+        // Start the game when the page loads
+        document.addEventListener('DOMContentLoaded', initializeGame);
+    </script>
+</body>
+</html>
