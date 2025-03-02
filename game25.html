@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Spelling Game: Level 1</title>
+    <title>The Spelling Game: Level 2</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -311,7 +311,17 @@
         }
 
         .error-box {
-            display: none;
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            min-width: 120px;
         }
 
         .error-count {
@@ -373,7 +383,7 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>🎮 The Spelling Game: Level 1 🎮</h1>
+        <h1>🎮 The Spelling Game: Level 2 🎮</h1>
         
         <div class="instructions-container">
             <button class="audio-button" id="audioInstructions">
@@ -384,8 +394,8 @@
         </div>
 
         <div class="spelling-area">
-            <div class="word-to-spell" id="wordToSpell">ail</div>
-            <div class="word-meaning" id="wordMeaning">means to be ill or unwell</div>
+            <div class="word-to-spell" id="wordToSpell">day</div>
+            <div class="word-meaning" id="wordMeaning">is the time between sunrise and sunset</div>
             <div class="spelling-display-container">
                 <div class="spelling-display" id="spellingDisplay"></div>
                 <button class="next-button" id="nextButton" disabled>Next Word</button>
@@ -417,6 +427,11 @@
                         <!-- Special tile for 'y' will be inserted here by JavaScript -->
                     </div>
                 </div>
+                
+                <div class="error-box">
+                    <span class="error-label">Errors</span>
+                    <span class="error-count" id="errorCount">0</span>
+                </div>
             </div>
         </div>
 
@@ -433,32 +448,21 @@
     <script>
         // Define the phonograms and their categories
         const consonantPhonograms = ['b', 'ch', 'ck', 'd', 'f', 'h', 'j', 'k', 'l', 'm', 'n', 'ng', 'p', 'qu', 'r', 'sh', 't', 'th', 'v', 'w', 'wh', 'z'];
-        const vowelPhonograms = ['a', 'ai', 'e', 'i', 'o', 'u'];
+        const vowelPhonograms = ['a', 'ai', 'ay', 'e', 'i', 'o', 'u'];
         const sometimesPhonograms = [];
         const allPhonograms = [...consonantPhonograms, ...vowelPhonograms, ...sometimesPhonograms];
         
         // Words to spell with their meanings
         const wordsToSpellOriginal = [
-            { word: 'ail', meaning: 'means to be ill or unwell' },
-            { word: 'fail', meaning: 'means to not succeed at something' },
-            { word: 'mail', meaning: 'means letters and packages that get delivered to your home' },
-            { word: 'quail', meaning: 'is a small bird that lives on the ground' },
-            { word: 'tail', meaning: 'is the part that sticks out at the back of an animal' },
-            { word: 'rain', meaning: 'is water that falls from the sky' },
-            { word: 'chain', meaning: 'is metal rings connected together in a line' },
-            { word: 'plain', meaning: 'means simple or not fancy' },
-            { word: 'train', meaning: 'is a line of connected cars that runs on tracks' },
-            { word: 'air', meaning: 'is what we breathe all around us' },
-            { word: 'paint', meaning: 'is colored liquid we use to make pictures' },
-            { word: 'fair', meaning: 'means treating everyone the same way' },
-            { word: 'lair', meaning: 'is where an animal lives or sleeps' },
-            { word: 'pair', meaning: 'means two things that go together' },
-            { word: 'chair', meaning: 'is something you sit on that has a back' },
-            { word: 'aid', meaning: 'means to help someone' },
-            { word: 'paid', meaning: 'means you gave money for something' },
-            { word: 'wait', meaning: 'means to stay in one place until it\'s time to do something' },
-            { word: 'aim', meaning: 'means to point at something you want to hit' },
-            { word: 'bait', meaning: 'is food used to catch fish or animals' }
+            { word: 'day', meaning: 'is the time between sunrise and sunset' },
+            { word: 'hay', meaning: 'is dried grass used to feed farm animals' },
+            { word: 'lay', meaning: 'means to put something down gently' },
+            { word: 'may', meaning: 'means something might happen or is allowed' },
+            { word: 'pay', meaning: 'means to give money for something' },
+            { word: 'ray', meaning: 'is a beam of light or energy' },
+            { word: 'tray', meaning: 'is a flat surface used for carrying things' },
+            { word: 'way', meaning: 'is a path, road, or direction' },
+            { word: 'railway', meaning: 'is a track that trains travel on' }
         ];
         
         // Shuffle the words array
@@ -524,6 +528,13 @@
             vowelPhonograms.forEach(phonogram => {
                 createPhonogramTile(phonogram, vowelTilesContainer);
             });
+            
+            // Create sometimes tile (y) - This section is no longer needed but we'll keep the empty function call
+            // for compatibility with the rest of the code
+            const sometimesTilesContainer = document.getElementById('sometimesTiles');
+            sometimesPhonograms.forEach(phonogram => {
+                createPhonogramTile(phonogram, sometimesTilesContainer);
+            });
         }
         
         // Create a phonogram tile
@@ -570,8 +581,9 @@
                 // Check if the word is complete
                 checkWordCompletion();
             } else {
-                // Incorrect phonogram - we'll still track errors in the code but not display them
+                // Incorrect phonogram
                 errorCount++;
+                document.getElementById('errorCount').textContent = errorCount;
                 
                 // Show incorrect feedback
                 const feedback = document.getElementById('feedback');
@@ -723,6 +735,12 @@
                     i += 2;
                     found = true;
                 }
+                // Check for 'ay'
+                else if (i < word.length - 1 && word.substring(i, i + 2) === 'ay') {
+                    phonograms.push('ay');
+                    i += 2;
+                    found = true;
+                }
                 // Check for 'ch'
                 else if (i < word.length - 1 && word.substring(i, i + 2) === 'ch') {
                     phonograms.push('ch');
@@ -791,7 +809,7 @@
             const container = document.querySelector('.game-container');
             
             container.innerHTML = `
-                <h1>🎮 The Spelling Game: Level 1 🎮</h1>
+                <h1>🎮 The Spelling Game: Level 2 🎮</h1>
                 
                 <div class="results-container">
                     <div class="results-title">Your Results</div>
