@@ -391,6 +391,8 @@
                 Listen to the Instructions
             </button>
             <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/spell-aid.mp3" preload="auto"></audio>
+            <audio id="ighErrorAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/igh-not-i.mp3" preload="auto"></audio>
+            <audio id="ayErrorAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/ay-not-a.mp3" preload="auto"></audio>
         </div>
 
         <div class="spelling-area">
@@ -585,6 +587,21 @@
                 // Incorrect phonogram
                 errorCount++;
                 document.getElementById('errorCount').textContent = errorCount;
+                
+                // Check if this is the 'i' vs 'igh' error
+                if (phonogram === 'i' && expectedPhonogram === 'igh') {
+                    // Play the igh error audio
+                    const ighErrorAudio = document.getElementById('ighErrorAudio');
+                    ighErrorAudio.currentTime = 0;
+                    ighErrorAudio.play().catch(e => console.log('Audio play failed:', e));
+                }
+                // Check if this is the 'a' vs 'ay' error
+                else if (phonogram === 'a' && expectedPhonogram === 'ay') {
+                    // Play the ay error audio
+                    const ayErrorAudio = document.getElementById('ayErrorAudio');
+                    ayErrorAudio.currentTime = 0;
+                    ayErrorAudio.play().catch(e => console.log('Audio play failed:', e));
+                }
                 
                 // Show incorrect feedback
                 const feedback = document.getElementById('feedback');

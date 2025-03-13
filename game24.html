@@ -381,6 +381,7 @@
                 Listen to the Instructions
             </button>
             <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/spell-aid.mp3" preload="auto"></audio>
+            <audio id="aiErrorAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/ai-not-a.mp3" preload="auto"></audio>
         </div>
 
         <div class="spelling-area">
@@ -572,6 +573,14 @@
             } else {
                 // Incorrect phonogram - we'll still track errors in the code but not display them
                 errorCount++;
+
+                // Check if this is the 'a' vs 'ai' error
+                if (phonogram === 'a' && expectedPhonogram === 'ai') {
+                    // Play the ai error audio
+                    const aiErrorAudio = document.getElementById('aiErrorAudio');
+                    aiErrorAudio.currentTime = 0;
+                    aiErrorAudio.play().catch(e => console.log('Audio play failed:', e));
+                }
                 
                 // Show incorrect feedback
                 const feedback = document.getElementById('feedback');

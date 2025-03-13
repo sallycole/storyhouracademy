@@ -391,6 +391,7 @@
                 Listen to the Instructions
             </button>
             <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/spell-aid.mp3" preload="auto"></audio>
+            <audio id="eighErrorAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/eigh-not-e.mp3" preload="auto"></audio>
         </div>
 
         <div class="spelling-area">
@@ -581,6 +582,14 @@
                 // Incorrect phonogram
                 errorCount++;
                 document.getElementById('errorCount').textContent = errorCount;
+                
+                // Check if this is the 'e' vs 'eigh' error
+                if (phonogram === 'e' && expectedPhonogram === 'eigh') {
+                    // Play the eigh error audio
+                    const eighErrorAudio = document.getElementById('eighErrorAudio');
+                    eighErrorAudio.currentTime = 0;
+                    eighErrorAudio.play().catch(e => console.log('Audio play failed:', e));
+                }
                 
                 // Show incorrect feedback
                 const feedback = document.getElementById('feedback');
