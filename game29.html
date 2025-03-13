@@ -392,6 +392,7 @@
             </button>
             <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/spell-aid.mp3" preload="auto"></audio>
             <audio id="oaErrorAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/oa-not-o.mp3" preload="auto"></audio>
+            <audio id="aiErrorAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/ai-not-a.mp3" preload="auto"></audio>
         </div>
 
         <div class="spelling-area">
@@ -593,6 +594,13 @@
                     const oaErrorAudio = document.getElementById('oaErrorAudio');
                     oaErrorAudio.currentTime = 0;
                     oaErrorAudio.play().catch(e => console.log('Audio play failed:', e));
+                }
+                // Check if this is the 'a' vs 'ai' error in railroad
+                else if (phonogram === 'a' && expectedPhonogram === 'ai' && currentWord === 'railroad') {
+                    // Play the ai error audio
+                    const aiErrorAudio = document.getElementById('aiErrorAudio');
+                    aiErrorAudio.currentTime = 0;
+                    aiErrorAudio.play().catch(e => console.log('Audio play failed:', e));
                 }
                 
                 // Show incorrect feedback
