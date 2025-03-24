@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Word Sorting Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F4FF 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            width: 95%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .instructions-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .instructions {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.4;
+            flex: 1;
+            text-align: left;
+        }
+
+        .audio-icon {
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #4a90e2;
+            transition: transform 0.2s;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .word-tiles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .word-tile {
+            min-width: 100px;
+            height: 40px;
+            background-color: #f8f8f8;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 0 15px;
+        }
+
+        .word-tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .word-tile:active {
+            cursor: grabbing;
+        }
+
+        .sorting-boxes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .sorting-box {
+            border: 3px dashed;
+            border-radius: 15px;
+            padding: 15px;
+            min-height: 100px;
+            margin: 0 auto;
+            width: 90%;
+            position: relative;
+        }
+
+        .sorting-box-label {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sound-icon {
+            cursor: pointer;
+            font-size: 20px;
+            color: #4a90e2;
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sound-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .er-sound-box {
+            border-color: #4a90e2;
+        }
+
+        .er-sound-box .sorting-box-label {
+            color: #4a90e2;
+        }
+
+        .short-e-box {
+            border-color: #e74c3c;
+        }
+
+        .short-e-box .sorting-box-label {
+            color: #e74c3c;
+        }
+
+        .long-e-box {
+            border-color: #2ecc71;
+        }
+
+        .long-e-box .sorting-box-label {
+            color: #2ecc71;
+        }
+
+        .word-slots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .word-slot {
+            min-width: 100px;
+            height: 40px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .feedback {
+            font-size: 24px;
+            height: 30px;
+            margin: 20px;
+            color: #333;
+        }
+
+        .finish-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .finish-button:hover {
+            background-color: #45a049;
+        }
+
+        .finish-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .play-again-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .play-again-button:hover {
+            background-color: #3a80d2;
+        }
+
+        .dropped-letter {
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            background-color: #f8f8f8;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .results-container {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .results-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .result-item {
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        .error-box {
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            min-width: 120px;
+        }
+
+        .error-count {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 5px;
+        }
+
+        .error-label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 The Word Sorting Game 🎮</h1>
+        
+        <div class="instructions-container">
+            <div class="audio-icon" id="audioInstructions" title="Listen to instructions">🔊</div>
+            <div class="instructions">
+                Sort the words into three groups: words where 'er' sounds like the /er/ sound, words where the 'e' in 'er' makes a short e sound, and words where the 'e' in 'er' makes a long e sound. Click or drag a word to hear it spoken.
+            </div>
+            <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/sort-er-words-instructions.mp3" preload="auto"></audio>
+            <div id="wordAudios" style="display: none;">
+                <!-- Audio elements will be created dynamically by JavaScript -->
+            </div>
+        </div>
+
+        <div class="word-tiles-container" id="letterTiles">
+            <!-- Word tiles will be inserted here by JavaScript -->
+        </div>
+
+        <div class="sorting-boxes-container">
+            <div class="sorting-box er-sound-box" id="erSoundBox">
+                <div class="sorting-box-label">
+                    Words where 'er' makes the /er/ sound
+                    <span class="sound-icon" title="Listen to the er sound">🔊
+                        <audio src="https://storyhouracademy.s3.us-east-1.amazonaws.com/er.mp3" preload="auto"></audio>
+                    </span>
+                </div>
+                <div class="word-slots" id="erSoundSlots">
+                    <!-- Slots will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="sorting-box short-e-box" id="shortEBox">
+                <div class="sorting-box-label">
+                    Words where the 'e' in 'er' makes a short e sound
+                    <span class="sound-icon" title="Listen to the short e sound">🔊
+                        <audio src="https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/shorte.mp3" preload="auto"></audio>
+                    </span>
+                </div>
+                <div class="word-slots" id="shortESlots">
+                    <!-- Slots will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="sorting-box long-e-box" id="longEBox">
+                <div class="sorting-box-label">
+                    Words where 'e' in 'er' makes a long e sound
+                    <span class="sound-icon" title="Listen to the long e sound">🔊
+                        <audio src="https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longe.mp3" preload="auto"></audio>
+                    </span>
+                </div>
+                <div class="word-slots" id="longESlots">
+                    <!-- Slots will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="error-box">
+            <span class="error-label">Errors</span>
+            <span class="error-count" id="errorCount">0</span>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+        
+        <button class="finish-button" id="finishButton" disabled>Finish</button>
+    </div>
+
+    <script>
+        // Define the words and their categories
+        const words = {
+            erSound: ['her', 'fern', 'herd', 'jerk', 'nerd', 'perch', 'perk', 'verb', 'term', 'player', 'boiler', 'grayer', 'keeper', 'trailer', 'lighter', 'fighter', 'trainer'],
+            shortE: ['very', 'merry', 'error', 'there'],
+            longE: ['here']
+        };
+        
+        // Track the current state
+        let correctPlacements = 0;
+        let totalWords = Object.values(words).flat().length;
+        let errorCount = 0;
+        let correctErSound = 0;
+        let correctShortE = 0;
+        let correctLongE = 0;
+        
+        // Create word tiles
+        function createWordTiles() {
+            const container = document.getElementById('letterTiles');
+            container.className = 'word-tiles-container'; // Update class for styling
+            const audioContainer = document.getElementById('wordAudios');
+            audioContainer.id = 'wordAudios'; // Update ID to reflect new purpose
+            
+            // Create audio elements for each word
+            const allWords = Object.values(words).flat();
+            allWords.forEach(word => {
+                const audio = document.createElement('audio');
+                audio.id = `${word}Audio`;
+                audio.src = `https://storyhouracademy.s3.us-east-1.amazonaws.com/words/${word}.mp3`;
+                audio.preload = 'auto';
+                audioContainer.appendChild(audio);
+            });
+            
+            // Shuffle the words
+            const shuffledWords = [...allWords];
+            for (let i = shuffledWords.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledWords[i], shuffledWords[j]] = [shuffledWords[j], shuffledWords[i]];
+            }
+            
+            shuffledWords.forEach(word => {
+                const tile = document.createElement('div');
+                tile.className = 'word-tile';
+                tile.textContent = word;
+                tile.draggable = true;
+                tile.dataset.word = word;
+                
+                // Add click event for audio playback
+                tile.addEventListener('click', (e) => {
+                    const audio = document.getElementById(`${word}Audio`);
+                    if (audio) {
+                        audio.currentTime = 0;
+                        audio.play().catch(err => console.log('Audio play failed:', err));
+                    }
+                });
+                
+                // Add drag events
+                tile.addEventListener('dragstart', (e) => {
+                    // Play audio when starting to drag
+                    const audio = document.getElementById(`${word}Audio`);
+                    if (audio) {
+                        audio.currentTime = 0;
+                        audio.play().catch(err => console.log('Audio play failed:', err));
+                    }
+
+                    e.dataTransfer.setData('text/plain', word);
+                    setTimeout(() => tile.style.opacity = '0.5', 0);
+                });
+                
+                tile.addEventListener('dragend', () => {
+                    tile.style.opacity = '1';
+                });
+                
+                container.appendChild(tile);
+            });
+        }
+        
+        // Create slots for each category
+        function createWordSlots() {
+            // Create slots for er sound words
+            const erSoundSlots = document.getElementById('erSoundSlots');
+            const erSoundCount = words.erSound.length;
+            for (let i = 0; i < erSoundCount; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'word-slot';
+                erSoundSlots.appendChild(slot);
+            }
+            
+            // Create slots for short e words
+            const shortESlots = document.getElementById('shortESlots');
+            const shortECount = words.shortE.length;
+            for (let i = 0; i < shortECount; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'word-slot';
+                shortESlots.appendChild(slot);
+            }
+            
+            // Create slots for long e words
+            const longESlots = document.getElementById('longESlots');
+            const longECount = words.longE.length;
+            for (let i = 0; i < longECount; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'word-slot';
+                longESlots.appendChild(slot);
+            }
+        }
+        
+        // Initialize drag and drop functionality
+        function initializeDragAndDrop() {
+            const erSoundBox = document.getElementById('erSoundBox');
+            const shortEBox = document.getElementById('shortEBox');
+            const longEBox = document.getElementById('longEBox');
+            
+            const boxes = [erSoundBox, shortEBox, longEBox];
+            
+            boxes.forEach(box => {
+                box.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    box.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+                });
+                
+                box.addEventListener('dragleave', () => {
+                    box.style.backgroundColor = '';
+                });
+                
+                box.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    box.style.backgroundColor = '';
+                    
+                    const word = e.dataTransfer.getData('text/plain');
+                    const wordTile = document.querySelector(`.word-tile[data-word="${word}"]`);
+                    
+                    // Check if the word is placed in the correct box
+                    let isCorrect = false;
+                    
+                    if (box === erSoundBox && words.erSound.includes(word)) {
+                        isCorrect = true;
+                        correctErSound++;
+                    } else if (box === shortEBox && words.shortE.includes(word)) {
+                        isCorrect = true;
+                        correctShortE++;
+                    } else if (box === longEBox && words.longE.includes(word)) {
+                        isCorrect = true;
+                        correctLongE++;
+                    }
+                    
+                    if (isCorrect) {
+                        // Find an empty slot
+                        const slots = box.querySelectorAll('.word-slot');
+                        let emptySlot = null;
+                        for (let slot of slots) {
+                            if (!slot.hasChildNodes()) {
+                                emptySlot = slot;
+                                break;
+                            }
+                        }
+                        
+                        if (emptySlot) {
+                            // Create a new element for the dropped word
+                            const droppedWord = document.createElement('div');
+                            droppedWord.className = 'dropped-word';
+                            droppedWord.textContent = word;
+                            
+                            // Add to the slot
+                            emptySlot.appendChild(droppedWord);
+                            
+                            // Remove the original tile
+                            wordTile.remove();
+                            
+                            // Update progress
+                            correctPlacements++;
+                            
+                            // Show feedback
+                            const feedback = document.getElementById('feedback');
+                            feedback.textContent = 'Correct!';
+                            feedback.style.color = 'green';
+                            
+                            // Check if all words are placed
+                            if (correctPlacements === totalWords) {
+                                document.getElementById('finishButton').disabled = false;
+                                feedback.textContent = "Great job! You've sorted all the words correctly!";
+                            }
+                            
+                            setTimeout(() => {
+                                feedback.textContent = '';
+                            }, 1500);
+                        }
+                    } else {
+                        // Increment error count
+                        errorCount++;
+                        document.getElementById('errorCount').textContent = errorCount;
+                        
+                        // Show incorrect feedback and shake the word tile
+                        const feedback = document.getElementById('feedback');
+                        feedback.textContent = 'Try again!';
+                        feedback.style.color = 'red';
+                        
+                        // Add shake animation to the word tile
+                        wordTile.classList.add('shake');
+                        setTimeout(() => {
+                            wordTile.classList.remove('shake');
+                            feedback.textContent = '';
+                        }, 1000);
+                    }
+                });
+            });
+        }
+        
+        // Show results screen
+        function showResults() {
+            const container = document.querySelector('.game-container');
+            
+            container.innerHTML = `
+                <h1>🎮 The Word Sorting Game 🎮</h1>
+                
+                <div class="results-container">
+                    <div class="results-title">Your Results</div>
+                    
+                    <div class="result-item">
+                        You made ${errorCount} errors during the game.
+                    </div>
+                    
+                    <div class="result-item">
+                        Overall score: ${Math.max(0, 100 - (errorCount * 5))}%
+                    </div>
+                </div>
+                
+                <button class="play-again-button" id="playAgainButton">Play Again</button>
+            `;
+            
+            // Add event listener to the play again button
+            document.getElementById('playAgainButton').addEventListener('click', resetGame);
+        }
+        
+        // Reset the game
+        function resetGame() {
+            // Reset counters
+            correctPlacements = 0;
+            errorCount = 0;
+            correctErSound = 0;
+            correctShortE = 0;
+            correctLongE = 0;
+            
+            // Reset the container
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <h1>🎮 The Word Sorting Game 🎮</h1>
+                
+                <div class="instructions-container">
+                    <div class="audio-icon" id="audioInstructions" title="Listen to instructions">🔊</div>
+                    <div class="instructions">
+                        Sort the words into three groups: words where 'er' sounds like the /er/ sound, words where the 'e' in 'er' makes a short e sound, and words where the 'e' in 'er' makes a long e sound. Click or drag a word to hear it spoken.
+                    </div>
+                    <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/sort-er-words-instructions.mp3" preload="auto"></audio>
+                    <div id="wordAudios" style="display: none;">
+                        <!-- Audio elements will be created dynamically by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="word-tiles-container" id="letterTiles">
+                    <!-- Word tiles will be inserted here by JavaScript -->
+                </div>
+                
+                <div class="sorting-boxes-container">
+                    <div class="sorting-box er-sound-box" id="erSoundBox">
+                        <div class="sorting-box-label">
+                            Words where 'er' makes the /er/ sound
+                            <span class="sound-icon" title="Listen to the er sound">🔊
+                                <audio src="https://storyhouracademy.s3.us-east-1.amazonaws.com/er.mp3" preload="auto"></audio>
+                            </span>
+                        </div>
+                        <div class="word-slots" id="erSoundSlots">
+                            <!-- Slots will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="sorting-box short-e-box" id="shortEBox">
+                        <div class="sorting-box-label">
+                            Words where the 'e' in 'er' makes a short e sound
+                            <span class="sound-icon" title="Listen to the short e sound">🔊
+                                <audio src="https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/shorte.mp3" preload="auto"></audio>
+                            </span>
+                        </div>
+                        <div class="word-slots" id="shortESlots">
+                            <!-- Slots will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="sorting-box long-e-box" id="longEBox">
+                        <div class="sorting-box-label">
+                            Words where 'e' in 'er' makes a long e sound
+                            <span class="sound-icon" title="Listen to the long e sound">🔊
+                                <audio src="https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longe.mp3" preload="auto"></audio>
+                            </span>
+                        </div>
+                        <div class="word-slots" id="longESlots">
+                            <!-- Slots will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-box">
+                    <span class="error-label">Errors</span>
+                    <span class="error-count" id="errorCount">0</span>
+                </div>
+                
+                <div class="feedback" id="feedback"></div>
+                
+                <button class="finish-button" id="finishButton" disabled>Finish</button>
+            `;
+            
+            // Initialize the game again
+            initializeGame();
+        }
+        
+        // Initialize the game
+        function initializeGame() {
+            createWordTiles();
+            createWordSlots();
+            initializeDragAndDrop();
+            
+            // Set up finish button
+            document.getElementById('finishButton').addEventListener('click', showResults);
+            
+            // Set up audio instructions
+            document.getElementById('audioInstructions').addEventListener('click', function() {
+                const audio = document.getElementById('instructionsAudio');
+                audio.currentTime = 0; // Reset to beginning
+                audio.play();
+            });
+
+            // Set up sound icons
+            document.querySelectorAll('.sound-icon').forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const audio = this.querySelector('audio');
+                    if (audio) {
+                        audio.currentTime = 0;
+                        audio.play().catch(err => console.log('Audio play failed:', err));
+                    }
+                });
+            });
+        }
+        
+        // Start the game when the page loads
+        document.addEventListener('DOMContentLoaded', initializeGame);
+    </script>
+</body>
+</html>
