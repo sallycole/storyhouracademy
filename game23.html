@@ -312,6 +312,10 @@
                 Drag each letter to the correct box. Put consonant letters in the blue outlined box. Put vowel letters in the red outlined box. Put the letter y in the special outlined purple box because sometimes it's a vowel and sometimes it's a consonant.
             </div>
             <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sorting-instructions.mp3" preload="auto"></audio>
+            <!-- Audio elements for letter names -->
+            <div id="letterAudios" style="display: none;">
+                <!-- Audio elements will be created dynamically by JavaScript -->
+            </div>
         </div>
 
         <div class="letter-tiles-container" id="letterTiles">
@@ -371,6 +375,17 @@
         // Create letter tiles
         function createLetterTiles() {
             const container = document.getElementById('letterTiles');
+            const audioContainer = document.getElementById('letterAudios');
+            
+            // Create audio elements for each letter
+            letters.forEach(letter => {
+                const letterLower = letter[0].toLowerCase();
+                const audio = document.createElement('audio');
+                audio.id = `${letterLower}NameAudio`;
+                audio.src = `https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-names/${letterLower}-name.mp3`;
+                audio.preload = 'auto';
+                audioContainer.appendChild(audio);
+            });
             
             // Shuffle the letters
             const shuffledLetters = [...letters];
@@ -386,8 +401,26 @@
                 tile.draggable = true;
                 tile.dataset.letter = letter;
                 
+                // Add click event for audio playback
+                tile.addEventListener('click', (e) => {
+                    const letterLower = letter[0].toLowerCase();
+                    const audio = document.getElementById(`${letterLower}NameAudio`);
+                    if (audio) {
+                        audio.currentTime = 0;
+                        audio.play().catch(err => console.log('Audio play failed:', err));
+                    }
+                });
+                
                 // Add drag events
                 tile.addEventListener('dragstart', (e) => {
+                    // Play audio when starting to drag
+                    const letterLower = letter[0].toLowerCase();
+                    const audio = document.getElementById(`${letterLower}NameAudio`);
+                    if (audio) {
+                        audio.currentTime = 0;
+                        audio.play().catch(err => console.log('Audio play failed:', err));
+                    }
+
                     e.dataTransfer.setData('text/plain', letter);
                     setTimeout(() => tile.style.opacity = '0.5', 0);
                 });
@@ -598,6 +631,9 @@
                         Drag each letter to the correct box. Put consonant letters in the blue outlined box. Put vowel letters in the red outlined box. Put the letter y in the special outlined purple box because sometimes it's a vowel and sometimes it's a consonant.
                     </div>
                     <audio id="instructionsAudio" src="https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sorting-instructions.mp3" preload="auto"></audio>
+                    <div id="letterAudios" style="display: none;">
+                        <!-- Audio elements will be created dynamically by JavaScript -->
+                    </div>
                 </div>
                 
                 <div class="letter-tiles-container" id="letterTiles">
