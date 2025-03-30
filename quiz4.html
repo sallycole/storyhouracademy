@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastery Test of Multi-Letter Vowel Phonograms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mastery Test of Multi-Letter Vowel Phonograms</h1>
+        
+        <div class="quiz-controls">
+            <button id="playSound" class="play-button">
+                Replay Sound
+            </button>
+            <p id="feedback" class="feedback"></p>
+            <p id="score" class="score">Progress: 0/0</p>
+        </div>
+
+        <div id="letterGrid" class="letter-grid">
+            <!-- Phonogram tiles will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const letters = [
+            'ai\nay\neigh', 'ee', 'igh', 'oa', 'au\naw', 'oi\noy', 'ui',
+            'er\nir\nur', 'ar', 'or', 'wor', 'ear', 'our'
+        ];
+        const allSounds = [
+            'longa', 'longe', 'longi', 'longo', 'broada', 'oioy', 'longoo',
+            'erirur', 'ar', 'or', 'wor', 'ear3', 'our2'
+        ];
+        let remainingSounds = [];
+        let currentSound = '';
+        let results = [];
+
+        // Create a mapping of sounds to their S3 URLs
+        const soundUrls = {
+            'longa': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longa.mp3',
+            'longe': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longe.mp3',
+            'longi': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longi.mp3',
+            'longo': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longo.mp3',
+            'broada': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/broada.mp3',
+            'oioy': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/oioysound.mp3',
+            'longoo': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longoo.mp3',
+            'erirur': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/erirursound.mp3',
+            'ar': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/arsound.mp3',
+            'or': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/orsound.mp3',
+            'wor': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/worsound.mp3',
+            'ear3': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/ear3sounds.mp3',
+            'our2': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/our2sounds.mp3'
+        };
+
+        // Map the sounds to their corresponding phonograms for display in results
+        const soundToPhonogram = {
+            'longa': 'ai/ay/eigh',
+            'longe': 'ee',
+            'longi': 'igh',
+            'longo': 'oa',
+            'broada': 'au/aw',
+            'oioy': 'oi/oy',
+            'longoo': 'ui',
+            'erirur': 'er/ir/ur',
+            'ar': 'ar',
+            'or': 'or',
+            'wor': 'wor',
+            'ear3': 'ear',
+            'our2': 'our'
+        };
+
+        // First, let's create a mapping of phonogram tiles to their sounds
+        const phonogramToSound = {
+            'ai\nay\neigh': 'longa',
+            'ee': 'longe',
+            'igh': 'longi',
+            'oa': 'longo',
+            'au\naw': 'broada',
+            'oi\noy': 'oioy',
+            'ui': 'longoo',
+            'er\nir\nur': 'erirur',
+            'ar': 'ar',
+            'or': 'or',
+            'wor': 'wor',
+            'ear': 'ear3',
+            'our': 'our2'
+        };
+
+        function createLetterGrid() {
+            const grid = document.getElementById('letterGrid');
+            
+            // Update the CSS to handle stacked phonograms
+            const style = document.createElement('style');
+            style.textContent = `
+                .letter-grid {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 20px;
+                    justify-content: center;
+                    padding: 20px;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                
+                .letter-tile {
+                    width: 80px;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 24px;
+                    font-weight: normal;
+                    margin: 0 auto;
+                    background-color: #f0f0f0;
+                    border: 2px solid #ccc;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                    position: relative;
+                }
+                
+                .letter-tile:hover {
+                    background-color: #e0e0e0;
+                    transform: scale(1.05);
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+                }
+                
+                .letter-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    gap: 4px;
+                }
+                
+                .letter-content div {
+                    font-size: 20px;
+                    font-weight: normal;
+                    line-height: 1;
+                }
+                
+                @media (max-width: 768px) {
+                    .letter-grid {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .letter-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            letters.forEach(letter => {
+                const tile = document.createElement('div');
+                tile.className = 'letter-tile';
+                
+                if (letter.includes('\n')) {
+                    // Create a container for stacked phonograms
+                    const letterContent = document.createElement('div');
+                    letterContent.className = 'letter-content';
+                    
+                    // Split the phonograms and create a div for each
+                    letter.split('\n').forEach(phonogram => {
+                        const phonogramDiv = document.createElement('div');
+                        phonogramDiv.textContent = phonogram;
+                        letterContent.appendChild(phonogramDiv);
+                    });
+                    
+                    tile.appendChild(letterContent);
+                } else {
+                    // Single phonogram tiles
+                    tile.textContent = letter;
+                }
+                
+                // Set up the click handler
+                tile.addEventListener('click', () => checkAnswer(letter));
+                grid.appendChild(tile);
+            });
+        }
+
+        function initializeQuiz() {
+            remainingSounds = [...allSounds];
+            shuffleArray(remainingSounds);
+            results = [];
+            document.getElementById('score').textContent = `Progress: 0/${allSounds.length}`;
+            playNextSound();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function playNextSound() {
+            if (remainingSounds.length === 0) {
+                showFinalResults();
+                return;
+            }
+            
+            currentSound = remainingSounds[0];
+            playCurrentSound();
+            document.getElementById('feedback').textContent = '';
+        }
+
+        function playCurrentSound() {
+            const audioUrl = soundUrls[currentSound];
+            const audio = new Audio(audioUrl);
+            audio.play().catch(error => {
+                console.error('Error playing sound:', error);
+                document.getElementById('feedback').textContent = 'Error playing sound. Please try again.';
+            });
+        }
+
+        function checkAnswer(selectedLetter) {
+            if (!currentSound || remainingSounds.length === 0) return;
+
+            const correct = phonogramToSound[selectedLetter] === currentSound;
+            const feedback = document.getElementById('feedback');
+            
+            results.push({
+                sound: currentSound,
+                selected: selectedLetter,
+                correct: correct
+            });
+
+            feedback.textContent = correct ? 'Correct!' : 'Incorrect';
+            feedback.style.color = correct ? 'green' : 'red';
+            
+            remainingSounds.shift();
+            document.getElementById('score').textContent = 
+                `Progress: ${results.length}/${allSounds.length}`;
+
+            setTimeout(playNextSound, 1000);
+        }
+
+        function showStartScreen() {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Mastery Test of Multi-Letter Vowel Phonograms</h1>
+                <div class="instructions-container" style="display: flex; align-items: center; justify-content: center; margin: 20px;">
+                    <div class="audio-icon" style="cursor: pointer; margin-right: 15px; font-size: 24px; color: #4a90e2;" onclick="playInstructions()" title="Listen to instructions">🔊</div>
+                    <div class="instructions" style="font-size: 18px; color: #333; line-height: 1.4; flex: 1; text-align: left;">
+                        Listen to the sound and click the tile with the phonogram or phonograms that represents the sound.
+                    </div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="startQuiz" class="play-button">
+                        Start Quiz
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('startQuiz').addEventListener('click', startQuiz);
+        }
+
+        function startQuiz() {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Mastery Test of Multi-Letter Vowel Phonograms</h1>
+                <div class="instructions-container" style="display: flex; align-items: center; justify-content: center; margin: 20px;">
+                    <div class="audio-icon" style="cursor: pointer; margin-right: 15px; font-size: 24px; color: #4a90e2;" onclick="playInstructions()" title="Listen to instructions">🔊</div>
+                    <div class="instructions" style="font-size: 18px; color: #333; line-height: 1.4; flex: 1; text-align: left;">
+                        Listen to the sound and click the tile with the phonogram or phonograms that represents the sound.
+                    </div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="playSound" class="play-button">
+                        Replay Sound
+                    </button>
+                    <p id="feedback" class="feedback"></p>
+                    <p id="score" class="score">Progress: 0/${allSounds.length}</p>
+                </div>
+                <div id="letterGrid" class="letter-grid">
+                </div>
+            `;
+
+            createLetterGrid();
+            initializeQuiz();
+            
+            document.getElementById('playSound').addEventListener('click', () => {
+                if (currentSound) {
+                    playCurrentSound();
+                }
+            });
+        }
+
+        function showFinalResults() {
+            const container = document.querySelector('.container');
+            const correct = results.filter(r => r.correct).length;
+            
+            let resultsHTML = `
+                <h2>Quiz Complete!</h2>
+                <p>Final Score: ${correct}/${allSounds.length}</p>
+                <h3>Results:</h3>
+                <ul style="list-style: none; padding: 0;">
+            `;
+            
+            results.forEach(result => {
+                let displaySound = soundToPhonogram[result.sound];
+                let displaySelected = result.selected.includes('\n') ? 
+                    result.selected.split('\n').join('/') : result.selected;
+                
+                // Check if it's 'ear' or 'our' phonogram
+                const usesPluralSounds = ['ear', 'our'].includes(displaySound);
+                
+                resultsHTML += `
+                    <li style="margin: 10px 0; color: ${result.correct ? 'green' : 'red'}">
+                        ${usesPluralSounds ? 'Sounds' : 'Sound'} for: "${displaySound}" - You selected: "${displaySelected}" 
+                        ${result.correct ? '✓' : '✗'}
+                    </li>
+                `;
+            });
+            
+            resultsHTML += `
+                </ul>
+                <button id="tryAgain" class="play-button">Try Again</button>
+            `;
+            
+            container.innerHTML = resultsHTML;
+            
+            document.getElementById('tryAgain').addEventListener('click', startQuiz);
+        }
+
+        // Add this new function to play instructions audio
+        function playInstructions() {
+            const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/test4instructions.mp3');
+            audio.play().catch(error => {
+                console.error('Error playing instructions:', error);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', showStartScreen);
+    </script>
+</body>
+</html> 
