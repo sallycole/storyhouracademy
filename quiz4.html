@@ -196,12 +196,34 @@
 
     <script>
         const letters = [
-            'ai\nay\neigh', 'ee', 'igh', 'oa', 'au\naw', 'oi\noy', 'ui',
-            'er\nir\nur', 'ar', 'or', 'wor', 'ear', 'our'
+            'ai\nay\neigh',  // starts with 'ai'
+            'ar',           // starts with 'ar'
+            'au\naw',       // starts with 'au'
+            'ear',          // starts with 'ear'
+            'ee',           // starts with 'ee'
+            'er\nir\nur',   // starts with 'er'
+            'igh',          // starts with 'igh'
+            'oa',           // starts with 'oa'
+            'oi\noy',       // starts with 'oi'
+            'or',           // starts with 'or'
+            'our',          // starts with 'our'
+            'ui',           // starts with 'ui'
+            'wor'           // starts with 'wor'
         ];
         const allSounds = [
-            'longa', 'longe', 'longi', 'longo', 'broada', 'oioy', 'longoo',
-            'erirur', 'ar', 'or', 'wor', 'ear3', 'our2'
+            'longa',    // corresponds to ai/ay/eigh
+            'ar',       // corresponds to ar
+            'broada',   // corresponds to au/aw
+            'ear3',     // corresponds to ear
+            'longe',    // corresponds to ee
+            'erirur',   // corresponds to er/ir/ur
+            'longi',    // corresponds to igh
+            'longo',    // corresponds to oa
+            'oioy',     // corresponds to oi/oy
+            'or',       // corresponds to or
+            'our2',     // corresponds to our
+            'longoo',   // corresponds to ui
+            'wor'       // corresponds to wor
         ];
         let remainingSounds = [];
         let currentSound = '';
