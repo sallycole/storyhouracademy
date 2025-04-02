@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastery Test of Alphabet Sounds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F4FF 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 900px;
+            width: 95%;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .letter-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .letter-tile {
+            width: 80px;  /* Fixed width matching quiz4.html */
+            height: 80px; /* Fixed height matching quiz4.html */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: normal;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .letter-tile:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .play-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .feedback {
+            font-size: 20px;
+            margin: 10px 0;
+            min-height: 30px;
+        }
+
+        .score {
+            font-size: 18px;
+        }
+
+        .instructions-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .audio-icon {
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #4a90e2;
+        }
+
+        .instructions {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.4;
+            flex: 1;
+            text-align: left;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .feedback-container {
+            min-height: 70px;
+        }
+
+        /* Add responsive breakpoints */
+        @media (max-width: 768px) {
+            .letter-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .letter-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mastery Test of Alphabet Sounds (Lowercase)</h1>
+        
+        <div class="quiz-controls">
+            <button id="playSound" class="play-button">
+                Replay Sound
+            </button>
+            <p id="feedback" class="feedback"></p>
+            <p id="score" class="score">Progress: 0/0</p>
+        </div>
+
+        <div id="letterGrid" class="letter-grid">
+            <!-- Letters will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'qu', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        const allSounds = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'qu', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        let remainingSounds = [];
+        let currentSound = '';
+        let results = [];
+        let audioQueue = [];
+        let isPlaying = false;
+
+        // Create a mapping of sounds to their S3 URLs
+        const soundUrls = {
+            'a': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/a.mp3',
+            'b': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3',
+            'c': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/c.mp3',
+            'd': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3',
+            'e': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/e.mp3',
+            'f': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/f.mp3',
+            'g': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/g.mp3',
+            'h': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/h.mp3',
+            'i': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/i.mp3',
+            'j': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/j.mp3',
+            'k': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/k.mp3',
+            'l': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/l.mp3',
+            'm': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/m.mp3',
+            'n': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3',
+            'o': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/o.mp3',
+            'p': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/p.mp3',
+            'qu': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/qu.mp3',
+            'r': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/r.mp3',
+            's': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/s.mp3',
+            't': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/t.mp3',
+            'u': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/u.mp3',
+            'v': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/v.mp3',
+            'w': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/w.mp3',
+            'x': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/x.mp3',
+            'y': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/y.mp3',
+            'z': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/z.mp3'
+        };
+
+        function createLetterGrid() {
+            const grid = document.getElementById('letterGrid');
+            letters.forEach(letter => {
+                const tile = document.createElement('div');
+                tile.className = 'letter-tile';
+                tile.textContent = letter;
+                tile.addEventListener('click', () => checkAnswer(letter));
+                grid.appendChild(tile);
+            });
+        }
+
+        function initializeQuiz() {
+            remainingSounds = [...allSounds];
+            shuffleArray(remainingSounds);
+            results = [];
+            document.getElementById('score').textContent = `Progress: 0/${allSounds.length}`;
+            playNextSound();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function playNextSound() {
+            if (remainingSounds.length === 0) {
+                showFinalResults();
+                return;
+            }
+            
+            currentSound = remainingSounds[0];
+            playCurrentSound();
+            document.getElementById('feedback').textContent = '';
+        }
+
+        function playCurrentSound() {
+            const audioUrl = soundUrls[currentSound];
+            const audio = new Audio(audioUrl);
+            audio.play().catch(error => {
+                console.error('Error playing sound:', error);
+                document.getElementById('feedback').textContent = 'Error playing sound. Please try again.';
+            });
+        }
+
+        function processAudioQueue() {
+            if (isPlaying || audioQueue.length === 0) return;
+            
+            isPlaying = true;
+            const audio = audioQueue[0];
+            
+            audio.play().catch(error => {
+                console.error('Error playing sound:', error);
+                document.getElementById('feedback').textContent = 'Error playing sound. Please try again.';
+                isPlaying = false;
+                audioQueue.shift();
+                processAudioQueue();
+            });
+
+            audio.addEventListener('ended', () => {
+                isPlaying = false;
+                audioQueue.shift();
+                processAudioQueue();
+            });
+        }
+
+        function checkAnswer(selectedLetter) {
+            if (!currentSound || remainingSounds.length === 0) return;
+
+            const correct = selectedLetter === currentSound;
+            const feedback = document.getElementById('feedback');
+            
+            results.push({
+                sound: currentSound,
+                selected: selectedLetter,
+                correct: correct
+            });
+
+            feedback.textContent = correct ? 'Correct!' : 'Incorrect';
+            feedback.style.color = correct ? 'green' : 'red';
+            
+            // Play additional audio for incorrect choices
+            if (!correct) {
+                let additionalAudio = null;
+                if (currentSound === 'k' && selectedLetter === 'c') {
+                    additionalAudio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/k-not-c-mastery.mp3');
+                }
+
+                if (additionalAudio) {
+                    audioQueue.push(additionalAudio);
+                    additionalAudio.addEventListener('ended', proceedToNextSound);
+                    processAudioQueue();
+                } else {
+                    proceedToNextSound();
+                }
+            } else {
+                proceedToNextSound();
+            }
+        }
+
+        function proceedToNextSound() {
+            remainingSounds.shift();
+            document.getElementById('score').textContent = 
+                `Progress: ${results.length}/${allSounds.length}`;
+            
+            if (remainingSounds.length === 0) {
+                // Show results after a delay to ensure audio has finished
+                setTimeout(showFinalResults, 1000);
+            } else {
+                setTimeout(playNextSound, 1000);
+            }
+        }
+
+        function showStartScreen() {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Mastery Test of Alphabet Sounds</h1>
+                <div class="instructions-container">
+                    <div class="audio-icon" onclick="playInstructions()" title="Listen to instructions">🔊</div>
+                    <div class="instructions">
+                        Listen to the sound and click the letter or phonogram that represents the sound.
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="startQuiz" class="play-button">
+                        Start Quiz
+                    </button>
+                </div>
+                <div class="feedback-container">
+                    <!-- Empty container to maintain consistent layout -->
+                </div>
+                <div class="letter-grid">
+                    <!-- Empty grid to maintain consistent layout -->
+                </div>
+            `;
+            
+            document.getElementById('startQuiz').addEventListener('click', startQuiz);
+        }
+
+        function startQuiz() {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Mastery Test of Alphabet Sounds</h1>
+                <div class="instructions-container">
+                    <div class="audio-icon" onclick="playInstructions()" title="Listen to instructions">🔊</div>
+                    <div class="instructions">
+                        Listen to the sound and click the letter or phonogram that represents the sound.
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="playSound" class="play-button">
+                        Replay Sound
+                    </button>
+                </div>
+                <div class="feedback-container">
+                    <p id="feedback" class="feedback"></p>
+                    <p id="score" class="score">Progress: 0/${allSounds.length}</p>
+                </div>
+                <div id="letterGrid" class="letter-grid">
+                </div>
+            `;
+
+            createLetterGrid();
+            initializeQuiz();
+            
+            document.getElementById('playSound').addEventListener('click', () => {
+                if (currentSound) {
+                    playCurrentSound();
+                }
+            });
+        }
+
+        function showFinalResults() {
+            const container = document.querySelector('.container');
+            const correct = results.filter(r => r.correct).length;
+            
+            let resultsHTML = `
+                <h2>Quiz Complete!</h2>
+                <p>Final Score: ${correct}/${allSounds.length}</p>
+                <h3>Results:</h3>
+                <ul style="list-style: none; padding: 0;">
+            `;
+            
+            const multiSoundLetters = ['a', 'c', 'e', 'g', 'i', 'o', 's', 'u', 'x', 'y'];
+            
+            results.forEach(result => {
+                const displaySound = result.sound;
+                const displaySelected = result.selected;
+                const isMultiSound = multiSoundLetters.includes(displaySound);
+                
+                resultsHTML += `
+                    <li style="margin: 10px 0; color: ${result.correct ? 'green' : 'red'}">
+                        ${isMultiSound ? 'Sounds' : 'Sound'} of ${displaySound} - You selected: "${displaySelected}" 
+                        ${result.correct ? '✓' : '✗'}
+                    </li>
+                `;
+            });
+            
+            resultsHTML += `
+                </ul>
+                <button id="tryAgain" class="play-button">Try Again</button>
+            `;
+            
+            container.innerHTML = resultsHTML;
+            
+            document.getElementById('tryAgain').addEventListener('click', startQuiz);
+        }
+
+        function playInstructions() {
+            const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/test1instructions.mp3');
+            audio.play().catch(error => {
+                console.error('Error playing instructions:', error);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', showStartScreen);
+    </script>
+</body>
+</html> 
