@@ -86,21 +86,6 @@
             100% { transform: scale(1); }
         }
 
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #f00;
-            border-radius: 50%;
-            animation: fall 3s ease-in-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100px) rotate(360deg); opacity: 0; }
-        }
-
         .phonogram-tiles {
             display: flex;
             justify-content: center;
@@ -440,9 +425,6 @@
                 // Add visual celebration
                 display.classList.add('correct-word');
                 
-                // Create confetti effect
-                createConfetti();
-                
                 // Activate next button
                 nextButton.classList.add('active');
                 
@@ -463,30 +445,6 @@
                 if (!wordResults.has(currentWord.word)) {
                     wordResults.set(currentWord.word, false);
                 }
-            }
-        }
-
-        function createConfetti() {
-            const spellingArea = document.querySelector('.spelling-area');
-            const colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f', '#ff5722', '#4CAF50', '#2196F3'];
-            
-            for (let i = 0; i < 30; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                
-                const left = Math.random() * 100;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const delay = Math.random() * 0.5;
-                
-                confetti.style.left = `${left}%`;
-                confetti.style.backgroundColor = color;
-                confetti.style.animationDelay = `${delay}s`;
-                
-                spellingArea.appendChild(confetti);
-                
-                setTimeout(() => {
-                    confetti.remove();
-                }, 3000);
             }
         }
 
