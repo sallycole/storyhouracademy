@@ -338,10 +338,18 @@
             { word: "the", schwaVowel: "e", schwaPosition: 3 },
             { word: "about", schwaVowel: "a", schwaPosition: 1 },
             { word: "dragon", schwaVowel: "o", schwaPosition: 5 },
-            { word: "animal", schwaVowel: "a", schwaPosition: 5 },
             { word: "away", schwaVowel: "a", schwaPosition: 1 },
             { word: "problem", schwaVowel: "e", schwaPosition: 6 },
-            { word: "offend", schwaVowel: "o", schwaPosition: 1 }
+            { word: "offend", schwaVowel: "o", schwaPosition: 1 },
+            { word: "panda", schwaVowel: "a", schwaPosition: 5 },
+            { word: "salad", schwaVowel: "a", schwaPosition: 4 },
+            { word: "oven", schwaVowel: "e", schwaPosition: 3 },
+            { word: "pilot", schwaVowel: "o", schwaPosition: 4 },
+            { word: "zebra", schwaVowel: "a", schwaPosition: 5 },
+            { word: "camel", schwaVowel: "e", schwaPosition: 4 },
+            { word: "sofa", schwaVowel: "a", schwaPosition: 4 },
+            { word: "wagon", schwaVowel: "o", schwaPosition: 4 },
+            { word: "pencil", schwaVowel: "i", schwaPosition: 5 }
         ];
 
         let currentWordIndex = 0;
@@ -360,19 +368,7 @@
 
         function displayWord(word) {
             const display = document.getElementById('wordDisplay');
-            const wordObj = shuffledWords[currentWordIndex];
-            
-            // Create the word with the schwa vowel highlighted
-            let displayWord = '';
-            for (let i = 0; i < word.length; i++) {
-                if (i === wordObj.schwaPosition - 1) {
-                    displayWord += `<span class="schwa-highlight">${word[i]}</span>`;
-                } else {
-                    displayWord += word[i];
-                }
-            }
-            
-            display.innerHTML = displayWord;
+            display.textContent = word;  // Simply display the word without any highlighting
         }
 
         function handleVowelClick(event) {
