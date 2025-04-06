@@ -179,6 +179,7 @@
             'b',
             'c',
             'ch',
+            'ck\nk',
             'd',
             'e',
             'ear',
@@ -190,7 +191,6 @@
             'i',
             'igh',
             'j',
-            'k',
             'l',
             'm',
             'n',
@@ -221,12 +221,12 @@
             'b',
             'c',
             'ch',
+            'ck',
             'd',
             'f',
             'g',
             'h',
             'j',
-            'k',
             'l',
             'm',
             'n',
@@ -274,6 +274,7 @@
             'a': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/a.mp3',
             'b': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3',
             'c': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/c.mp3',
+            'ck': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/k.mp3',
             'd': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3',
             'e': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/e.mp3',
             'f': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/f.mp3',
@@ -281,7 +282,6 @@
             'h': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/h.mp3',
             'i': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/i.mp3',
             'j': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/j.mp3',
-            'k': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/k.mp3',
             'l': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/l.mp3',
             'm': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/m.mp3',
             'n': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3',
@@ -321,6 +321,7 @@
             'a': 'a',
             'b': 'b',
             'c': 'c',
+            'ck': 'ck/k',
             'd': 'd',
             'e': 'e',
             'f': 'f',
@@ -328,7 +329,6 @@
             'h': 'h',
             'i': 'i',
             'j': 'j',
-            'k': 'k',
             'l': 'l',
             'm': 'm',
             'n': 'n',
@@ -337,7 +337,9 @@
             'qu': 'qu',
             'r': 'r',
             's': 's',
+            'sh': 'sh',
             't': 't',
+            'th': 'th',
             'u': 'u',
             'v': 'v',
             'w': 'w/wh',
@@ -368,16 +370,18 @@
             'b': 'b',
             'c': 'c',
             'ch': 'ch',
+            'ck\nk': ['ck', 'k'],  // Allow both 'ck' and 'k' sounds to match this tile
             'd': 'd',
             'f': 'f',
             'g': 'g',
             'h': 'h',
+            'i': 'i',
             'j': 'j',
-            'k': 'k',
             'l': 'l',
             'm': 'm',
             'n': 'n',
             'ng': 'ng',
+            'o': 'o',
             'p': 'p',
             'qu': 'qu',
             'r': 'r',
@@ -496,7 +500,10 @@
         function checkAnswer(selectedLetter) {
             if (!currentSound || remainingSounds.length === 0) return;
 
-            const correct = phonogramToSound[selectedLetter] === currentSound;
+            const correct = Array.isArray(phonogramToSound[selectedLetter]) 
+                ? phonogramToSound[selectedLetter].includes(currentSound)
+                : phonogramToSound[selectedLetter] === currentSound;
+            
             const feedback = document.getElementById('feedback');
             
             results.push({
@@ -558,7 +565,7 @@
                 </div>
                 <div class="button-container">
                     <button id="startQuiz" class="play-button">
-                        Start Quiz
+                        Start
                     </button>
                 </div>
                 <div class="feedback-container">
@@ -623,6 +630,11 @@
                 
                 const multiSoundPhonograms = ['a', 'e', 'i', 'o', 'u', 'y', 'ear', 'our', 'ch', 'g', 'x', 's', 'th', 'c'];
                 const soundText = multiSoundPhonograms.includes(displaySound) ? 'Sounds' : 'Sound';
+                
+                // Ensure we have a valid displaySound
+                if (!displaySound) {
+                    displaySound = result.sound;
+                }
                 
                 resultsHTML += `
                     <li style="margin: 10px 0; color: ${result.correct ? 'green' : 'red'}">
