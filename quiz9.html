@@ -213,7 +213,8 @@
             'u',
             'ui',
             'v',
-            'w\nwh',
+            'w',
+            'wh',
             'wor',
             'x',
             'y',
@@ -245,6 +246,7 @@
             'th',
             'v',
             'w',
+            'wh',
             'x',
             'z',
             'longa',
@@ -301,6 +303,7 @@
             'u': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/u.mp3',
             'v': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/v.mp3',
             'w': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/w.mp3',
+            'wh': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/wh.mp3',
             'x': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/x.mp3',
             'y': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/y.mp3',
             'z': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/z.mp3',
@@ -352,7 +355,8 @@
             'th': 'th',
             'u': 'u',
             'v': 'v',
-            'w\nwh': 'w',
+            'w': 'w',
+            'wh': 'wh',
             'x': 'x',
             'z': 'z',
             'ai/ay\neigh\naigh': 'longa',
@@ -405,7 +409,8 @@
             'th': 'th',
             'u': 'u',
             'v': 'v',
-            'w\nwh': 'w',
+            'w': 'w',
+            'wh': 'wh',
             'x': 'x',
             'z': 'z',
             'ai/ay\neigh\naigh': 'longa',
@@ -575,7 +580,7 @@
                 <div class="instructions-container">
                     <div class="audio-icon" onclick="playInstructions()" title="Listen to instructions">🔊</div>
                     <div class="instructions">
-                        Listen to the sound and click the tile with the phonogram or phonograms that represents the sound.
+                        Listen to the sound (or sounds). Click the tile with the phonogram (or phonograms) that can spell the sound (or sounds).
                     </div>
                 </div>
                 <div class="button-container">
@@ -601,7 +606,7 @@
                 <div class="instructions-container">
                     <div class="audio-icon" onclick="playInstructions()" title="Listen to instructions">🔊</div>
                     <div class="instructions">
-                        Listen to the sound and click the tile with the phonogram or phonograms that represents the sound.
+                        Listen to the sound (or sounds). Click the tile with the phonogram (or phonograms) that can spell the sound (or sounds).
                     </div>
                 </div>
                 <div class="button-container">
@@ -639,17 +644,13 @@
             `;
             
             results.forEach(result => {
-                let displaySound = soundToPhonogram[result.sound];
+                let displaySound = result.selected.includes('\n') ? 
+                    result.selected.split('\n').join('/') : result.selected;
                 let displaySelected = result.selected.includes('\n') ? 
                     result.selected.split('\n').join('/') : result.selected;
                 
-                const multiSoundPhonograms = ['a', 'e', 'i', 'o', 'u', 'y', 'ear', 'our', 'ch', 'g', 'x', 's', 'th', 'c'];
+                const multiSoundPhonograms = ['ch', 'wh', 's', 'y', 'a', 'o', 'c', 'i', 'x', 'th', 'g', 'e', 'u', 'our', 'ear'];
                 const soundText = multiSoundPhonograms.includes(displaySound) ? 'Sounds' : 'Sound';
-                
-                // Ensure we have a valid displaySound
-                if (!displaySound) {
-                    displaySound = result.sound;
-                }
                 
                 resultsHTML += `
                     <li style="margin: 10px 0; color: ${result.correct ? 'green' : 'red'}">
@@ -670,7 +671,7 @@
         }
 
         function playInstructions() {
-            const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/test4instructions.mp3');
+            const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/quiz8-instructions.mp3');
             audioQueue.push(audio);
             processAudioQueue();
         }
