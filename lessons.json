@@ -1,0 +1,2688 @@
+[
+  {
+    "unit": "Single-Sound Consonants",
+    "lessons": [
+      {
+        "title": "Single-Sound Consonants Pretest",
+        "activities": [
+          {
+            "name": "Mastery Test of Single-Sound Consonants (lowercase)",
+            "type": "Mastery Check",
+            "description": "Take the mastery test as a pretest and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz1.html"]
+          },
+          {
+            "name": "Mastery Test of Single-Sound Consonants (uppercase)",
+            "type": "Mastery Check",
+            "description": "Take the mastery test as a pretest and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz2.html"]
+          }
+        ]
+      },
+      {
+        "title": "Introduction to Single-Sound Consonants",
+        "activities": [
+          {
+            "name": "Single-Sound Consonants Video",
+            "type": "Video",
+            "description": "Collect a pencil, paper, and colorful writing utensils and follow the instructions in the video.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/1.mp4"]
+          },
+          {
+            "name": "Listen to a Selection of Pages from \"A Farm Yard Alphabet\" by Edward Dalziel",
+            "type": "Video",
+            "description": "Watch the video.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/Lesson+1+Reading+-+Story+Hour+Academy+-+The+Farm+Yard+Alphabet.mp4"]
+          }
+        ]
+      },
+      {
+        "title": "Letter B",
+        "activities": [
+          {
+            "name": "Letter B Video",
+            "type": "Video",
+            "description": "This lesson is about the letter B, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase B's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/2.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level one of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game1.html"]
+          },
+          {
+            "name": "Listen to \"The Baby's Opera\" by Walter Crane",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/babyquotsopera00cran/page/4/mode/2up",
+              "https://archive.org/details/babys_songbook_1102_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter D",
+        "activities": [
+          {
+            "name": "Letter D Video",
+            "type": "Video",
+            "description": "This lesson is about the letter D, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase D's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/3.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 2 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game2.html"]
+          },
+          {
+            "name": "Listen to \"Ring O' Roses\" by L. Leslie Brooke",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/ringorosesnurserbroo/page/n5/mode/2up",
+              "https://archive.org/details/ring_o_roses_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter F",
+        "activities": [
+          {
+            "name": "Letter F Video",
+            "type": "Video",
+            "description": "This lesson is about the letter F, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase F's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/4.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 3 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game3.html"]
+          },
+          {
+            "name": "Listen to \"In the Nursery of My Bookhouse\" Edited by Olive Beaupré Miller",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/mybookhouseinnur0000unse/page/n5/mode/2up",
+              "https://archive.org/details/inthenursery_1210_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter H",
+        "activities": [
+          {
+            "name": "Letter H Video",
+            "type": "Video",
+            "description": "This lesson is about the letter H, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase H's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/5.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 4 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game4.html"]
+          },
+          {
+            "name": "Listen to \"What Jack Horner Did\" from \"Mother Goose in Prose\" by L. Frank Baum",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/mothergooseinpro00baum/page/96/mode/2up",
+              "https://archive.org/details/mothergooseinprose_pc_librivox/mothergooseinprose_08_baum.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter J",
+        "activities": [
+          {
+            "name": "Letter J Video",
+            "type": "Video",
+            "description": "This lesson is about the letter J, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase J's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/6.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 5 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game5.html"]
+          },
+          {
+            "name": "Listen to \"Jack and the Beanstalk\" from \"The Red Fairy Book\" Edited by Andrew Lang",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/redfairybook00langiala/redfairybook00langiala/page/132/mode/2up",
+              "https://archive.org/details/red_fairy_book_0908_librivox/redfairybook_12_lang.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter K",
+        "activities": [
+          {
+            "name": "Letter K Video",
+            "type": "Video",
+            "description": "This lesson is about the letter K, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase K's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/7.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 6 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game6.html"]
+          },
+          {
+            "name": "Listen to \"How the Beggars Came to Town\" from \"Mother Goose in Prose\" by L. Frank Baum",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/mothergooseinpro00baum/page/180/mode/2up",
+              "https://archive.org/details/mothergooseinprose_pc_librivox/mothergooseinprose_16_baum.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter L",
+        "activities": [
+          {
+            "name": "Letter L Video",
+            "type": "Video",
+            "description": "This lesson is about the letter L, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase L's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/8.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 7 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game7.html"]
+          },
+          {
+            "name": "Listen to \"Little Bo-Peep\" from \"Mother Goose in Prose\" by L. Frank Baum",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/mothergooseinpro00baum/page/148/mode/2up",
+              "https://archive.org/details/mothergooseinprose_pc_librivox/mothergooseinprose_13_baum.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter M",
+        "activities": [
+          {
+            "name": "Letter M Video",
+            "type": "Video",
+            "description": "This lesson is about the letter M, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase M's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/9.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 8 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game8.html"]
+          },
+          {
+            "name": "Listen to \"Complete Version of ye Three Blind Mice\" by John W. Ivimey",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": ["https://archive.org/details/completeversiono00ivim/page/n5/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter N",
+        "activities": [
+          {
+            "name": "Letter N Video",
+            "type": "Video",
+            "description": "This lesson is about the letter N, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase N's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/10.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 9 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game9.html"]
+          },
+          {
+            "name": "Listen to \"Raggedy Ann Stories\" by Johnny Gruelle",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/raggedy-ann-stories/page/n5/mode/2up",
+              "https://archive.org/details/raggedy_ann_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter P",
+        "activities": [
+          {
+            "name": "Letter P Video",
+            "type": "Video",
+            "description": "This lesson is about the letter P, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase P's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/11.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 10 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game10.html"]
+          },
+          {
+            "name": "Listen to \"The Tale of Pigling Bland\" by Beatrix Potter",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/taleofpiglingbla00beat/page/n7/mode/2up",
+              "https://archive.org/details/mrs.-tiggy-winkle-and-friends-and-other-favourite-tales-2006-audiobook-ver./03.+The+Tale+of+Piggling+Bland.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram Qu",
+        "activities": [
+          {
+            "name": "Phonogram Qu Video",
+            "type": "Video",
+            "description": "This lesson is about the phonogram Qu, the sound it makes, and how to write it. Follow along with this video to write and sound out the Qu phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/12.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 11 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game11.html"]
+          },
+          {
+            "name": "Listen to \"The Nursery 'Alice'\" by Lewis Carroll",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/the-nursery-alice/page/n13/mode/2up",
+              "https://archive.org/details/nursery_alice_1705_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter R",
+        "activities": [
+          {
+            "name": "Letter R Video",
+            "type": "Video",
+            "description": "This lesson is about the letter R, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase R's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/13.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 12 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game12.html"]
+          },
+          {
+            "name": "Listen to \"Lullaby-Land\" by Eugene Field",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/bwb_P9-CSE-078/page/n7/mode/2up",
+              "https://archive.org/details/lullaby-land_2006_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter T",
+        "activities": [
+          {
+            "name": "Letter T Video",
+            "type": "Video",
+            "description": "This lesson is about the letter T, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase T's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/14.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 13 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game13.html"]
+          },
+          {
+            "name": "Listen to \"Alice's Adventures in Wonderland\" by Lewis Carroll",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/alicesadventures00carr_25/page/n5/mode/2up",
+              "https://archive.org/details/aliceinwonderland_2106_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter V",
+        "activities": [
+          {
+            "name": "Letter V Video",
+            "type": "Video",
+            "description": "This lesson is about the letter V, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase V's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/15.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 14 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game14.html"]
+          },
+          {
+            "name": "Listen to \"Over in the Meadow\" by Olive A. Wadsworth",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the recording.",
+            "links": [
+              "https://archive.org/details/overinmeadow00wads/page/n5/mode/2up",
+              "https://archive.org/details/OverInTheMeadow-ByOliveA.Wadsworth-NarratedByGrantRaymondBarrett"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter W",
+        "activities": [
+          {
+            "name": "Letter W Video",
+            "type": "Video",
+            "description": "This lesson is about the letter W, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase W's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/16.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 15 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game15.html"]
+          },
+          {
+            "name": "Listen to \"The 'Wake-Up' Story\" by Eudora Bumstead",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/innurseryofmyboo0000oliv/page/86/mode/2up",
+              "https://archive.org/details/inthenursery_1210_librivox/inthenursery_020_miller.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Letter Z",
+        "activities": [
+          {
+            "name": "Letter Z Video",
+            "type": "Video",
+            "description": "This lesson is about the letter Z, the sound it makes, and how to write it. Follow along with the video to write and sound out lowercase and uppercase Z's.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/17.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 16 of The Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game16.html"]
+          },
+          {
+            "name": "Listen to \"The Wonderful Wizard of Oz\" by L. Frank Baum.",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/wonderfulwizardo00baumiala/page/n3/mode/2up",
+              "https://archive.org/details/wonderfulwizardofoz_v8_2205_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Review of Single-Sound Consonants",
+        "activities": [
+          {
+            "name": "Review of Single-Sound Consonants Video",
+            "type": "Video",
+            "description": "In this lesson, you will review the sixteen single-sound consonants in the English alphabet.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/18.mp4"]
+          }
+        ]
+      },
+      {
+        "title": "Single-Sound Consonants Mastery Tests",
+        "activities": [
+          {
+            "name": "Mastery Test of Single-Sound Consonants (lowercase)",
+            "type": "Mastery Check",
+            "description": "Take the mastery test and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz1.html"]
+          },
+          {
+            "name": "Mastery Test of Single-Sound Consonants (uppercase)",
+            "type": "Mastery Check",
+            "description": "Take the mastery test and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz2.html"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "Consonant Digraphs",
+    "lessons": [
+      {
+        "title": "Consonant Digraphs Pretest",
+        "activities": [
+          {
+            "name": "Mastery Test of Consonant Digraphs and Single-Sound Consonants",
+            "type": "Mastery Check",
+            "description": "Take the mastery test as a pretest and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz3.html"]
+          }
+        ]
+      },
+      {
+        "title": "Introduction to Consonant Digraphs",
+        "activities": [
+          {
+            "name": "Introduction to Consonant Digraphs Video",
+            "type": "Video",
+            "description": "This lesson is an introduction to six consonant digraph phonograms: ck, ch, ng, sh, th, and wh. Follow along with the video to write and sound out these consonant digraph phonograms.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/19.mp4"]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram ck",
+        "activities": [
+          {
+            "name": "Phonogram ck Video",
+            "type": "Video",
+            "description": "This lesson is about the digraph CK, the sound it makes, and how to write it. Follow along with this video to write and sound out the CK consonant digraph phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/20.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 1 of the Consonant Digraph Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game17.html"]
+          },
+          {
+            "name": "Listen to poems from \"When We Were Very Young\" by A. A. Milne",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/whenwewereveryyo0000unse_o4c5/page/n11/mode/2up",
+              "https://archive.org/details/when_we_were_very_young_2002_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram ch",
+        "activities": [
+          {
+            "name": "Phonogram ch Video",
+            "type": "Video",
+            "description": "This lesson is about the digraph CH, the sound it makes, and how to write it. Follow along with this video to write and sound out the CH consonant digraph phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/21.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 2 of the Consonant Digraph Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game18.html"]
+          },
+          {
+            "name": "Listen to \"Poems That Every Child Should Know\" Edited by Mary E. Burt",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/poemsthateveryc00unkngoog/page/n8/mode/2up",
+              "https://archive.org/details/poems_every_child_should_know_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram ng",
+        "activities": [
+          {
+            "name": "Phonogram ng Video",
+            "type": "Video",
+            "description": "This lesson is about the digraph NG, the sound it makes, and how to write it. Follow along with this video to write and sound out the NG consonant digraph phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/22.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 3 of the Consonant Digraph Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game19.html"]
+          },
+          {
+            "name": "Listen to poems from \"Peacock Pie: A Book of Rhymes\" by Walter De la Mare",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/peacockpiebookof00dela_1/page/n7/mode/2up",
+              "https://archive.org/details/peacock_pie_bk_2110_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram sh",
+        "activities": [
+          {
+            "name": "Phonogram sh Video",
+            "type": "Video",
+            "description": "This lesson is about the digraph SH, the sound it makes, and how to write it. Follow along with this video to write and sound out the SH consonant digraph phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/23.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 4 of the Consonant Digraph Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game20.html"]
+          },
+          {
+            "name": "Listen to poems from \"Phantasmagoria and Other Poems\" by Lewis Carroll",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/phantasmagoriaot00carrrich/page/n5/mode/2up",
+              "https://archive.org/details/phantasmagoria_1610_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram th",
+        "activities": [
+          {
+            "name": "Phonogram th Video",
+            "type": "Video",
+            "description": "This lesson is about the digraph TH, the sound it makes, and how to write it. Follow along with this video to write and sound out the TH consonant digraph phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/24.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 5 of the Consonant Digraph Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game21.html"]
+          },
+          {
+            "name": "Listen to poems from \"Now We Are Six\" by A. A. Milne",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/nowwearesixdecor0000aami/page/n15/mode/2up",
+              "https://archive.org/details/now_we_are_six3_2306_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Phonogram wh",
+        "activities": [
+          {
+            "name": "Phonogram wh Video",
+            "type": "Video",
+            "description": "This lesson is about the digraph WH, the sound it makes, and how to write it. Follow along with this video to write and sound out the WH consonant digraph phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/25.mp4"]
+          },
+          {
+            "name": "Phonogram Practice",
+            "type": "Assignment",
+            "description": "Play level 6 of the Consonant Digraph Sound Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game22.html"]
+          },
+          {
+            "name": "Listen to \"Why the Tail of the Fox Has a White Tip\" from \"The Book of Nature Myths\" by Florence Holbrook",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/cu31924024536835/page/n75/mode/2up",
+              "https://archive.org/details/booknaturemyths_1211_librivox_kc/bookofnaturemyths_16_holbrook.mp3"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Review of Consonant Digraphs",
+        "activities": [
+          {
+            "name": "Review of Consonant Digraphs Video",
+            "type": "Video",
+            "description": "In this lesson, you will review six consonant digraph phonograms: ck, ch, ng, sh, th and wh.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/26.mp4"]
+          }
+        ]
+      },
+      {
+        "title": "Consonant Digraphs Mastery Test",
+        "activities": [
+          {
+            "name": "Mastery Test of Single-Sound Consonants and Consonant Digraphs",
+            "type": "Mastery Check",
+            "description": "Take the mastery test and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz3.html"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "Multi-Letter Vowel Phonograms",
+    "lessons": [
+      {
+        "title": "Pretest of Multi-Letter Vowel Phonograms",
+        "activities": [
+          {
+            "name": "Mastery Test of Multi-Letter Vowel Phonograms",
+            "type": "Mastery Check",
+            "description": "Take the mastery test as a pretest and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz4.html"]
+          }
+        ]
+      },
+      {
+        "title": "Introduction to Multi-Letter Vowel Phonograms",
+        "activities": [
+          {
+            "name": "Introduction to Multi-Letter Vowel Phonograms Video",
+            "type": "Video",
+            "description": "In this lesson, you will get an introduction to vowel letters, vowel sounds, and multi-letter vowel phonograms.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/27.mp4"]
+          },
+          {
+            "name": "Play the Letter Sorting Game",
+            "type": "Assignment",
+            "description": "Play the Letter Sorting Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game23.html"]
+          },
+          {
+            "name": "Listen to songs from \"The Baby's Opera\" by Walter Crane",
+            "type": "Assignment",
+            "description": "Have someone sing to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/babysoperabookof000cran/page/n7/mode/2up",
+              "https://archive.org/details/thebabysopera_2103_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ai",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ai Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram AI, the sound it makes, and how to write it. Follow along with this video to write and sound out the AI phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/28.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game24.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use page 1 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to poems from \"A Child's Garden of Verses\" by Robert Louis Stevenson",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/robertlouisstev01stevgoog/mode/2up",
+              "https://archive.org/details/childsgardenofverses_2104_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ay",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ay Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram AY, the sound it makes, and how to write it. Follow along with this video to write and sound out the AY phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/29.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game25.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use page 1 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai and ay.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to \"Under the Window\" by Kate Greenaway",
+            "type": "Assignment",
+            "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/underwindow00gree"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram eigh",
+        "activities": [
+          {
+            "name": "Vowel Phonogram eigh Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram EIGH, the sound it makes, and how to write it. Follow along with this video to write and sound out the EIGH phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/30.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game26.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use page 1 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, and eigh.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to \"The Peter Patter Book\" by Leroy F. Jackson",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/peterpatterbookr00jack/page/9/mode/2up",
+              "https://archive.org/details/peter_patter_2103_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ee",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ee Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram EE, the sound it makes, and how to write it. Follow along with this video to write and sound out the EE phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/31.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game27.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-2 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh and ee.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to \"The Wake-Up Story\" by Eudora Bumstead from \"Stories for Little Children\" Compiled by Susan S. Harriman",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study its pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/storiesforlittle00harr/page/n31/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram igh",
+        "activities": [
+          {
+            "name": "Vowel Phonogram igh Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram IGH, the sound it makes, and how to write it. Follow along with this video to write and sound out the IGH phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/32.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game28.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-2 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee and igh.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to \"Mother Goose's Nursery Rhymes\"",
+            "type": "Assignment",
+            "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/mothergoosesnurs00craniala/page/n5/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram oa",
+        "activities": [
+          {
+            "name": "Vowel Phonogram oa Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram OA, the sound it makes, and how to write it. Follow along with this video to write and sound out the OA phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/33.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game29.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-2 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh and oa.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read from the book \"The Crescent Moon\" by Rabindranath Tagore",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the LibriVox recording.",
+            "links": [
+              "https://archive.org/details/crescentmoonchil00tagoiala/page/n7/mode/2up",
+              "https://archive.org/details/crescent_moon_1608_librivox"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram au",
+        "activities": [
+          {
+            "name": "Vowel Phonogram au Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram AU, the sound it makes, and how to write it. Follow along with this video to write and sound out the AU phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/34.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game30.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-2 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa and au.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read from the book \"Little Folks' Book of Verse\" by Clifton Johnson",
+            "type": "Assignment",
+            "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/littlefolksbooko00john"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram aw",
+        "activities": [
+          {
+            "name": "Vowel Phonogram aw Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram AW, the sound it makes, and how to write it. Follow along with this video to write and sound out the AW phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/35.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game31.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-3 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au and aw.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read from the book \"The Little Mother Goose\" by Jessie Wilcox Smith",
+            "type": "Assignment",
+            "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/littlemothergoos00smit/page/n7/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram oi",
+        "activities": [
+          {
+            "name": "Vowel Phonogram oi Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram OI, the sound it makes, and how to write it. Follow along with this video to write and sound out the OI phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/36.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game32.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-3 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw and oi.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to \"Over in the Meadow\" by Olive A. Wadsworth",
+            "type": "Assignment",
+            "description": "Have someone read to you or listen to the recording.",
+            "links": [
+              "https://archive.org/details/overinmeadow00wads/page/n5/mode/2up",
+              "https://archive.org/details/OverInTheMeadow-ByOliveA.Wadsworth-NarratedByGrantRaymondBarrett"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram oy",
+        "activities": [
+          {
+            "name": "Vowel Phonogram oy Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram OY, the sound it makes, and how to write it. Follow along with this video to write and sound out the OY phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/37.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game33.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-3 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, and oy.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read from the book \"The Story of the Golden Apple\" by Pamela McArthur Cole",
+            "type": "Assignment",
+            "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://play.google.com/books/reader?id=o1EqAAAAYAAJ&pg=GBS.PP1"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ui",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ui Video",
+            "type": "Video",
+            "description": "This lesson is about the vowel phonogram UI, the sound it makes, and how to write it. Follow along with this video to write and sound out the UI phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/38.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game34.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-3 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, and ui.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read from the book \"Aesop's Fables\" illustrated by Arthur Rackham",
+            "type": "Assignment",
+            "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/aesopsfables00aeso"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram er",
+        "activities": [
+          {
+            "name": "Vowel Phonogram er Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonogram ER, the sound it makes, and how to write it. Follow along with this video to write and sound out the ER phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/39.mp4"]
+          },
+          {
+            "name": "Play the Word Sorting Game",
+            "type": "Assignment",
+            "description": "Play the Word Sorting Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game35.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-3 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui and er.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read \"The Gingerbread Man\" from the book \"In the Nursery of My Bookhouse\" by Olive Beaupré Miller",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/mybookhouseinnur0000unse/page/136/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ir",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ir Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonogram IR, the sound it makes, and how to write it. Follow along with this video to write and sound out the IR phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/40.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game36.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-3 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er and ir.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Look for the ir phonogram in \"The Sparrow\" poem from \"Little Folks' Book of Verse\" edited by Clifton Johnson",
+            "type": "Assignment",
+            "description": "Look for the ir phonogram in \"The Sparrow\" poem.",
+            "links": ["https://archive.org/details/littlefolksbooko00john/page/36/mode/2up"]
+          },
+          {
+            "name": "Listen to someone read \"The Fir-Tree\" from \"The Fir-Tree Fairy Book\" edited by Clifton Johnson",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/firtreefairybook00john/page/14/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ur",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ur Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonogram UR, the sound it makes, and how to write it. Follow along with this video to write and sound out the UR phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/41.mp4"]
+          },
+          {
+            "name": "Play the Spelling Game",
+            "type": "Assignment",
+            "description": "Play the Spelling Game.",
+            "links": ["https://sallycole.github.io/storyhouracademy/game37.html"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-4 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir and ur.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read from \"The Folk-Lore Readers: Book Two\" by Eulalie Osgood Grover",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/folklorereaders02grovgoog/page/n6/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ar",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ar Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonogram AR, the sound it makes, and how to write it. Follow along with this video to write and sound out the AR phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/42.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-4 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur and ar.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Look for multi-letter vowel phonograms in a book titled \"The Folk-lore Readers\"",
+            "type": "Assignment",
+            "description": "Look for ai ay eigh ee igh oa au aw oi oy ui er ir ur in \"The Folk-lore Readers\".",
+            "links": ["https://archive.org/details/folklorereaders02grovgoog/page/n12/mode/2up"]
+          },
+          {
+            "name": "Listen to someone read from \"Famous Legends Adapted for Children\" by Emeline Gifford Crommelin",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/famouslegendsada00cromrich/page/n9/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonograms or and wor",
+        "activities": [
+          {
+            "name": "Vowel Phonograms or and wor Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonograms OR and WOR, the sound each phonogram makes, and how to write these phonograms. Follow along with this video to write and sound out the OR and WOR phonograms.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/43.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-5 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, or and wor.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read \"Pittypat and Tippytoe\" from \"Lullaby Land\" by Eugene Fields",
+            "type": "Assignment",
+            "description": "Have someone read this poem to you or study the poem while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/lullabylandsongchild00fielrich/page/136/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram ear",
+        "activities": [
+          {
+            "name": "Vowel Phonogram ear Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonogram EAR, the sounds it makes, and how to write it. Follow along with this video to write and sound out the EAR phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/44.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-5 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, or, wor and ear.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read \"Bearskin\" from \"The Wonder Clock\" by Howard Pyle",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/wonderclockorfou00pyle/page/n21/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Vowel Phonogram our",
+        "activities": [
+          {
+            "name": "Vowel Phonogram our Video",
+            "type": "Video",
+            "description": "This lesson is about the r-controlled vowel phonogram OUR, the sounds it makes, and how to write it. Follow along with this video to write and sound out the OUR phonogram.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/45.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 1-5 of the linked printable to practice the sounds for all single-sound consonants and consonant digraphs. Also, practice all the words spelled with ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, or, wor, ear and our.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read \"The Fox Without a Tail\" from \"Aesop's Fables\" illustrated by Arthur Rackham",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/aesopsfables00aeso/page/67/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Review of Multi-Letter Vowel Phonograms",
+        "activities": [
+          {
+            "name": "Review of Multi-Letter Vowel Phonograms Video",
+            "type": "Video",
+            "description": "In this lesson, you will review nineteen multi-letter vowel phonograms: ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, ar, or, wor, ear and our.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/46.mp4"]
+          }
+        ]
+      },
+      {
+        "title": "Mastery Test of Multi-Letter Vowel Phonograms",
+        "activities": [
+          {
+            "name": "Mastery Test of Multi-Letter Vowel Phonograms",
+            "type": "Mastery Check",
+            "description": "Take the mastery test and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz4.html"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "Vowel Letters and the Sounds They Make",
+    "lessons": [
+      {
+        "title": "Pretest of 25 Vowel Phonograms",
+        "activities": [
+          {
+            "name": "Mastery test of 25 vowel phonograms",
+            "type": "Mastery Check",
+            "description": "Take the mastery test as a pretest and show your teacher the results.",
+            "links": ["https://sallycole.github.io/storyhouracademy/quiz5.html"]
+          }
+        ]
+      },
+      {
+        "title": "Introduction to Vowel Letters and the Sounds They Make",
+        "activities": [
+          {
+            "name": "Introduction to Vowel Letters and the Sounds They Make Video",
+            "type": "Video",
+            "description": "Learn how all vowel letters make more than one vowel sound.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/47.mp4"]
+          },
+          {
+            "name": "Listen to someone read \"Atlantis, The Lost Island\" from \"Stories from Plato and Other Classic Writers\" by Mary Elizabeth Burt",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/storiesfromplat00burtgoog/page/n252/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter a",
+        "activities": [
+          {
+            "name": "Letter a Video",
+            "type": "Video",
+            "description": "This lesson is about the letter a and the three sounds it makes. Follow along with this video to write and sound out the letter a.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/48.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use page 6 of the linked printable to recite the phonogram sounds and read the words spelled with a.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read \"Raggylug - The Story of a Cottontail Rabbit\" from \"Wild Animals I Have Known\" by Ernest Seton Thompson",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/wildanimalsihave00seto/page/90/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter e",
+        "activities": [
+          {
+            "name": "Letter e Video",
+            "type": "Video",
+            "description": "This lesson is about the letter e and the two sounds it makes. Follow along with this video to write and sound out the letter e.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/49.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 6-7 of the linked printable to recite the phonogram sounds and read the words spelled with a and e.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read \"The Tempest\" from \"Tales from Shakespeare\" by Charles and Mary Lamb",
+            "type": "Assignment",
+            "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/talesfromshakesp00lamb2/page/n21/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter i",
+        "activities": [
+          {
+            "name": "Letter i Video",
+            "type": "Video",
+            "description": "This lesson is about the letter i and the four sounds it makes. Follow along with this video to write and sound out the letter i.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/50.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 6-8 of the linked printable to recite the phonogram sounds and read the words spelled with a, e, and i.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read the poem \"Precocious Piggy\" from \"The Riverside Third Reader\" by James H. Van Sickle and Wilhelmina Seegmiller",
+            "type": "Assignment",
+            "description": "Have someone read this poem to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/riversidereader00unkngoog/page/n30/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter o",
+        "activities": [
+          {
+            "name": "Letter o Video",
+            "type": "Video",
+            "description": "This lesson is about the letter o and the four sounds it makes. Follow along with this video to write and sound out the letter o.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/51.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 6-9 of the linked printable to recite the phonogram sounds and read the words spelled with a, e, i and o.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Listen to someone read the poem \"The Song of the Corn Popper\" from \"The Young and Field Literary Readers Book Two\" by Ella Flagg Young and Walter Taylor Field",
+            "type": "Assignment",
+            "description": "Have someone read this poem to you or study the pages while looking for phonograms and words that you know.",
+            "links": ["https://archive.org/details/youngandfieldli01fielgoog/page/n112/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter u",
+        "activities": [
+          {
+            "name": "Letter u Video",
+            "type": "Video",
+            "description": "This lesson is about the letter u and the four sounds it makes. Follow along with this video to write and sound out the letter u.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/52.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 6-9 of the linked printable to recite the phonogram sounds and read the words spelled with a, e, i, o and u.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "With help, try reading \"Summer\" in \"Easy Stories\" by Elizabeth A. Turner.",
+            "type": "Assignment",
+            "description": "With help, try reading the short story titled \"Summer.\"",
+            "links": ["https://archive.org/details/easystories00turngoog/page/n120/mode/2up"]
+          }
+        ]
+      },
+      {
+        "title": "Letter y",
+        "activities": [
+          {
+            "name": "Letter y Video",
+            "type": "Video",
+            "description": "This lesson is about the letter y and the four sounds it makes. Follow along with this video to write and sound out the letter y.",
+            "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/53.mp4"]
+          },
+          {
+            "name": "Practice reading phonograms and words",
+            "type": "Assignment",
+            "description": "Use pages 6-10 of the linked printable to recite the phonogram sounds and read the words spelled with a, e, i, o, u and y.",
+            "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+          },
+          {
+            "name": "Read as many words with the letter y as you can. Start by reading words with the letter y in \"Dumpy, The Pony\"",
+            "type": "Assignment",
+            "description": "Read as many words with the letter y as you can. Start by reading words with the letter y in \"Dumpy, The Pony\" from the book “The Riverside Readers, Second Reader” by James H. Van Sickle and Wilhelmina Seegmiller.",
+            "links": ["https://archive.org/details/riversidereader01seeggoog/page/n6/mode/2up"]
+          }
+        ]
+      },
+      {
+        "unit": "Vowel Letters and the Sounds They Make",
+        "lessons": [
+          {
+            "title": "Review of Vowel Letters and the Sounds They Make",
+            "activities": [
+              {
+                "name": "Review of Vowel Letters and the Sounds They Make Video",
+                "type": "Video",
+                "description": "In this lesson, you will review the sounds made by the vowel letters (a, e, i, o, u and y) in the English alphabet.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/54.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Mastery Test of 25 Vowel Phonograms",
+            "activities": [
+              {
+                "name": "Mastery test of 25 vowel phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz5.html"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "Multi-Sound Consonant Letters",
+        "lessons": [
+          {
+            "title": "Pretest of Alphabet Letters and their Associated Sounds",
+            "activities": [
+              {
+                "name": "Mastery Test of Alphabet Letters and their Associated Sounds",
+                "type": "Mastery Check",
+                "description": "Take the mastery test as a pretest and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz6.html"]
+              }
+            ]
+          },
+          {
+            "title": "Introduction to Multi-Sound Consonant Letters",
+            "activities": [
+              {
+                "name": "Introduction to Multi-Sound Consonant Letters Video",
+                "type": "Video",
+                "description": "Learn about how the consonant letters c, g, s, and x each make two consonant sounds.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/55.mp4"]
+              },
+              {
+                "name": "Read \"Doodling with Dragons\" by Denise Eide",
+                "type": "Assignment",
+                "description": "Purchase or check out this book and have someone read it to you.",
+                "links": []
+              }
+            ]
+          },
+          {
+            "title": "Letter c",
+            "activities": [
+              {
+                "name": "Letter c Video",
+                "type": "Video",
+                "description": "This lesson is about the letter c and the two sounds it makes. Follow along with this video to write and sound out the letter c.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/56.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use page 11 of the linked printable to recite some vowel sounds and read the words spelled with c.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "With help, try reading \"Belling the Cat\" in \"The Latch Key of My Bookhouse\"",
+                "type": "Assignment",
+                "description": "With help, try reading the short story titled \"Belling the Cat.\"",
+                "links": ["https://archive.org/details/latchkeyofmybook01mill/page/84/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Letter g",
+            "activities": [
+              {
+                "name": "Letter g Video",
+                "type": "Video",
+                "description": "This lesson is about the letter g and the two sounds it makes. Follow along with this video to write and sound out the letter g.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/57.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 11-12 of the linked printable to recite some vowel sounds and read the words spelled with c and g.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "With help, try reading \"The Giraffe and the Palms\" in \"Happy Hour Stories\"",
+                "type": "Assignment",
+                "description": "With help, try reading the short story titled \"The Giraffe and the Palms.\"",
+                "links": ["https://archive.org/details/happyhourstories00silv/page/78/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Letter s",
+            "activities": [
+              {
+                "name": "Letter s Video",
+                "type": "Video",
+                "description": "This lesson is about the letter s and the two sounds it makes. Follow along with this video to write and sound out the letter s.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/58.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 11-13 of the linked printable to recite some vowel sounds and read the words spelled with c, g, and s.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "With help, try reading \"At the Sea-Side\" in \"The Robert Louis Stevenson Reader\"",
+                "type": "Assignment",
+                "description": "With help, try reading the poem titled \"At the Sea-Side.\"",
+                "links": ["https://archive.org/details/robertlouisstev01stevgoog/page/n16/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Letter x",
+            "activities": [
+              {
+                "name": "Letter x Video",
+                "type": "Video",
+                "description": "This lesson is about the letter x and the two sounds it makes. Follow along with this video to write and sound out the letter x.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/59.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 11-14 of the linked printable to recite some vowel sounds and read the words spelled with c, g, s, and x.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "With help, try reading \"The Fox and the Grapes\" in \"Aesop's Fables in Words of One Syllable\"",
+                "type": "Assignment",
+                "description": "With help, try reading the short story titled \"The Fox and the Grapes.\"",
+                "links": ["https://archive.org/details/aesopsfablesinwo00aeso/page/74/mode/2up"]
+              },
+              {
+                "name": "Listen to someone read part 3 of the book “Stories of Greek Gods, Heroes, and Men”",
+                "type": "Assignment",
+                "description": "Listen to someone read part 3 of the book “Stories of Greek Gods, Heroes, and Men.”",
+                "links": ["https://archive.org/details/storiesgreekgod00hardgoog/page/n142/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Review of Alphabet Letters and the Sounds They Make",
+            "activities": [
+              {
+                "name": "Review of Alphabet Letters and the Sounds They Make Video",
+                "type": "Video",
+                "description": "Follow along with the video as you write the uppercase and lowercase version of each letter of the alphabet. Also, learn a letter sounds song.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/60.mp4"]
+              },
+              {
+                "name": "Memorize the Letter Sounds Song",
+                "type": "Video",
+                "description": "Memorize the letter sounds song.",
+                "links": [
+                  "https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sounds-video.mp4",
+                  "https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sounds-song.mp3"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Mastery Test of Alphabet Letters and their Associated Sounds",
+            "activities": [
+              {
+                "name": "Mastery Test of Alphabet Letters and their Associated Sounds",
+                "type": "Mastery Check",
+                "description": "Take the mastery test and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz6.html"]
+              },
+              {
+                "name": "Mastery Test of 51 Phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test as a pretest and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz8.html"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "Syllables",
+        "lessons": [
+          {
+            "title": "Pretest",
+            "activities": [
+              {
+                "name": "Mastery Test of Syllable Types",
+                "type": "Mastery Check",
+                "description": "Take the mastery test as a pretest and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz7.html"]
+              }
+            ]
+          },
+          {
+            "title": "Introduction to Syllables",
+            "activities": [
+              {
+                "name": "Introduction to Syllables Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn what a syllable is and how to count syllables in words. You will also get an introduction to the six syllable types.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/61.mp4"]
+              },
+              {
+                "name": "Play the Syllable Counting Game",
+                "type": "Assignment",
+                "description": "Play the Syllable Counting Game.",
+                "links": ["https://sallycole.github.io/storyhouracademy/game38.html"]
+              }
+            ]
+          },
+          {
+            "title": "Closed Syllables, Part 1/2",
+            "activities": [
+              {
+                "name": "Closed Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will learn the definition of a closed syllable and write down some examples of closed syllable words.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/62a.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Closed Syllables, Part 2/2",
+            "activities": [
+              {
+                "name": "Closed Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will continue to learn about closed syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/62b.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 14-15 of the linked printable to recite some phonogram sounds as well as read some words with closed syllables.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Find closed syllable words in \"Aesop's Fables in Words of One Syllable\"",
+                "type": "Assignment",
+                "description": "Find closed syllable words in \"Aesop's Fables in Words of One Syllable\".",
+                "links": ["https://archive.org/details/aesopsfablesinwo00aeso/page/6/mode/2up"]
+              },
+              {
+                "name": "Find closed syllable words in \"Swiss Family Robinson in Words of One Syllable\"",
+                "type": "Assignment",
+                "description": "Find closed syllable words in \"Swiss Family Robinson in Words of One Syllable\".",
+                "links": ["https://archive.org/details/swissfamilyrobinwyssj/page/n11/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Open Syllables, Part 1/2",
+            "activities": [
+              {
+                "name": "Open Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will learn the definition of an open syllable and write down some examples of open syllable words.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/63a.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Open Syllables, Part 2/2",
+            "activities": [
+              {
+                "name": "Open Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will continue to learn about open syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/63b.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 14-15 of the linked printable to recite some phonogram sounds as well as read some words with closed and open syllables.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Find all the open syllable words in three poems",
+                "type": "Assignment",
+                "description": "Find the open syllable words in three poems from \"The Children's First Book of Poetry\".",
+                "links": ["https://archive.org/details/childrensbookofp01bake/page/18/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Consonant le Syllables, Part 1/2",
+            "activities": [
+              {
+                "name": "Consonant le Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will learn the definition of the consonant le syllable, write down some examples of this syllable type, and write some words that contain this syllable type.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/64.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Consonant le Syllables, Part 2/2",
+            "activities": [
+              {
+                "name": "Consonant le Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will continue to learn about consonant le syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/64b.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 14-15 of the linked printable to recite some phonogram sounds as well as read some words with closed, open, and consonant le syllables.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Find five consonant le syllables in the linked file",
+                "type": "Assignment",
+                "description": "Find five consonant le syllables in the linked file.",
+                "links": ["https://archive.org/details/story-hour-academy-poems-from-little-rhymes-for-little-readers"]
+              }
+            ]
+          },
+          {
+            "title": "R-Controlled Syllables, Part 1/2",
+            "activities": [
+              {
+                "name": "R-Controlled Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will learn the definition of the r-controlled syllable and write some words that contain this type of syllable.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/65a.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "R-Controlled Syllables, Part 2/2",
+            "activities": [
+              {
+                "name": "R-Controlled Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will continue to learn about r-controlled syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/65b.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 14-16 of the linked printable to recite some phonogram sounds as well as read some words with closed, open, consonant le, and r-controlled syllables.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Find 19 words with an r-controlled syllable type in the linked file",
+                "type": "Assignment",
+                "description": "Find 19 words with an r-controlled syllable type in the linked file.",
+                "links": ["https://archive.org/details/story-hour-academy-poems-from-dream-blocks"]
+              }
+            ]
+          },
+          {
+            "title": "Vowel-Consonant-E Syllables, Part 1/2",
+            "activities": [
+              {
+                "name": "Vowel-Consonant-E Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will learn the definition of the vowel-consonant-e syllable, also known as the vce or magic e syllable, and write some words that contain this type of syllable.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/66.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Vowel-Consonant-E Syllables, Part 2/2",
+            "activities": [
+              {
+                "name": "Vowel-Consonant-E Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will continue to learn about vowel-consonant-e syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/66b.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 14-16 of the linked printable to recite some phonogram sounds as well as read some words with closed, open, consonant le, r-controlled, and vowel-consonant-e syllables.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy/page/n13/mode/2up"]
+              },
+              {
+                "name": "Look for vowel-consonant-e syllables in \"Our Common Friends and Foes: A Nature Reader\"",
+                "type": "Assignment",
+                "description": "Look for vowel-consonant-e syllables in \"Our Common Friends and Foes: A Nature Reader.\"",
+                "links": ["https://archive.org/details/ourcommonfriend00turngoog"]
+              }
+            ]
+          },
+          {
+            "title": "Vowel Team Syllables Video, Part 1/2",
+            "activities": [
+              {
+                "name": "Vowel Team Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will learn the definition of the vowel team syllable and write some words that contain this type of syllable.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/67.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Vowel Team Syllables Video, Part 2/2",
+            "activities": [
+              {
+                "name": "Vowel Team Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will continue to learn about vowel team syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/67b.mp4"]
+              },
+              {
+                "name": "Practice reading phonograms and words",
+                "type": "Assignment",
+                "description": "Use pages 14-18 of the linked printable to recite some phonogram sounds as well as read some words with closed, open, consonant le, r-controlled, vowel-consonant-e, and vowel team syllables.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              }
+            ]
+          },
+          {
+            "title": "Review Lesson of Syllables, Part 1/2",
+            "activities": [
+              {
+                "name": "Review Lesson of Syllables Video, Part 1/2",
+                "type": "Video",
+                "description": "In this lesson, you will review the definition of a syllable, the six syllable types, and rules for dividing syllables.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/68a.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Review Lesson of Syllables, Part 2/2",
+            "activities": [
+              {
+                "name": "Review Lesson of Syllables Video, Part 2/2",
+                "type": "Video",
+                "description": "In this lesson, you will complete your review of syllable types.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/68b.mp4"]
+              },
+              {
+                "name": "With help, find and study two syllable words in \"The Velveteen Rabbit\"",
+                "type": "Assignment",
+                "description": "With help, use the book \"The Velveteen Rabbit\" to find ten two-syllable words. Write them down and find the syllable break in each of the ten words. Then, examine each of the twenty resulting syllables and determine the syllable type for each syllable.",
+                "links": ["https://archive.org/details/velveteenrabbito1900bian/page/n5/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Mastery Check",
+            "activities": [
+              {
+                "name": "Mastery test of syllable types",
+                "type": "Mastery Check",
+                "description": "Take the mastery test and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz7.html"]
+              },
+              {
+                "name": "Mastery test of 51 phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz8.html"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "The Schwa Sound",
+        "lessons": [
+          {
+            "title": "The Schwa Sound",
+            "activities": [
+              {
+                "name": "The Schwa Sound Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn about the schwa sound.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/69.mp4"]
+              },
+              {
+                "name": "Play the Schwa Sound Identification Game",
+                "type": "Assignment",
+                "description": "Play the Schwa Sound Identification Game.",
+                "links": ["https://sallycole.github.io/storyhouracademy/game39.html"]
+              },
+              {
+                "name": "Find dictionary words with the schwa sound and memorize their spelling",
+                "type": "Assignment",
+                "description": "Find dictionary words with the schwa sound and memorize their spelling.",
+                "links": ["https://www.thefreedictionary.com/dictionary.htm"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "More Single-Sound Phonograms",
+        "lessons": [
+          {
+            "title": "Pretest of 60 Phonograms",
+            "activities": [
+              {
+                "name": "Mastery Test of 60 Phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test as a pretest and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz9.html"]
+              }
+            ]
+          },
+          {
+            "title": "Introduction to More Single-Sound Phonograms",
+            "activities": [
+              {
+                "name": "More Single-Sound Phonograms Video",
+                "type": "Video",
+                "description": "In this lesson, watch an introduction to 9 more single-sound phonograms: tch, ph, rh, gh, gn, kn, wr, dg, and aigh.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/70.mp4"]
+              },
+              {
+                "name": "Make your own phonogram flashcards for the 51 phonograms you've already learned",
+                "type": "Assignment",
+                "description": "Copy the phonogram flashcards in the \"More Single Sound Phonograms Video\" to make your first 51 phonogram flash cards.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/70.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram tch",
+            "activities": [
+              {
+                "name": "Phonogram tch Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the TCH phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/71.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use page 19 of the linked printable to read words spelled with the tch phonogram.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "With help, read \"The Little Toy Land of the Dutch\" in \"The Latch Key of My Bookhouse\"",
+                "type": "Assignment",
+                "description": "Read this poem to a parent, tutor, teacher, or friend.",
+                "links": ["https://archive.org/details/latchkeyofmybook01mill/page/334/mode/2up"]
+              },
+              {
+                "name": "Listen to someone read \"The Boy Hero of Harlem\" in \"Up One Pair of Stairs in My Bookhouse\"",
+                "type": "Assignment",
+                "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+                "links": ["https://archive.org/details/bwb_W9-CUC-827/page/184/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ph",
+            "activities": [
+              {
+                "name": "Phonogram ph Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ph phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/72.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use page 19 of the linked printable to read words spelled with the tch and ph phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Listen to someone read \"Phaeton\" in \"Through Fairy Halls of My Bookhouse\"",
+                "type": "Assignment",
+                "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+                "links": ["https://archive.org/details/throughfairyhall00mill_0/page/268/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram rh",
+            "activities": [
+              {
+                "name": "Phonogram rh Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the rh phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/73.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use page 19 of the linked printable to read words spelled with the tch, ph and rh phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Listen to someone read \"Sunny Rhymes for Happy Times\" by Olive Beaupré Miller",
+                "type": "Assignment",
+                "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+                "links": ["https://archive.org/details/sunnyrhymesforha00mill/page/n5/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram gh",
+            "activities": [
+              {
+                "name": "Phonogram gh Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the gh phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/74.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, and gh phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Listen to someone read \"A Christmas Carol\" by Charles Dickens",
+                "type": "Assignment",
+                "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+                "links": [
+                  "https://archive.org/details/achristmascarol00dickarch/achristmascarol00dickarch_200KB/",
+                  "https://archive.org/details/christmascar00dick/page/n7/mode/2up"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram gn",
+            "activities": [
+              {
+                "name": "Phonogram gn Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the gn phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/75.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, and gn phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Listen to someone read \"Ten at One Stroke\" in \"Fairy Stories My Children Love Best of All\"",
+                "type": "Assignment",
+                "description": "Have someone read this story to you or study the pages while looking for phonograms and words that you know.",
+                "links": ["https://archive.org/details/fairystoriesmych00shim/page/126/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram kn",
+            "activities": [
+              {
+                "name": "Phonogram kn Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the kn phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/76.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, and kn phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Listen to someone read \"Tales of King Arthur and the Round Table\" by Andrew Lang",
+                "type": "Assignment",
+                "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+                "links": ["https://archive.org/details/in.ernet.dli.2015.12999/page/n1/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram wr",
+            "activities": [
+              {
+                "name": "Phonogram wr Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the wr phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/77.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, kn, and wr phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Listen to someone read \"The Burgess Animal Book for Children\"",
+                "type": "Assignment",
+                "description": "Have someone read this book to you or study the pages while looking for phonograms and words that you know.",
+                "links": ["https://archive.org/details/cu31924022526457/page/n7/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram dg",
+            "activities": [
+              {
+                "name": "Phonogram dg Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the dg phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/78.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, kn, wr, and dg phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Look for words you can read in \"Rhymes and Jingles\" by Mary Mapes Dodge",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"Rhymes and Jingles\" by Mary Mapes Dodge.",
+                "links": ["https://archive.org/details/rhymesandjingle01dodggoog/page/n19/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram aigh",
+            "activities": [
+              {
+                "name": "Phonogram aigh Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the aigh phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/79.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 19-21 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, kn, wr, dg, and aigh phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Look for words you can read in \"The Two Crabs\" by Aesop from \"In the Nursery of My Bookhouse\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"The Two Crabs\" by Aesop.",
+                "links": ["https://archive.org/details/mybookhouseinnur0000unse/page/128/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram Review",
+            "activities": [
+              {
+                "name": "Phonogram Review Video",
+                "type": "Video",
+                "description": "In this lesson, you will review the 60 phonograms that you've learned thus far in the Story Hour Academy curriculum.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/82.mp4"]
+              },
+              {
+                "name": "Add 9 more cards to your phonogram flash cards. Make cards for tch, ph, rh, gh, gn, kn, wr, dg, and aigh.",
+                "type": "Assignment",
+                "description": "Copy the cards in the Phonogram Review Video starting at the 5:04 timestamp.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/82.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Mastery Test of 60 Phonograms",
+            "activities": [
+              {
+                "name": "Mastery Test of 60 Phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz9.html"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "More Multi-Sound Phonograms",
+        "lessons": [
+          {
+            "title": "Pretest of 75 Phonograms",
+            "activities": [
+              {
+                "name": "Mastery Test of 75 Phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test as a pretest and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz10.html"]
+              }
+            ]
+          },
+          {
+            "title": "Introduction to More Multi-Sound Phonograms",
+            "activities": [
+              {
+                "name": "More Multi-Sound Phonograms Video",
+                "type": "Video",
+                "description": "In this lesson, you will review 15 multi-sound phonograms and preview 15 more.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/83.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram gu",
+            "activities": [
+              {
+                "name": "Phonogram gu Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the gu phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/87.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use page 21 of the linked printable to read words spelled with the gu phonogram.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for the gu phonogram to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the gu phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in “Good-Children Street” by Eugene Field from “Lullaby Land.\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in “Good-Children Street” by Eugene Field.",
+                "links": ["https://archive.org/details/lullabylandsongs00fielrich/page/60/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram oe",
+            "activities": [
+              {
+                "name": "Phonogram oe Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the oe phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/88.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use page 21 of the linked printable to read words spelled with the gu and oe phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for the oe phonogram to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the oe phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in \"The Tiptoes\" by Miriam Clark Potter from \"Rhymes of a Child's World\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"The Tiptoes\" by Miriam Clark Potter.",
+                "links": ["https://archive.org/details/rhymesofchildswo00pott/page/22/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ou",
+            "activities": [
+              {
+                "name": "Phonogram ou Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ou phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/89.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use page 21 and 22 of the linked printable to read words spelled with the gu, oe and ou phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for the ou phonogram to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ou phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in \"The Wind\" by Robert Louis Stevenson from \"Happy Hour Stories\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"The Wind\" by Robert Louis Stevenson.",
+                "links": ["https://archive.org/details/happyhourstories00silv/page/76/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ow",
+            "activities": [
+              {
+                "name": "Phonogram ow Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ow phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/90.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-23 of the linked printable to read words spelled with the gu, oe, ou and ow phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for the ow phonogram to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ow phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in \"One Afternoon\" by Laura E. Richards from \"Five Minute Stories\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"One Afternoon\" by Laura E. Richards.",
+                "links": ["https://archive.org/details/fiveminutestorie00rich/page/42/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram oo",
+            "activities": [
+              {
+                "name": "Phonogram oo Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the oo phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/91.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-23 of the linked printable to read words spelled with the gu, oe, ou, ow and oo phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for the oo phonogram to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the oo phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in \"The Heart of Oak Books - First Book\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"The Heart of Oak Books - First Book.\"",
+                "links": ["https://archive.org/details/heartoakbooks06nortgoog/page/n20/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ew",
+            "activities": [
+              {
+                "name": "Phonogram ew Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ew phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/92.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-24 of the linked printable to read words spelled with the gu, oe, ou, ow, oo and ew phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for the ew phonogram to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ew phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in \"The Dove and the Ant\" by Eulalie Osgood Grover from \"The Folk-Lore Readers\"",
+                "type": "Assignment",
+                "description": "Look for words you can read in \"The Dove and the Ant\" by Eulalie Osgood Grover.",
+                "links": ["https://archive.org/details/folklorereaders00webbgoog/page/n24/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonograms eu and eur",
+            "activities": [
+              {
+                "name": "Phonogram eu and eur Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the eu and eur phonograms.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/93.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-24 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu and eur phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for eu and a card for eur to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the eu phonogram and a card for the eur phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Look for words you can read in \"The Little Mother Goose\" by Jessie Wilcox Smith or in \"The Little Wreath of Stories and Poems for Children\" by Caroline Gilman.",
+                "type": "Assignment",
+                "description": "Read from one of the following two books: \"The Little Mother Goose\" by Jessie Wilcox Smith or in \"The Little Wreath of Stories and Poems for Children\" by Caroline Gilman.",
+                "links": [
+                  "https://archive.org/details/littlemothergoos00smit/page/n7/mode/2up",
+                  "https://books.google.com/books?id=B57KHYUacTAC&pg=PA8&dq=the+little+wreath&hl=en&sa=X&ved=0ahUKEwiM4uboqd7dAhUKWq0KHVIfDYoQ6AEIKDAA"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ea",
+            "activities": [
+              {
+                "name": "Phonogram ea Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ea phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/94.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-25 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur and ea phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for ea to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ea phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Read as many pages from \"As the Goose Flies\" by Katharine Pyle as you can.",
+                "type": "Assignment",
+                "description": "Read as many pages from \"As the Goose Flies\" by Katharine Pyle as you can.",
+                "links": ["https://archive.org/details/asgooseflies00pyle/page/n9/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram eau",
+            "activities": [
+              {
+                "name": "Phonogram eau",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the eau phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/95.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-25 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur, ea and eau phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for eau to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the eau phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Read \"The Boy in Trouble About His Hat\" by Caroline Howard Gilman from \"A Gift Book of Stories and Poems for Children\"",
+                "type": "Assignment",
+                "description": "Read \"The Boy in Trouble About His Hat\" by Caroline Howard Gilman.",
+                "links": ["https://archive.org/details/giftbookofstorie00gilm/page/n125/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ei",
+            "activities": [
+              {
+                "name": "Phonogram ei Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ei phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/96.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-25 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur, ea, eau and ei phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for ei to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ei phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Read as many poems as you can from \"Poems My Children Love Best of All\"",
+                "type": "Assignment",
+                "description": "Read as many poems as you can from \"Poems My Children Love Best of All.\"",
+                "links": ["https://archive.org/details/poemsmychildren00john/page/n7/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ey",
+            "activities": [
+              {
+                "name": "Phonogram ey Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ey phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/97.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-26 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei and ey phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for ey to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ey phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Read “Over in the Meadow” by Olive A. Wadsworth from “In the Nursery of My Bookhouse”",
+                "type": "Assignment",
+                "description": "Read “Over in the Meadow” by Olive A. Wadsworth.",
+                "links": ["https://archive.org/details/latchkeyofmybook01mill/page/64/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ie",
+            "activities": [
+              {
+                "name": "Phonogram ie Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ie phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/98.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-26 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei, ey and ie phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for ie to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ie phonogram to your deck of phonogram cards.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Read from a favorite book of poetry or from \"Rhymes and Verses - Collected Poems for Young People\"",
+                "type": "Assignment",
+                "description": "Read from a favorite book of poetry or from \"Rhymes and Verses - Collected Poems for Young People.\"",
+                "links": ["https://archive.org/details/in.ernet.dli.2015.74991"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram augh",
+            "activities": [
+              {
+                "name": "Phonogram augh Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the augh phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/99.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-26 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei, ey, ie and augh phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for augh to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the augh phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Read as many pages as you can from \"In the Days of Giants\" by Abbie Farwell Brown",
+                "type": "Assignment",
+                "description": "Read as many pages as you can from \"In the Days of Giants\" by Abbie Farwell Brown.",
+                "links": ["https://archive.org/details/cu31924012566133/page/n3/mode/2up"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram ough",
+            "activities": [
+              {
+                "name": "Phonogram ough Video",
+                "type": "Video",
+                "description": "In this lesson, you will learn all about the ough phonogram.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/100.mp4"]
+              },
+              {
+                "name": "Practice reading words",
+                "type": "Assignment",
+                "description": "Use pages 21-27 of the linked printable to read words spelled with the gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei, ey, ie, augh and ough phonograms.",
+                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+              },
+              {
+                "name": "Add a card for ough to your deck of phonogram cards",
+                "type": "Assignment",
+                "description": "Add a card for the ough phonogram to your deck of phonogram cards.",
+                "links": []
+              },
+              {
+                "name": "Study the poem “I Take it You Already Know\" and then try to write your own poem using all 6 sounds of ough",
+                "type": "Assignment",
+                "description": "Study the poem “I Take it You Already Know\" and then try to write your own poem using all 6 sounds of ough.",
+                "links": ["https://iuuk.mff.cuni.cz/~andrew/EAP/PronunciationPoem.pdf"]
+              }
+            ]
+          },
+          {
+            "title": "Phonogram Review",
+            "activities": [
+              {
+                "name": "Phonogram Review Video",
+                "type": "Video",
+                "description": "",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/101.mp4"]
+              },
+              {
+                "name": "Check that you have made 75 phonogram cards, one for each phonogram that we've studied.",
+                "type": "Assignment",
+                "description": "Sort your phonogram cards in the same order as in the Phonogram Review Video. Make sure you have all 75 phonogram cards.",
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/101.mp4"]
+              }
+            ]
+          },
+          {
+            "title": "Mastery Test of 75 Phonograms",
+            "activities": [
+              {
+                "name": "Mastery Test of 75 Phonograms",
+                "type": "Mastery Check",
+                "description": "Take the mastery test and show your teacher the results.",
+                "links": ["https://sallycole.github.io/storyhouracademy/quiz10.html"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
