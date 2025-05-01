@@ -1,4 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Load header and footer
+fetch('includes/header.html')
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+        // Initialize header functionality after content is loaded
+        initializeHeader();
+    });
+
+fetch('includes/footer.html')
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+
+function initializeHeader() {
     const dropdowns = document.querySelectorAll('.dropdown');
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -43,4 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+
+    // Only handle clicks for mobile
+    if (window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            });
+        });
+    }
+}
