@@ -194,36 +194,46 @@ header {
     padding: var(--space-2xl) var(--space-lg);
 }
 
-.lesson-header {
+/* Page Header */
+.page-header {
     margin-bottom: var(--space-2xl);
     text-align: center;
 }
 
-.unit-title {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    margin-bottom: var(--space-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: var(--transition);
-}
-
-.unit-title:hover {
-    color: var(--secondary);
-}
-
-.lesson-title {
+.title {
     font-family: var(--font-heading);
     font-size: 3.5rem;
     color: var(--text);
-    margin-bottom: var(--space-sm);
     line-height: 1.1;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.02em;
     font-weight: 700;
     text-transform: uppercase;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: var(--space-lg);
+}
+
+/* Breadcrumb style for lesson pages */
+.unit-title-breadcrumb {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition);
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    opacity: 0.7;
+    position: relative;
+    padding-bottom: var(--space-xs);
+}
+
+.unit-title-breadcrumb:hover {
+    color: var(--text);
+    opacity: 1;
 }
 
 /* Activity Cards */
@@ -312,10 +322,11 @@ header {
 
 .activity-title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--text);
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin-bottom: var(--space-xs);
     text-transform: none;
 }
 
@@ -324,7 +335,7 @@ header {
     color: var(--text-light);
     line-height: 1.8;
     font-size: 1.125rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
 }
 
 .activity-links {
@@ -349,6 +360,7 @@ header {
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    font-size: 1.125rem;
 }
 
 .activity-link i {
@@ -581,6 +593,18 @@ footer {
     .footer-section blockquote {
         margin: 0 auto;
     }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .unit-title-breadcrumb {
+        font-size: 0.6875rem;
+    }
+
+    .activity-title {
+        font-size: 1.25rem;
+    }
 }
 
 /* Accessibility */
@@ -621,30 +645,16 @@ footer {
 /* Unit Content Styles */
 .unit-header {
     text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-.unit-number {
-    font-size: 1.2rem;
-    color: var(--secondary);
-    margin-bottom: 0.5rem;
-}
-
-.unit-title {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-2xl);
 }
 
 .unit-description {
     color: var(--text-light);
     max-width: 800px;
     margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
 }
 
 .lessons-container {
@@ -709,4 +719,12 @@ footer {
     .lesson-number {
         min-width: auto;
     }
+}
+
+/* Remove old classes */
+.lesson-header,
+.unit-header,
+.lesson-title,
+.unit-title {
+    /* These classes are deprecated in favor of .page-header and .title */
 }
