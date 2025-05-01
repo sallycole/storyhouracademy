@@ -18,6 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/script.js" defer></script>
+    
     <style>
         :root {
             /* Modern Color Palette */
@@ -635,44 +639,12 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <a href="#" class="logo">Story Hour Academy</a>
-                <span class="tagline">Free, self-paced reading and handwriting lessons</span>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 12h18M3 6h18M3 18h18"/>
-                </svg>
-            </button>
-            <nav class="nav-links" aria-label="Main navigation">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" aria-expanded="false" aria-controls="units-dropdown">
-                        Units
-                        <span class="sr-only">Toggle units menu</span>
-                    </a>
-                    <div class="dropdown-content" id="units-dropdown" role="menu">
-                        <a href="#" role="menuitem">1. Single-Sound Consonants</a>
-                        <a href="#" role="menuitem">2. Consonant Digraphs</a>
-                        <a href="#" role="menuitem">3. Multi-Letter Vowel Phonograms</a>
-                        <a href="#" role="menuitem">4. Vowel Letters and the Sounds They Make</a>
-                        <a href="#" role="menuitem">5. Multi-Sound Consonant Letters</a>
-                        <a href="#" role="menuitem">6. Syllables</a>
-                        <a href="#" role="menuitem">7. The Schwa Sound</a>
-                        <a href="#" role="menuitem">8. More Single-Sound Phonograms</a>
-                        <a href="#" role="menuitem">9. More Multi-Sound Phonograms</a>
-                    </div>
-                </div>
-                <a href="#">About</a>
-            </nav>
-        </div>
-    </header>
+    <div id="header"></div>
 
-    <main class="container">
+    <main class="container lesson-template">
         <div class="lesson-header">
             <a href="#" class="unit-title">Unit: Single-Sound Consonants</a>
-            <h1 class="lesson-title">Letter b</h1>
+            <h1 class="lesson-title">Letter B</h1>
         </div>
 
         <div class="activities-container">
@@ -701,7 +673,9 @@
             </article>
 
             <article class="activity-card">
-                <div class="activity-image"></div>
+                <div class="activity-image">
+                    <img src="assets/images/jack-and-jill.png" alt="Jack and Jill illustration" class="activity-image">
+                </div>
                 <div class="activity-content">
                     <div class="activity-header">
                         <h2 class="activity-title">Listen to "The Baby's Opera" by Walter Crane</h2>
@@ -725,32 +699,25 @@
         </nav>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <blockquote>
-                    "Story Hour Academy delivers free reading instruction to anyone with a computer and a will to learn." — Sally Cole
-                </blockquote>
-            </div>
-            <div class="footer-section">
-                <ul class="social-links">
-                    <li>
-                        <a href="https://www.youtube.com/@Storyhouracademy" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i> YouTube
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/lolfuture" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-x-twitter"></i> Twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
             const dropdowns = document.querySelectorAll('.dropdown');
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -774,28 +741,18 @@
                 }
             });
             
-            dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('.dropdown-toggle');
-                const content = dropdown.querySelector('.dropdown-content');
-                
-                toggle.setAttribute('aria-expanded', 'false');
-                
-                toggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-                    toggle.setAttribute('aria-expanded', !isExpanded);
-                    dropdown.classList.toggle('active');
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
                 });
-
-                content.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdown.classList.remove('active');
-                        toggle.focus();
-                    }
-                });
-            });
-        });
+            }
+        }
     </script>
 </body>
 </html>
