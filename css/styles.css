@@ -381,30 +381,27 @@ header {
 }
 
 .nav-button {
-    display: inline-block;
-    padding: var(--space-md) var(--space-lg);
-    background: transparent;
-    color: var(--text);
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--text-light);
     text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-weight: 500;
+    transition: var(--transition);
     border: 1px solid var(--border);
-    flex: 1;
+    border-radius: 6px;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    min-width: 150px;
     text-align: center;
 }
 
 .nav-button:hover {
+    color: var(--text);
     border-color: var(--secondary);
-    color: var(--secondary);
+    box-shadow: var(--shadow);
 }
 
 .nav-button:focus {
     outline: none;
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--secondary);
 }
 
 .nav-button:active {
@@ -620,9 +617,9 @@ footer {
     border: 0;
 }
 
-:focus {
-    outline: 2px solid var(--secondary);
-    outline-offset: 2px;
+/* Override global focus styles for nav buttons */
+.nav-button:focus {
+    outline: none;
 }
 
 /* Print Styles */
