@@ -938,6 +938,14 @@ footer {
     border-radius: 6px;
     background: var(--surface);
     font-size: 1.125rem;
+    /* Ensure all children are vertically centered */
+}
+
+.result-sound-group, .result-selected {
+    display: flex;
+    align-items: center;
+    min-height: 2.2em;
+    line-height: 1.2;
 }
 
 .result-item.correct {
@@ -1055,11 +1063,23 @@ footer {
     cursor: pointer;
     transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     line-height: 1.2;
     outline: none;
 }
 
 .ipa-sound-btn:hover, .ipa-sound-btn:focus {
     background: var(--secondary-light);
+}
+
+.result-item.incorrect .ipa-sound-btn {
+    background: rgb(244, 63, 94);
+    color: #fff;
+}
+
+.result-item.incorrect .ipa-sound-btn:hover,
+.result-item.incorrect .ipa-sound-btn:focus {
+    background: #fb7185;
+    color: #fff;
 }
