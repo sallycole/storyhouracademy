@@ -235,7 +235,7 @@
                 const displaySound = soundToIPA[result.sound] || `/${result.sound}/`;
                 resultsHTML += `
                     <div class="result-item ${result.correct ? 'correct' : 'incorrect'}">
-                        <span class="result-sound">Sound: "${displaySound}"</span>
+                        <span class="result-sound-group">For sound: <button class="ipa-sound-btn" data-sound="${result.sound}" title="Play sound">${displaySound}</button></span>
                         <span class="result-selected">You selected: "${result.selected}"</span>
                         <span class="result-mark">${result.correct ? '✓' : '✕'}</span>
                     </div>
@@ -244,6 +244,18 @@
             
             resultsHTML += '</div>';
             resultsContent.innerHTML = resultsHTML;
+
+            // Add click listeners to play sound
+            document.querySelectorAll('.ipa-sound-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const soundKey = this.getAttribute('data-sound');
+                    const audioUrl = soundUrls[soundKey];
+                    if (audioUrl) {
+                        const audio = new Audio(audioUrl);
+                        audio.play();
+                    }
+                });
+            });
         }
 
         function playInstructions() {
