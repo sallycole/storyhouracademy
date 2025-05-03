@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, self-paced reading and handwriting lessons for young learners">
+    <title>Story Hour Academy - The Sound Game: Level 1</title>
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">The Sound Game: Level 1</h1>
+        </div>
+        <div class="test-container">
+            <div class="instructions-container">
+                <button class="audio-button" id="playInstructions" title="Listen to instructions">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <p class="instructions">
+                    Does the letter shown represent the sound that you hear? Choose thumbs up if it does. Choose thumbs down if it doesn't.
+                </p>
+            </div>
+            <div class="feedback-container" style="margin-bottom: 1.2rem;">
+                <div class="sha-progress-row" style="flex-direction: column; align-items: center; gap: 0.25rem; margin-bottom: 0; margin-top: 0;">
+                    <div class="sha-streak-label sha-streak-label-black"><span id="correctCount">0</span> / 10</div>
+                    <div class="sha-feedback-icons"></div>
+                </div>
+                <div id="feedback" class="feedback"></div>
+            </div>
+            <div class="button-container">
+                <button class="primary-button play-sound" id="playSound">
+                    <i class="fas fa-volume-up"></i> Listen to the Sound
+                </button>
+            </div>
+            <div id="currentLetter" class="sha-current-letter sha-current-letter-black" style="margin-bottom: 1.2rem;"></div>
+            <div class="sha-answer-row">
+                <button class="primary-button answer-button" id="yesButton" aria-label="Thumbs up"><span style="font-size:2rem;">👍</span></button>
+                <button class="primary-button answer-button" id="noButton" aria-label="Thumbs down"><span style="font-size:2rem;">👎</span></button>
+            </div>
+        </div>
+        <nav class="lesson-navigation" aria-label="Lesson navigation">
+            <a href="lesson-1.html" class="nav-button prev">Return to Lesson</a>
+            <a href="#" class="nav-button next" style="visibility: hidden">Next Lesson</a>
+        </nav>
+    </main>
+    <div id="footer"></div>
+    <script>
+        let correctCount = 0;
+        let questionCount = 0;
+        const totalQuestions = 10;
+        const letters = ['b', 'B', 'd', 'D'];
+        let currentLetterIndex = 0;
+        let answerResults = [];
+        let currentSound = '';
+
+        function getCurrentSound(letter) {
+            if (letter === 'b' || letter === 'B') return 'b';
+            if (letter === 'd' || letter === 'D') return 'd';
+            return '';
+        }
+
+        function playCurrentSound() {
+            const letter = letters[currentLetterIndex];
+            currentSound = getCurrentSound(letter);
+            let audioUrl = '';
+            if (currentSound === 'b') audioUrl = 'https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3';
+            if (currentSound === 'd') audioUrl = 'https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3';
+            if (audioUrl) {
+                const audio = new Audio(audioUrl);
+                audio.play();
+            }
+        }
+
+        function createFeedbackIcons() {
+            const container = document.querySelector('.sha-feedback-icons');
+            container.innerHTML = '';
+            for (let i = 0; i < totalQuestions; i++) {
+                const icon = document.createElement('span');
+                icon.className = 'sha-feedback-icon';
+                container.appendChild(icon);
+            }
+        }
+
+        function updateFeedbackIcons() {
+            document.getElementById('correctCount').textContent = correctCount;
+            const icons = document.querySelectorAll('.sha-feedback-icon');
+            icons.forEach((icon, index) => {
+                if (answerResults[index] === true) {
+                    icon.textContent = '✔️';
+                    icon.className = 'sha-feedback-icon correct';
+                } else if (answerResults[index] === false) {
+                    icon.textContent = '❌';
+                    icon.className = 'sha-feedback-icon incorrect';
+                } else {
+                    icon.textContent = '';
+                    icon.className = 'sha-feedback-icon';
+                }
+            });
+        }
+
+        function showWinnerMessage() {
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <div class="sha-winner-message">
+                    <h1>Congratulations!</h1>
+                    <h2>You got ${correctCount} out of 10 correct!</h2>
+                    <button class="primary-button" onclick="resetGame()"><i class='fas fa-redo'></i> Play Again</button>
+                </div>
+            `;
+        }
+
+        function resetGame() {
+            correctCount = 0;
+            questionCount = 0;
+            currentLetterIndex = 0;
+            answerResults = [];
+            const container = document.querySelector('.game-container');
+            container.innerHTML = `
+                <div class="sha-instructions sha-question" style="margin-bottom: var(--space-md);">
+                    Choose whether the letter shown can represent the letter sound that you hear. Choose thumbs up if it does. Choose thumbs down if it doesn't.
+                </div>
+                <div class="sha-progress-row" style="flex-direction: column; align-items: center; gap: 0.25rem; margin-bottom: var(--space-sm); margin-top: var(--space-xs);">
+                    <div class="sha-streak-label sha-streak-label-black"><span id="correctCount">0</span> / 10</div>
+                    <div class="sha-feedback-icons"></div>
+                </div>
+                <div class="sha-feedback-container">
+                    <div id="feedback" class="feedback"></div>
+                </div>
+                <div class="sha-main-content">
+                    <button class="primary-button play-sound" id="playSound">
+                        <i class="fas fa-volume-up"></i> Listen to the Sound
+                    </button>
+                    <div id="currentLetter" class="sha-current-letter sha-current-letter-black"></div>
+                    <div class="sha-answer-row">
+                        <button class="primary-button answer-button sha-yes" id="yesButton" aria-label="Thumbs up"><span style="font-size:2rem;">👍</span></button>
+                        <button class="primary-button answer-button sha-no" id="noButton" aria-label="Thumbs down"><span style="font-size:2rem;">👎</span></button>
+                    </div>
+                </div>
+            `;
+            createFeedbackIcons();
+            updateFeedbackIcons();
+            initializeEventListeners();
+            showNextLetter();
+        }
+
+        function initializeEventListeners() {
+            document.getElementById('playSound').addEventListener('click', playCurrentSound);
+            document.getElementById('yesButton').addEventListener('click', () => checkAnswer(true));
+            document.getElementById('noButton').addEventListener('click', () => checkAnswer(false));
+            document.getElementById('playInstructions').addEventListener('click', function() {
+                const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/sound-game-instructions.mp3');
+                audio.play();
+            });
+        }
+
+        function showNextLetter() {
+            const letterDisplay = document.getElementById('currentLetter');
+            letterDisplay.textContent = letters[currentLetterIndex];
+            const feedback = document.getElementById('feedback');
+            feedback.textContent = '';
+            feedback.className = 'feedback';
+            playCurrentSound();
+        }
+
+        function checkAnswer(isYes) {
+            const currentLetter = letters[currentLetterIndex];
+            const sound = getCurrentSound(currentLetter);
+            let correct = false;
+            // b/B with b.mp3: yes is correct; b/B with d.mp3: no is correct
+            // d/D with d.mp3: yes is correct; d/D with b.mp3: no is correct
+            if ((sound === 'b' && isYes && currentSound === 'b') ||
+                (sound === 'b' && !isYes && currentSound === 'd') ||
+                (sound === 'd' && isYes && currentSound === 'd') ||
+                (sound === 'd' && !isYes && currentSound === 'b')) {
+                correctCount++;
+                correct = true;
+                document.getElementById('feedback').className = 'feedback correct';
+                document.getElementById('feedback').textContent = 'Correct!';
+            } else {
+                correct = false;
+                document.getElementById('feedback').className = 'feedback incorrect';
+                document.getElementById('feedback').textContent = 'Incorrect';
+            }
+            answerResults[questionCount] = correct;
+            questionCount++;
+            updateFeedbackIcons();
+            if (questionCount === totalQuestions) {
+                setTimeout(showWinnerMessage, 900);
+                return;
+            }
+            setTimeout(() => {
+                showNextLetter();
+                currentLetterIndex = (currentLetterIndex + 1) % letters.length;
+            }, 900);
+        }
+
+        // Initialize the game
+        createFeedbackIcons();
+        updateFeedbackIcons();
+        initializeEventListeners();
+        showNextLetter();
+    </script>
+</body>
+</html> 
