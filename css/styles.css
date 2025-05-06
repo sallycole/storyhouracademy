@@ -907,6 +907,23 @@ footer {
     border-color: var(--secondary-light);
 }
 
+/* Styles for multi-phonogram letter tiles */
+.letter-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    line-height: 0.9;
+    padding: 2px 0;
+}
+
+.letter-content div {
+    font-size: 0.9em;
+    margin: 1px 0;
+}
+
 .results-title {
     font-family: var(--font-heading);
     font-size: 2rem;
