@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch and learn about the r-controlled vowel phonogram ur, its sound, and how to write it in this video lesson for beginning readers.">
+    <title>Story Hour Academy - Vowel Phonogram ur Video</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container video-template">
+        <div class="page-header">
+            <a href="lesson-46.html" class="lesson-title-breadcrumb">Lesson: Vowel Phonogram ur</a>
+            <h1 class="title">Vowel Phonogram ur Video</h1>
+        </div>
+
+        <div class="video-embed-container">
+            <video controls>
+                <source src="https://storyhouracademy.s3.us-east-1.amazonaws.com/41.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="playback-controls">
+            <button class="speed-button" data-speed="0.5">0.5x</button>
+            <button class="speed-button active" data-speed="1.0">1.0x</button>
+            <button class="speed-button" data-speed="1.5">1.5x</button>
+        </div>
+
+        <nav class="lesson-navigation" aria-label="Lesson navigation">
+            <a href="lesson-46.html" class="nav-button">Return to Lesson</a>
+        </nav>
+    </main>
+
+    <div id="footer"></div>
+
+    <style>
+        .video-embed-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        video {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .playback-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .speed-button {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .speed-button:hover {
+            background: #f0f0f0;
+        }
+
+        .speed-button.active {
+            background: #007bff;
+            color: white;
+            border-color: #0056b3;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video');
+            const speedButtons = document.querySelectorAll('.speed-button');
+            
+            speedButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const speed = parseFloat(this.dataset.speed);
+                    video.playbackRate = speed;
+                    
+                    // Update active state
+                    speedButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
