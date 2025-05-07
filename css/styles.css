@@ -1178,3 +1178,88 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Specific styling for the second-to-last literature card in lesson-45 */
+.literature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.literature-grid .activity-image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--surface);
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.literature-grid .activity-content {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.literature-grid .activity-title {
+    font-size: 2.25rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.literature-grid .activity-description {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-lg);
+    color: var(--text-light);
+    max-width: 40ch;
+}
+
+.literature-grid .activity-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 300px;
+}
+
+.literature-grid .activity-link {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-md) var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .literature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .literature-grid .activity-image {
+        height: 200px;
+        min-height: auto;
+    }
+    
+    .literature-grid .activity-content {
+        padding: var(--space-xl);
+    }
+    
+    .literature-grid .activity-title {
+        font-size: 2rem;
+    }
+    
+    .literature-grid .activity-links {
+        max-width: 100%;
+    }
+}
+
+.activity-card-literature .activity-image img,
+.literature-grid .activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--surface);
+}
