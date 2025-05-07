@@ -567,7 +567,7 @@
           },
           {
             "name": "Phonogram Practice",
-            "type": "Assignment",
+            "type": "Assignment",2
             "description": "Play level 3 of the Consonant Digraph Sound Game.",
             "links": ["https://sallycole.github.io/storyhouracademy/game19.html"]
           },
@@ -694,7 +694,7 @@
             "name": "Mastery Test of Multi-Letter Vowel Phonograms",
             "type": "Mastery Check",
             "description": "Take the mastery test as a pretest and show your teacher the results.",
-            "links": ["https://sallycole.github.io/storyhouracademy/quiz4.html"]
+            "links": ["pretest-4.html"]
           }
         ]
       },
