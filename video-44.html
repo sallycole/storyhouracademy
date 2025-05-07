@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch and learn about the vowel phonograms or and wor, their sounds, and how to write them in this video lesson for beginning readers.">
+    <title>Story Hour Academy - Video Lesson or and wor</title>
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container lesson-template">
+        <div class="page-header">
+            <a href="/unit-3.html" class="unit-title-breadcrumb">Unit: Multi-Letter Vowel Phonograms</a>
+            <h1 class="title">Vowel Phonograms or and wor Video</h1>
+        </div>
+        <div class="video-embed-container" style="max-width:800px;margin:0 auto 2rem auto;">
+            <video id="lesson-video" controls style="width:100%;border-radius:12px;">
+                <source src="https://storyhouracademy.s3.us-east-1.amazonaws.com/43.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="playback-controls" style="margin-top:1rem;text-align:center;">
+                <button class="playback-btn" data-speed="0.5">0.5x</button>
+                <button class="playback-btn active" data-speed="1">1x</button>
+                <button class="playback-btn" data-speed="1.5">1.5x</button>
+            </div>
+        </div>
+        <nav class="lesson-navigation" aria-label="Lesson navigation">
+            <a href="lesson-48.html" class="nav-button prev">Return to Lesson</a>
+        </nav>
+    </main>
+    <div id="footer"></div>
+    <script>
+    const video = document.getElementById('lesson-video');
+    const buttons = document.querySelectorAll('.playback-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            video.playbackRate = parseFloat(btn.dataset.speed);
+        });
+    });
+    </script>
+</body>
+</html>
