@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, self-paced reading and handwriting lessons for young learners">
+    <title>Story Hour Academy - Pretest of Alphabet Letters and their Associated Sounds</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">Pretest of Alphabet Letters and their Associated Sounds</h1>
+            <p id="test-description" class="unit-description">Play the test directions and then click the "Start Test" button to start the test.</p>
+        </div>
+
+        <div class="test-container">
+            <!-- Start Screen -->
+            <div id="startScreen" class="test-screen">
+                <div class="instructions-container">
+                    <button class="audio-button" onclick="playInstructions()" title="Listen to instructions">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <p class="instructions">
+                        Listen to the sound and click the letter or phonogram that represents the sound.
+                    </p>
+                </div>
+                <div class="button-container">
+                    <button id="startQuiz" class="primary-button">
+                        Start Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- Test Screen -->
+            <div id="testScreen" class="test-screen" style="display: none;">
+                <div class="test-controls">
+                    <div class="instructions-container">
+                        <button class="audio-button" onclick="playInstructions()" title="Listen to instructions">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <p class="instructions">
+                            Listen to the sound and click the letter or phonogram that represents the sound.
+                        </p>
+                    </div>
+                    <div class="button-container">
+                        <button id="playSound" class="primary-button">
+                            <i class="fas fa-play"></i> Replay Sound
+                        </button>
+                    </div>
+                    <div class="feedback-container">
+                        <p id="feedback" class="feedback"></p>
+                        <p id="score" class="score">Progress: 0/0</p>
+                    </div>
+                </div>
+
+                <div id="letterGrid" class="letter-grid">
+                    <!-- Letters will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="resultsScreen" class="test-screen" style="display: none;">
+                <h2 class="results-title">Test Complete!</h2>
+                <div id="resultsContent" class="results-content">
+                    <!-- Results will be inserted here by JavaScript -->
+                </div>
+                <button id="tryAgain" class="primary-button">
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <nav class="lesson-navigation" aria-label="Lesson navigation">
+            <a href="lesson-63.html" class="nav-button prev">Return to Lesson</a>
+            <a href="#" class="nav-button next" style="visibility: hidden">Next Lesson</a>
+        </nav>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Alphabet letters and sounds from quiz6.html
+        const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'qu', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        const allSounds = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'qu', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        const soundToPhonogram = {
+            'a': 'a', 'b': 'b', 'c': 'c', 'd': 'd', 'e': 'e', 'f': 'f', 
+            'g': 'g', 'h': 'h', 'i': 'i', 'j': 'j', 'k': 'k', 'l': 'l', 
+            'm': 'm', 'n': 'n', 'o': 'o', 'p': 'p', 'qu': 'qu', 'r': 'r', 
+            's': 's', 't': 't', 'u': 'u', 'v': 'v', 'w': 'w', 'x': 'x', 
+            'y': 'y', 'z': 'z'
+        };
+        // Create a mapping of sounds to their S3 URLs
+        const soundUrls = {
+            'a': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/a.mp3',
+            'b': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3',
+            'c': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/c.mp3',
+            'd': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3',
+            'e': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/e.mp3',
+            'f': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/f.mp3',
+            'g': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/g.mp3',
+            'h': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/h.mp3',
+            'i': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/i.mp3',
+            'j': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/j.mp3',
+            'k': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/k.mp3',
+            'l': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/l.mp3',
+            'm': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/m.mp3',
+            'n': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3',
+            'o': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/o.mp3',
+            'p': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/p.mp3',
+            'qu': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/qu.mp3',
+            'r': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/r.mp3',
+            's': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/s.mp3',
+            't': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/t.mp3',
+            'u': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/u.mp3',
+            'v': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/v.mp3',
+            'w': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/w.mp3',
+            'x': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/x.mp3',
+            'y': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/y.mp3',
+            'z': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/z.mp3'
+        };
+        let remainingSounds = [];
+        let currentSound = '';
+        let results = [];
+        let audioQueue = [];
+        let isPlaying = false;
+
+        // Function to show specific screen
+        function showScreen(screenId) {
+            document.querySelectorAll('.test-screen').forEach(screen => {
+                screen.style.display = 'none';
+            });
+            document.getElementById(screenId).style.display = 'block';
+        }
+
+        // Function to create letter grid with letter tiles
+        function createLetterGrid() {
+            const grid = document.getElementById('letterGrid');
+            grid.innerHTML = ''; // Clear existing content
+            
+            // Create letter tiles
+            letters.forEach(letter => {
+                const tile = document.createElement('div');
+                tile.className = 'letter-tile';
+                tile.textContent = letter;
+                
+                // Set up the click handler
+                tile.addEventListener('click', () => checkAnswer(letter));
+                grid.appendChild(tile);
+            });
+        }
+
+        // Function to initialize quiz
+        function initializeQuiz() {
+            remainingSounds = [...allSounds];
+            shuffleArray(remainingSounds);
+            results = [];
+            document.getElementById('score').textContent = `Progress: 0/${allSounds.length}`;
+            playNextSound();
+        }
+
+        // Function to shuffle array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Function to play next sound
+        function playNextSound() {
+            if (remainingSounds.length === 0) {
+                showFinalResults();
+                return;
+            }
+            
+            currentSound = remainingSounds[0];
+            playCurrentSound();
+            document.getElementById('feedback').textContent = '';
+        }
+
+        // Function to play current sound
+        function playCurrentSound() {
+            const audioUrl = soundUrls[currentSound];
+            const audio = new Audio(audioUrl);
+            audio.play().catch(error => {
+                console.error('Error playing sound:', error);
+                document.getElementById('feedback').textContent = 'Error playing sound. Please try again.';
+            });
+        }
+
+        // Function to process audio queue
+        function processAudioQueue() {
+            if (isPlaying || audioQueue.length === 0) return;
+            
+            isPlaying = true;
+            const audio = audioQueue[0];
+            
+            audio.play().catch(error => {
+                console.error('Error playing sound:', error);
+                document.getElementById('feedback').textContent = 'Error playing sound. Please try again.';
+                isPlaying = false;
+                audioQueue.shift();
+                processAudioQueue();
+            });
+
+            audio.addEventListener('ended', () => {
+                isPlaying = false;
+                audioQueue.shift();
+                processAudioQueue();
+            });
+        }
+
+        // Function to check answer
+        function checkAnswer(selectedLetter) {
+            if (!currentSound || remainingSounds.length === 0) return;
+
+            const correct = selectedLetter === currentSound;
+            const feedback = document.getElementById('feedback');
+            
+            results.push({
+                sound: currentSound,
+                selected: selectedLetter,
+                correct: correct
+            });
+
+            feedback.textContent = correct ? 'Correct!' : 'Incorrect';
+            feedback.className = `feedback ${correct ? 'correct' : 'incorrect'}`;
+            
+            // Play additional audio for incorrect choices if needed (from quiz6.html)
+            if (!correct) {
+                let additionalAudio = null;
+                if (currentSound === 'k' && selectedLetter === 'c') {
+                    additionalAudio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/k-not-c-mastery.mp3');
+                }
+
+                if (additionalAudio) {
+                    audioQueue.push(additionalAudio);
+                    additionalAudio.addEventListener('ended', proceedToNextSound);
+                    processAudioQueue();
+                } else {
+                    proceedToNextSound();
+                }
+            } else {
+                proceedToNextSound();
+            }
+        }
+
+        // Function to proceed to next sound
+        function proceedToNextSound() {
+            remainingSounds.shift();
+            document.getElementById('score').textContent = 
+                `Progress: ${results.length}/${allSounds.length}`;
+            
+            if (remainingSounds.length === 0) {
+                // Show results after a delay to ensure audio has finished
+                setTimeout(showFinalResults, 1000);
+            } else {
+                setTimeout(playNextSound, 1000);
+            }
+        }
+
+        // Function to start quiz
+        function startQuiz() {
+            showScreen('testScreen');
+            document.getElementById('test-description').style.display = 'none';
+            createLetterGrid();
+            initializeQuiz();
+        }
+
+        // Function to try again
+        function tryAgain() {
+            showScreen('testScreen');
+            document.getElementById('test-description').style.display = 'none';
+            createLetterGrid();
+            initializeQuiz();
+        }
+
+        // Function to show final results - using design from pretest-5.html
+        function showFinalResults() {
+            showScreen('resultsScreen');
+            const correct = results.filter(r => r.correct).length;
+            const resultsContent = document.getElementById('resultsContent');
+            
+            let resultsHTML = `
+                <p class="final-score">Final Score: ${correct}/${allSounds.length}</p>
+                <div class="results-list">
+            `;
+            
+            // Identify multi-sound letters, as in quiz6.html
+            const multiSoundLetters = ['a', 'c', 'e', 'g', 'i', 'o', 's', 'u', 'x', 'y'];
+            
+            results.forEach(result => {
+                let displaySound = soundToPhonogram[result.sound];
+                let displaySelected = result.selected;
+                
+                // Check if it's a multi-sound letter
+                const isMultiSound = multiSoundLetters.includes(displaySound);
+                
+                resultsHTML += `
+                    <div class="result-item ${result.correct ? 'correct' : 'incorrect'}">
+                        <span class="result-sound-group">
+                            ${isMultiSound ? 'Sounds' : 'Sound'} for: 
+                            <button class="ipa-sound-btn" data-sound="${result.sound}" title="Play sound">${displaySound}</button>
+                        </span>
+                        <span class="result-selected">You selected: "${displaySelected}"</span>
+                        <span class="result-mark">${result.correct ? '✓' : '✕'}</span>
+                    </div>
+                `;
+            });
+            
+            resultsHTML += '</div>';
+            resultsContent.innerHTML = resultsHTML;
+            
+            // Add click listeners to play sound
+            document.querySelectorAll('.ipa-sound-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const soundKey = this.getAttribute('data-sound');
+                    const audioUrl = soundUrls[soundKey];
+                    if (audioUrl) {
+                        const audio = new Audio(audioUrl);
+                        audio.play();
+                    }
+                });
+            });
+        }
+
+        // Function to play instructions
+        function playInstructions() {
+            const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/test1instructions.mp3');
+            audio.play().catch(error => {
+                console.error('Error playing instructions:', error);
+            });
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            showScreen('startScreen');
+            document.getElementById('startQuiz').addEventListener('click', startQuiz);
+            document.getElementById('playSound').addEventListener('click', () => {
+                if (currentSound) {
+                    playCurrentSound();
+                }
+            });
+            document.getElementById('tryAgain').addEventListener('click', tryAgain);
+        });
+    </script>
+</body>
+</html> 
