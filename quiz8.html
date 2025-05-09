@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastery Test of 51 Phonograms</title>
+    <title>Mastery Test of Syllable Types</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
             padding: 20px;
         }
 
-        .container {
+        .game-container {
             background: white;
             padding: 30px;
             border-radius: 20px;
@@ -34,58 +34,210 @@
             position: relative;
         }
 
-        .letter-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        .game-header {
+            margin-bottom: 20px;
         }
 
-        .letter-tile {
-            width: 80px;
+        .start-screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .game-content {
+            display: none;
+            flex: 1;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .game-content.visible {
+            display: flex;
+        }
+
+        .spelling-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .spelling-display-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .spelling-display {
+            font-size: 48px;
+            font-weight: bold;
+            min-height: 60px;
+            padding: 10px 20px;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-right: 15px;
+            transition: color 0.5s, transform 0.5s;
+        }
+
+        .correct-word {
+            color: #4CAF50;
+            animation: celebrate 1s ease-in-out;
+        }
+
+        @keyframes celebrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .phonogram-tiles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 100px;
+            margin: 30px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .phonogram-tile {
+            width: 100%;
             height: 80px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
-            font-weight: normal;
-            margin: 0 auto;
-            background-color: #f0f0f0;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 10px;
         }
 
-        .letter-tile:hover {
-            background-color: #e0e0e0;
+        .phonogram-tile.selected {
+            background-color: #3498db;
+            transform: scale(0.95);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid #2980b9;
+        }
+
+        .phonogram-tile:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            background-color: #3498db;
         }
 
-        .play-button {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #4CAF50;
+        .phonogram-tile:active {
+            transform: scale(0.95);
+        }
+
+        .submit-button {
+            background-color: #27ae60;
             color: white;
             border: none;
-            border-radius: 4px;
+            padding: 15px 30px;
+            font-size: 24px;
+            border-radius: 10px;
             cursor: pointer;
-            margin: 20px 0;
+            transition: background-color 0.3s;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .submit-button:hover {
+            background-color: #219a52;
+        }
+
+        .submit-button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
         }
 
         .feedback {
-            font-size: 20px;
-            margin: 10px 0;
-            min-height: 30px;
+            font-size: 24px;
+            height: 30px;
+            margin: 20px;
+            color: #333;
         }
 
-        .score {
+        .progress-container {
+            margin-top: 20px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .progress-text {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .results-container {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .word-list {
+            text-align: left;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .word-item {
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .play-again-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
             font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .play-again-button:hover {
+            background-color: #357abd;
         }
 
         .instructions-container {
@@ -93,579 +245,499 @@
             align-items: center;
             justify-content: center;
             margin: 20px;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
         }
 
         .audio-icon {
-            cursor: pointer;
             margin-right: 15px;
             font-size: 24px;
-            color: #4a90e2;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .instructions {
-            font-size: 18px;
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .syllable-question {
+            font-size: 24px;
             color: #333;
-            line-height: 1.4;
-            flex: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .start-button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .start-button:hover {
+            background-color: #219a52;
+        }
+
+        .start-button.hidden {
+            display: none;
+        }
+
+        .instructions-text {
+            font-size: 20px;
+            color: #333;
+            margin: 15px 0;
+            font-weight: bold;
             text-align: left;
+            padding-left: 0;
+            width: 100%;
         }
 
-        .button-container {
-            margin-bottom: 20px;
-        }
-
-        .feedback-container {
-            min-height: 70px;
-        }
-
-        .letter-content {
+        .answer-container {
+            width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-            gap: 4px;
-        }
-        
-        .letter-content div {
-            font-size: 20px;
-            line-height: 1;
+            align-items: flex-start;
         }
 
         @media (max-width: 768px) {
-            .letter-grid {
-                grid-template-columns: repeat(5, 1fr);
-                gap: 15px;
+            .game-container {
+                min-height: 500px;
+            }
+            .phonogram-tiles {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .game-container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
             }
         }
 
-        @media (max-width: 480px) {
-            .letter-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 10px;
+        @media (max-width: 576px) {
+            .game-container {
+                min-height: 400px;
+            }
+            .phonogram-tiles {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            .game-container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .start-button {
+                padding: 10px 20px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Mastery Test of 51 Phonograms</h1>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Mastery Test of Syllable Types</h1>
+        </div>
         
-        <div class="quiz-controls">
-            <button id="playSound" class="play-button">
-                Replay Sound
-            </button>
-            <p id="feedback" class="feedback"></p>
-            <p id="score" class="score">Progress: 0/0</p>
+        <div class="start-screen">
+            <button class="start-button" id="startButton">Start</button>
         </div>
 
-        <div id="letterGrid" class="letter-grid">
-            <!-- Letters will be inserted here by JavaScript -->
+        <div class="game-content">
+            <div class="instructions-container">
+                <span class="audio-icon" id="audioInstructions">🔊</span>
+                <div class="syllable-question">Which syllable type or types are in this word?</div>
+            </div>
+
+            <div class="spelling-area">
+                <div class="spelling-display-container">
+                    <div class="spelling-display" id="wordDisplay"></div>
+                </div>
+                
+                <div class="answer-container">
+                    <div class="instructions-text" id="instructionsText"></div>
+                    
+                    <div class="phonogram-tiles">
+                        <button class="phonogram-tile" data-type="closed">Closed Syllable</button>
+                        <button class="phonogram-tile" data-type="open">Open Syllable</button>
+                        <button class="phonogram-tile" data-type="consonant-le">Consonant le Syllable</button>
+                        <button class="phonogram-tile" data-type="r-controlled">R-Controlled Syllable</button>
+                        <button class="phonogram-tile" data-type="vowel-consonant-e">Vowel-Consonant-e Syllable</button>
+                        <button class="phonogram-tile" data-type="vowel-team">Vowel Team Syllable</button>
+                    </div>
+                </div>
+
+                <button class="submit-button" id="submitButton" disabled>Submit</button>
+                
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Word 1 of 36</div>
+            </div>
         </div>
     </div>
 
     <script>
-        const letters = [
-            'a',
-            'ai\nay\neigh',
-            'ar',
-            'au\naw',
-            'b',
-            'c',
-            'ch',
-            'ck\nk',
-            'd',
-            'e',
-            'ear',
-            'ee',
-            'er\nir\nur',
-            'f',
-            'g',
-            'h',
-            'i',
-            'igh',
-            'j',
-            'l',
-            'm',
-            'n',
-            'ng',
-            'o',
-            'oa',
-            'oi\noy',
-            'or',
-            'our',
-            'p',
-            'qu',
-            'r',
-            's',
-            'sh',
-            't',
-            'th',
-            'u',
-            'ui',
-            'v',
-            'w',
-            'wh',
-            'wor',
-            'x',
-            'y',
-            'z'
+        const syllableTypes = [
+            'closed',
+            'open',
+            'consonant-le',
+            'r-controlled',
+            'vowel-consonant-e',
+            'vowel-team'
         ];
 
-        const allSounds = [
-            'b',
-            'c',
-            'ch',
-            'ck',
-            'd',
-            'f',
-            'g',
-            'h',
-            'j',
-            'l',
-            'm',
-            'n',
-            'ng',
-            'p',
-            'qu',
-            'r',
-            's',
-            'sh',
-            't',
-            'th',
-            'v',
-            'w',
-            'wh',
-            'x',
-            'z',
-            'longa',
-            'ar',
-            'broada',
-            'ear3',
-            'longe',
-            'erirur',
-            'longi',
-            'longo',
-            'oioy',
-            'or',
-            'our2',
-            'longoo',
-            'wor',
-            'a',
-            'e',
-            'i',
-            'o',
-            'u',
-            'y'
+        const words = [
+            // Closed syllable words
+            { word: 'an', syllables: 1, types: ['closed'] },
+            { word: 'am', syllables: 1, types: ['closed'] },
+            { word: 'pan', syllables: 1, types: ['closed'] },
+            { word: 'ant', syllables: 1, types: ['closed'] },
+            { word: 'pant', syllables: 1, types: ['closed'] },
+            { word: 'shack', syllables: 1, types: ['closed'] },
+            
+            // Open syllable words
+            { word: 'he', syllables: 1, types: ['open'] },
+            { word: 'she', syllables: 1, types: ['open'] },
+            { word: 'be', syllables: 1, types: ['open'] },
+            { word: 'so', syllables: 1, types: ['open'] },
+            { word: 'baby', syllables: 2, types: ['open', 'open'] },
+            
+            // Consonant-le words
+            { word: 'bubble', syllables: 2, types: ['closed', 'consonant-le'] },
+            { word: 'bundle', syllables: 2, types: ['closed', 'consonant-le'] },
+            { word: 'waffle', syllables: 2, types: ['closed', 'consonant-le'] },
+            { word: 'wiggle', syllables: 2, types: ['closed', 'consonant-le'] },
+            { word: 'apple', syllables: 2, types: ['closed', 'consonant-le'] },
+            { word: 'puzzle', syllables: 2, types: ['closed', 'consonant-le'] },
+            { word: 'turtle', syllables: 2, types: ['r-controlled', 'consonant-le'] },
+            
+            // R-controlled words
+            { word: 'her', syllables: 1, types: ['r-controlled'] },
+            { word: 'bird', syllables: 1, types: ['r-controlled'] },
+            { word: 'fern', syllables: 1, types: ['r-controlled'] },
+            { word: 'sir', syllables: 1, types: ['r-controlled'] },
+            { word: 'stir', syllables: 1, types: ['r-controlled'] },
+            { word: 'birth', syllables: 1, types: ['r-controlled'] },
+            
+            // Vowel-consonant-e words
+            { word: 'ate', syllables: 1, types: ['vowel-consonant-e'] },
+            { word: 'late', syllables: 1, types: ['vowel-consonant-e'] },
+            { word: 'rake', syllables: 1, types: ['vowel-consonant-e'] },
+            { word: 'bake', syllables: 1, types: ['vowel-consonant-e'] },
+            { word: 'fame', syllables: 1, types: ['vowel-consonant-e'] },
+            { word: 'same', syllables: 1, types: ['vowel-consonant-e'] },
+            
+            // Vowel team words
+            { word: 'sail', syllables: 1, types: ['vowel-team'] },
+            { word: 'claim', syllables: 1, types: ['vowel-team'] },
+            { word: 'strain', syllables: 1, types: ['vowel-team'] },
+            { word: 'grain', syllables: 1, types: ['vowel-team'] },
+            { word: 'say', syllables: 1, types: ['vowel-team'] },
+            { word: 'stay', syllables: 1, types: ['vowel-team'] }
         ];
 
-        let remainingSounds = [];
-        let currentSound = '';
-        let results = [];
-        let audioQueue = [];
-        let isPlaying = false;
-
-        // Create a mapping of sounds to their S3 URLs
-        const soundUrls = {
-            'a': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/a.mp3',
-            'b': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/b.mp3',
-            'c': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/c.mp3',
-            'ck': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/k.mp3',
-            'd': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/d.mp3',
-            'e': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/e.mp3',
-            'f': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/f.mp3',
-            'g': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/g.mp3',
-            'h': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/h.mp3',
-            'i': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/i.mp3',
-            'j': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/j.mp3',
-            'l': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/l.mp3',
-            'm': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/m.mp3',
-            'n': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3',
-            'o': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/o.mp3',
-            'p': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/p.mp3',
-            'qu': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/qu.mp3',
-            'r': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/r.mp3',
-            's': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/s.mp3',
-            't': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/t.mp3',
-            'u': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/u.mp3',
-            'v': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/v.mp3',
-            'w': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/w.mp3',
-            'wh': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/wh.mp3',
-            'x': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/x.mp3',
-            'y': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/y.mp3',
-            'z': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/z.mp3',
-            'ch': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ch.mp3',
-            'sh': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sh.mp3',
-            'th': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/th.mp3',
-            'ng': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ng.mp3',
-            'longa': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longa.mp3',
-            'longe': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longe.mp3',
-            'longi': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longi.mp3',
-            'longo': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longo.mp3',
-            'broada': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/broada.mp3',
-            'oioy': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/oioysound.mp3',
-            'longoo': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/longoo.mp3',
-            'erirur': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/erirursound.mp3',
-            'ar': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/arsound.mp3',
-            'or': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/orsound.mp3',
-            'wor': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/worsound.mp3',
-            'ear3': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/ear3sounds.mp3',
-            'our2': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/our2sounds.mp3'
-        };
-
-        // Map the sounds to their corresponding phonograms for display in results
-        const soundToPhonogram = {
-            'a': 'a',
-            'b': 'b',
-            'c': 'c',
-            'ck': 'ck/k',
-            'd': 'd',
-            'e': 'e',
-            'f': 'f',
-            'g': 'g',
-            'h': 'h',
-            'i': 'i',
-            'j': 'j',
-            'l': 'l',
-            'm': 'm',
-            'n': 'n',
-            'o': 'o',
-            'p': 'p',
-            'qu': 'qu',
-            'r': 'r',
-            's': 's',
-            'sh': 'sh',
-            't': 't',
-            'th': 'th',
-            'u': 'u',
-            'v': 'v',
-            'w': 'w',
-            'wh': 'wh',
-            'x': 'x',
-            'y': 'y',
-            'z': 'z',
-            'ch': 'ch',
-            'sh': 'sh',
-            'th': 'th',
-            'ng': 'ng',
-            'longa': 'ai/ay/eigh',
-            'longe': 'ee',
-            'longi': 'igh',
-            'longo': 'oa',
-            'broada': 'au/aw',
-            'oioy': 'oi/oy',
-            'longoo': 'ui',
-            'erirur': 'er/ir/ur',
-            'ar': 'ar',
-            'or': 'or',
-            'wor': 'wor',
-            'ear3': 'ear',
-            'our2': 'our'
-        };
-
-        // Create a mapping of phonogram tiles to their sounds
-        const phonogramToSound = {
-            'b': 'b',
-            'c': 'c',
-            'ch': 'ch',
-            'ck\nk': ['ck', 'k'],
-            'd': 'd',
-            'f': 'f',
-            'g': 'g',
-            'h': 'h',
-            'i': 'i',
-            'j': 'j',
-            'l': 'l',
-            'm': 'm',
-            'n': 'n',
-            'ng': 'ng',
-            'o': 'o',
-            'p': 'p',
-            'qu': 'qu',
-            'r': 'r',
-            's': 's',
-            'sh': 'sh',
-            't': 't',
-            'th': 'th',
-            'v': 'v',
-            'w': 'w',
-            'wh': 'wh',
-            'x': 'x',
-            'z': 'z',
-            'ai\nay\neigh': 'longa',
-            'ar': 'ar',
-            'au\naw': 'broada',
-            'ear': 'ear3',
-            'ee': 'longe',
-            'er\nir\nur': 'erirur',
-            'igh': 'longi',
-            'oa': 'longo',
-            'oi\noy': 'oioy',
-            'or': 'or',
-            'our': 'our2',
-            'ui': 'longoo',
-            'wor': 'wor',
-            'a': 'a',
-            'e': 'e',
-            'i': 'i',
-            'o': 'o',
-            'u': 'u',
-            'y': 'y'
-        };
-
-        function createLetterGrid() {
-            const grid = document.getElementById('letterGrid');
-            letters.forEach(letter => {
-                const tile = document.createElement('div');
-                tile.className = 'letter-tile';
-                
-                if (letter.includes('\n')) {
-                    // Create a container for stacked phonograms
-                    const letterContent = document.createElement('div');
-                    letterContent.className = 'letter-content';
-                    
-                    // Split the phonograms and create a div for each
-                    letter.split('\n').forEach(phonogram => {
-                        const phonogramDiv = document.createElement('div');
-                        phonogramDiv.textContent = phonogram;
-                        letterContent.appendChild(phonogramDiv);
-                    });
-                    
-                    tile.appendChild(letterContent);
-                } else {
-                    // Single phonogram tiles
-                    tile.textContent = letter;
-                }
-                
-                // Set up the click handler
-                tile.addEventListener('click', () => checkAnswer(letter));
-                grid.appendChild(tile);
-            });
-        }
-
-        function initializeQuiz() {
-            remainingSounds = [...allSounds];
-            shuffleArray(remainingSounds);
-            results = [];
-            document.getElementById('score').textContent = `Progress: 0/${allSounds.length}`;
-            playNextSound();
-        }
+        let currentWordIndex = 0;
+        let shuffledWords = [];
+        let selectedTypes = new Set();
+        let wordResults = new Map();
+        let currentAudio = null;
+        let hoverAudio = null;
+        let wordHoverAudio = null;
 
         function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function playWordHoverAudio(word) {
+            // Stop any currently playing hover audio
+            if (wordHoverAudio) {
+                wordHoverAudio.pause();
+                wordHoverAudio.currentTime = 0;
+            }
+            
+            // Create and play new audio
+            wordHoverAudio = new Audio(`https://storyhouracademy.s3.us-east-1.amazonaws.com/words/${word}.mp3`);
+            wordHoverAudio.play().catch(e => console.log('Audio play failed:', e));
+        }
+
+        function stopWordHoverAudio() {
+            if (wordHoverAudio) {
+                wordHoverAudio.pause();
+                wordHoverAudio.currentTime = 0;
             }
         }
 
-        function playNextSound() {
-            if (remainingSounds.length === 0) {
-                return; // Don't show results immediately
+        function displayWord(word) {
+            const wordDisplay = document.getElementById('wordDisplay');
+            wordDisplay.textContent = word;
+            
+            // Add hover event listeners
+            wordDisplay.addEventListener('mouseenter', () => {
+                playWordHoverAudio(word);
+            });
+            
+            wordDisplay.addEventListener('mouseleave', () => {
+                stopWordHoverAudio();
+            });
+            
+            updateInstructions();
+        }
+
+        function updateInstructions() {
+            const currentWord = shuffledWords[currentWordIndex];
+            const instructionsText = document.getElementById('instructionsText');
+            
+            if (currentWord.syllables === 1 || 
+                (currentWord.syllables === 2 && currentWord.types[0] === currentWord.types[1])) {
+                instructionsText.textContent = 'Choose 1 answer:';
+            } else {
+                instructionsText.textContent = 'Choose 2 answers:';
+            }
+        }
+
+        function playHoverAudio(type) {
+            // Stop any currently playing hover audio
+            if (hoverAudio) {
+                hoverAudio.pause();
+                hoverAudio.currentTime = 0;
             }
             
-            currentSound = remainingSounds[0];
-            playCurrentSound();
-            document.getElementById('feedback').textContent = '';
+            // Create and play new audio
+            hoverAudio = new Audio(`https://storyhouracademy.s3.us-east-1.amazonaws.com/words/${type}-syllable.mp3`);
+            hoverAudio.play().catch(e => console.log('Audio play failed:', e));
         }
 
-        function playCurrentSound() {
-            const audioUrl = soundUrls[currentSound];
-            const audio = new Audio(audioUrl);
-            audioQueue.push(audio);
-            processAudioQueue();
+        function stopHoverAudio() {
+            if (hoverAudio) {
+                hoverAudio.pause();
+                hoverAudio.currentTime = 0;
+            }
         }
 
-        function processAudioQueue() {
-            if (isPlaying || audioQueue.length === 0) return;
+        function handleTypeClick(event) {
+            const type = event.target.dataset.type;
+            const button = event.target;
+            const currentWord = shuffledWords[currentWordIndex];
             
-            isPlaying = true;
-            const audio = audioQueue[0];
+            // Check if we should allow multiple selections
+            const allowMultiple = currentWord.syllables === 2 && 
+                                currentWord.types[0] !== currentWord.types[1];
             
-            audio.play().catch(error => {
-                console.error('Error playing sound:', error);
-                document.getElementById('feedback').textContent = 'Error playing sound. Please try again.';
-                isPlaying = false;
-                audioQueue.shift();
-                processAudioQueue();
+            if (selectedTypes.has(type)) {
+                selectedTypes.delete(type);
+                button.classList.remove('selected');
+            } else {
+                // If we don't allow multiple selections, clear all other selections
+                if (!allowMultiple) {
+                    selectedTypes.clear();
+                    document.querySelectorAll('.phonogram-tile').forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                }
+                
+                selectedTypes.add(type);
+                button.classList.add('selected');
+            }
+            
+            // Enable submit button if we have the correct number of selections
+            const requiredSelections = allowMultiple ? 2 : 1;
+            document.getElementById('submitButton').disabled = selectedTypes.size !== requiredSelections;
+        }
+
+        function addHoverAudioListeners() {
+            document.querySelectorAll('.phonogram-tile').forEach(button => {
+                const type = button.dataset.type;
+                
+                button.addEventListener('mouseenter', () => {
+                    playHoverAudio(type);
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    stopHoverAudio();
+                });
             });
-
-            audio.addEventListener('ended', () => {
-                isPlaying = false;
-                audioQueue.shift();
-                processAudioQueue();
-            });
         }
 
-        function checkAnswer(selectedLetter) {
-            if (!currentSound || remainingSounds.length === 0) return;
-
-            const correct = Array.isArray(phonogramToSound[selectedLetter]) 
-                ? phonogramToSound[selectedLetter].includes(currentSound)
-                : phonogramToSound[selectedLetter] === currentSound;
-            
+        function handleSubmit() {
+            const currentWord = shuffledWords[currentWordIndex];
+            const correctTypes = new Set(currentWord.types);
             const feedback = document.getElementById('feedback');
-            
-            results.push({
-                sound: currentSound,
-                selected: selectedLetter,
-                correct: correct
-            });
+            const submitButton = document.getElementById('submitButton');
+            const display = document.getElementById('wordDisplay');
 
-            feedback.textContent = correct ? 'Correct!' : 'Incorrect';
-            feedback.style.color = correct ? 'green' : 'red';
-            
-            // Play additional audio for incorrect choices
-            if (!correct) {
-                let additionalAudio = null;
-                if (currentSound === 'longa' && selectedLetter === 'a') {
-                    additionalAudio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/ai-not-a-mastery.mp3');
-                } else if (currentSound === 'longe' && selectedLetter === 'e') {
-                    additionalAudio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/ee-not-e-mastery.mp3');
-                } else if (currentSound === 'longi' && selectedLetter === 'i') {
-                    additionalAudio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/igh-not-i-mastery.mp3');
-                } else if (currentSound === 'longo' && selectedLetter === 'o') {
-                    additionalAudio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/spelling/oa-not-o-mastery.mp3');
-                }
+            // Check if all selected types are correct and all correct types are selected
+            const isCorrect = selectedTypes.size === correctTypes.size && 
+                            [...selectedTypes].every(type => correctTypes.has(type));
 
-                if (additionalAudio) {
-                    audioQueue.push(additionalAudio);
-                    additionalAudio.addEventListener('ended', proceedToNextSound);
-                    processAudioQueue();
-                } else {
-                    proceedToNextSound();
+            if (isCorrect) {
+                feedback.textContent = 'Correct!';
+                feedback.style.color = '#4CAF50';
+                display.classList.add('correct-word');
+                
+                // Mark the word as correct if this is the first attempt
+                if (!wordResults.has(currentWord.word)) {
+                    wordResults.set(currentWord.word, true);
                 }
+                
+                // Move to next word after a delay
+                setTimeout(nextWord, 1500);
             } else {
-                proceedToNextSound();
+                feedback.textContent = 'Try again!';
+                feedback.style.color = '#e74c3c';
+                
+                // Mark the word as incorrect if this is the first attempt
+                if (!wordResults.has(currentWord.word)) {
+                    wordResults.set(currentWord.word, false);
+                }
+                
+                // Clear selections and disable submit button
+                selectedTypes.clear();
+                document.querySelectorAll('.phonogram-tile').forEach(button => {
+                    button.classList.remove('selected');
+                });
+                submitButton.disabled = true;
             }
         }
 
-        function proceedToNextSound() {
-            remainingSounds.shift();
-            document.getElementById('score').textContent = 
-                `Progress: ${results.length}/${allSounds.length}`;
-            
-            if (remainingSounds.length === 0) {
-                // Show results after a delay to ensure audio has finished
-                setTimeout(showFinalResults, 1000);
-            } else {
-                setTimeout(playNextSound, 1000);
+        function playAudio(src) {
+            // Stop any currently playing audio
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
             }
-        }
-
-        function showStartScreen() {
-            const container = document.querySelector('.container');
-            container.innerHTML = `
-                <h1>Mastery Test of 51 Phonograms</h1>
-                <div class="instructions-container">
-                    <div class="audio-icon" onclick="playInstructions()" title="Listen to instructions">🔊</div>
-                    <div class="instructions">
-                        Listen to the sound (or sounds). Click the tile with the phonogram (or phonograms) that can spell the sound (or sounds).
-                    </div>
-                </div>
-                <div class="button-container">
-                    <button id="startQuiz" class="play-button">
-                        Start
-                    </button>
-                </div>
-                <div class="feedback-container">
-                    <!-- Empty container to maintain consistent layout -->
-                </div>
-                <div class="letter-grid">
-                    <!-- Empty grid to maintain consistent layout -->
-                </div>
-            `;
             
-            document.getElementById('startQuiz').addEventListener('click', startQuiz);
-        }
-
-        function startQuiz() {
-            const container = document.querySelector('.container');
-            container.innerHTML = `
-                <h1>Mastery Test of 51 Phonograms</h1>
-                <div class="instructions-container">
-                    <div class="audio-icon" onclick="playInstructions()" title="Listen to instructions">🔊</div>
-                    <div class="instructions">
-                        Listen to the sound (or sounds). Click the tile with the phonogram (or phonograms) that can spell the sound (or sounds).
-                    </div>
-                </div>
-                <div class="button-container">
-                    <button id="playSound" class="play-button">
-                        Replay Sound
-                    </button>
-                </div>
-                <div class="feedback-container">
-                    <p id="feedback" class="feedback"></p>
-                    <p id="score" class="score">Progress: 0/${allSounds.length}</p>
-                </div>
-                <div id="letterGrid" class="letter-grid">
-                </div>
-            `;
-
-            createLetterGrid();
-            initializeQuiz();
-            
-            document.getElementById('playSound').addEventListener('click', () => {
-                if (currentSound) {
-                    playCurrentSound();
-                }
-            });
-        }
-
-        function showFinalResults() {
-            const container = document.querySelector('.container');
-            const correct = results.filter(r => r.correct).length;
-            
-            let resultsHTML = `
-                <h2>Quiz Complete!</h2>
-                <p>Final Score: ${correct}/${allSounds.length}</p>
-                <h3>Results:</h3>
-                <ul style="list-style: none; padding: 0;">
-            `;
-            
-            results.forEach(result => {
-                let displaySound = soundToPhonogram[result.sound];
-                let displaySelected = result.selected.includes('\n') ? 
-                    result.selected.split('\n').join('/') : result.selected;
-                
-                const multiSoundPhonograms = ['a', 'e', 'i', 'o', 'u', 'y', 'ear', 'our', 'ch', 'g', 'x', 's', 'th', 'c'];
-                const soundText = multiSoundPhonograms.includes(displaySound) ? 'Sounds' : 'Sound';
-                
-                // Ensure we have a valid displaySound
-                if (!displaySound) {
-                    displaySound = result.sound;
-                }
-                
-                resultsHTML += `
-                    <li style="margin: 10px 0; color: ${result.correct ? 'green' : 'red'}">
-                        ${soundText} for: "${displaySound}" - You selected: "${displaySelected}" 
-                        ${result.correct ? '✓' : '✗'}
-                    </li>
-                `;
-            });
-            
-            resultsHTML += `
-                </ul>
-                <button id="tryAgain" class="play-button">Try Again</button>
-            `;
-            
-            container.innerHTML = resultsHTML;
-            
-            document.getElementById('tryAgain').addEventListener('click', startQuiz);
+            // Create and play new audio
+            currentAudio = new Audio(src);
+            return currentAudio.play().catch(e => console.log('Audio play failed:', e));
         }
 
         function playInstructions() {
-            const audio = new Audio('https://storyhouracademy.s3.us-east-1.amazonaws.com/quiz8-instructions.mp3');
-            audioQueue.push(audio);
-            processAudioQueue();
+            const button = document.getElementById('audioInstructions');
+            button.disabled = true;
+            playAudio('https://storyhouracademy.s3.us-east-1.amazonaws.com/which-syllable-types-instructions.mp3')
+                .then(() => {
+                    button.disabled = false;
+                });
         }
 
-        document.addEventListener('DOMContentLoaded', showStartScreen);
+        function nextWord() {
+            currentWordIndex++;
+            if (currentWordIndex < shuffledWords.length) {
+                const display = document.getElementById('wordDisplay');
+                display.classList.remove('correct-word');
+                displayWord(shuffledWords[currentWordIndex].word);
+                document.getElementById('feedback').textContent = '';
+                document.getElementById('submitButton').disabled = true;
+                updateProgress();
+                
+                // Clear any selected types
+                selectedTypes.clear();
+                document.querySelectorAll('.phonogram-tile').forEach(button => {
+                    button.classList.remove('selected');
+                });
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            
+            const progressPercentage = ((currentWordIndex + 1) / shuffledWords.length) * 100;
+            progressFill.style.width = `${progressPercentage}%`;
+            progressText.textContent = `Word ${currentWordIndex + 1} of ${shuffledWords.length}`;
+        }
+
+        function showResults() {
+            const container = document.querySelector('.game-container');
+            const correctWords = [];
+            const incorrectWords = [];
+
+            wordResults.forEach((correct, word) => {
+                if (correct) {
+                    correctWords.push(word);
+                } else {
+                    incorrectWords.push(word);
+                }
+            });
+
+            container.innerHTML = `
+                <h1>Results</h1>
+                <div class="results-container">
+                    <h2>Words Correct on First Try</h2>
+                    <div class="word-list">
+                        ${correctWords.map(word => `
+                            <div class="word-item correct">${word}</div>
+                        `).join('')}
+                    </div>
+                    
+                    <h2>Words that Need Practice</h2>
+                    <div class="word-list">
+                        ${incorrectWords.map(word => `
+                            <div class="word-item incorrect">${word}</div>
+                        `).join('')}
+                    </div>
+                </div>
+                <button class="play-again-button" onclick="location.reload()">Play Again</button>
+            `;
+        }
+
+        function startGame() {
+            document.querySelector('.game-content').classList.add('visible');
+            document.getElementById('startButton').classList.add('hidden');
+            
+            // Initialize game elements
+            shuffledWords = shuffleArray(words);
+            displayWord(shuffledWords[0].word);
+            
+            // Add click handlers to syllable type tiles
+            document.querySelectorAll('.phonogram-tile').forEach(tile => {
+                tile.addEventListener('click', handleTypeClick);
+            });
+
+            // Add hover audio listeners
+            addHoverAudioListeners();
+
+            // Add click handler to submit button
+            document.getElementById('submitButton').addEventListener('click', handleSubmit);
+            
+            // Add click handler to audio icon for instructions
+            document.getElementById('audioInstructions').addEventListener('click', playInstructions);
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function initializeGame() {
+            document.getElementById('startButton').addEventListener('click', startGame);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeGame);
     </script>
 </body>
-</html> 
+</html>
