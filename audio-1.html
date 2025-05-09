@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Listen to and download the letter sounds song to help memorize the sounds of the alphabet.">
+    <title>Story Hour Academy - Letter Sounds Song</title>
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container">
+        <div class="page-header">
+            <a href="/unit-5.html" class="unit-title-breadcrumb">Unit: Multi-Sound Consonant Letters</a>
+            <h1 class="title">Letter Sounds Song</h1>
+        </div>
+        <div class="activities-container">
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Listen to the Letter Sounds Song</h2>
+                </div>
+                <p class="activity-description">Listen to this song to help you memorize the sounds of the alphabet. You can play, pause, adjust volume, seek through the audio, and download the song.</p>
+                <div class="audio-player-container">
+                    <div class="audio-player">
+                        <audio id="audio-player" preload="metadata">
+                            <source src="https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sounds-song.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="player-controls">
+                            <div class="progress-section">
+                                <div class="time-display">
+                                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                                </div>
+                                <div class="progress-container">
+                                    <div class="progress-bar">
+                                        <div class="progress" id="progress"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="controls-section">
+                                <button id="play-pause-button" class="control-button">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="volume-container">
+                                    <button id="mute-button" class="control-button">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                    <div class="volume-slider">
+                                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                                    </div>
+                                </div>
+                                <button id="download-button" class="download-button">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <nav class="lesson-navigation" aria-label="Lesson navigation">
+            <a href="lesson-69.html" class="nav-button prev">Return to Lesson</a>
+            <a href="#" class="nav-button next" style="visibility: hidden">Next</a>
+        </nav>
+    </main>
+    <div id="footer"></div>
+
+    <style>
+        .audio-player-container {
+            width: 100%;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .audio-player {
+            width: 100%;
+            max-width: 600px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+        }
+        
+        .player-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .progress-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        
+        .controls-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .control-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .control-button:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .control-button:active {
+            transform: translateY(1px);
+        }
+        
+        .time-display {
+            font-family: monospace;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0.25rem;
+        }
+        
+        .progress-container {
+            width: 100%;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: 5px;
+            width: 0%;
+        }
+        
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-grow: 1;
+            justify-content: center;
+        }
+        
+        .volume-slider {
+            width: 100px;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .download-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .download-button:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .download-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .controls-section {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .volume-container {
+                order: 3;
+                width: 100%;
+                margin-top: 0.8rem;
+                justify-content: center;
+            }
+            
+            .volume-slider {
+                width: 60%;
+                max-width: 200px;
+            }
+            
+            .time-display {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('audio-player');
+            const playPauseButton = document.getElementById('play-pause-button');
+            const muteButton = document.getElementById('mute-button');
+            const volumeSlider = document.getElementById('volume-slider');
+            const progressBar = document.getElementById('progress');
+            const progressContainer = document.querySelector('.progress-bar');
+            const currentTimeEl = document.getElementById('current-time');
+            const durationEl = document.getElementById('duration');
+            const downloadButton = document.getElementById('download-button');
+            
+            // Play/Pause functionality
+            playPauseButton.addEventListener('click', togglePlayPause);
+            
+            function togglePlayPause() {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    audio.pause();
+                    playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            }
+            
+            // Update progress bar
+            audio.addEventListener('timeupdate', updateProgress);
+            
+            function updateProgress() {
+                const duration = audio.duration;
+                const currentTime = audio.currentTime;
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                // Update time display
+                currentTimeEl.textContent = formatTime(currentTime);
+            }
+            
+            // Format time to mm:ss
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+            
+            // Set audio duration once metadata is loaded
+            audio.addEventListener('loadedmetadata', function() {
+                durationEl.textContent = formatTime(audio.duration);
+            });
+            
+            // Click on progress bar to seek
+            progressContainer.addEventListener('click', setProgress);
+            
+            function setProgress(e) {
+                const width = this.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            }
+            
+            // Reset player when audio ends
+            audio.addEventListener('ended', function() {
+                playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+                audio.currentTime = 0;
+            });
+            
+            // Volume control
+            volumeSlider.addEventListener('input', function() {
+                audio.volume = this.value;
+                updateVolumeIcon();
+            });
+            
+            // Mute/unmute
+            muteButton.addEventListener('click', toggleMute);
+            
+            function toggleMute() {
+                audio.muted = !audio.muted;
+                updateVolumeIcon();
+            }
+            
+            // Update volume icon based on volume level
+            function updateVolumeIcon() {
+                const volumeIcon = muteButton.querySelector('i');
+                
+                if (audio.muted || audio.volume === 0) {
+                    volumeIcon.className = 'fas fa-volume-mute';
+                } else if (audio.volume < 0.5) {
+                    volumeIcon.className = 'fas fa-volume-down';
+                } else {
+                    volumeIcon.className = 'fas fa-volume-up';
+                }
+            }
+            
+            // Download functionality
+            downloadButton.addEventListener('click', function() {
+                // Create a Blob from the audio file
+                fetch('https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sounds-song.mp3')
+                    .then(response => response.blob())
+                    .then(blob => {
+                        // Create a blob URL
+                        const blobUrl = URL.createObjectURL(blob);
+                        
+                        // Create an invisible anchor element
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = blobUrl;
+                        a.download = 'letter-sounds-song.mp3';
+                        
+                        // Add to the DOM and trigger click
+                        document.body.appendChild(a);
+                        a.click();
+                        
+                        // Clean up
+                        setTimeout(function() {
+                            document.body.removeChild(a);
+                            // Revoke the blob URL to free memory
+                            URL.revokeObjectURL(blobUrl);
+                        }, 100);
+                    })
+                    .catch(error => {
+                        console.error('Download failed:', error);
+                        // Fallback to direct download if fetch fails
+                        window.location.href = 'https://storyhouracademy.s3.us-east-1.amazonaws.com/letter-sounds-song.mp3';
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
