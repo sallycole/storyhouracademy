@@ -1641,10 +1641,10 @@
             "title": "Pretest",
             "activities": [
               {
-                "name": "Mastery Test of Syllable Types",
+                "name": "Pretest of Syllable Types",
                 "type": "Mastery Check",
-                "description": "Take the mastery test as a pretest and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz7.html"]
+                "description": "Take the syllable types pretest and show your teacher the results.",
+                "links": ["pretest-8.html"]
               }
             ]
           },
@@ -1666,7 +1666,7 @@
             ]
           },
           {
-            "title": "Closed Syllables, Part 1/2",
+            "title": "Closed Syllables",
             "activities": [
               {
                 "name": "Closed Syllables Video, Part 1/2",
@@ -1674,11 +1674,6 @@
                 "description": "In this lesson, you will learn the definition of a closed syllable and write down some examples of closed syllable words.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/62a.mp4"]
               }
-            ]
-          },
-          {
-            "title": "Closed Syllables, Part 2/2",
-            "activities": [
               {
                 "name": "Closed Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1706,7 +1701,7 @@
             ]
           },
           {
-            "title": "Open Syllables, Part 1/2",
+            "title": "Open Syllables",
             "activities": [
               {
                 "name": "Open Syllables Video, Part 1/2",
@@ -1714,11 +1709,6 @@
                 "description": "In this lesson, you will learn the definition of an open syllable and write down some examples of open syllable words.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/63a.mp4"]
               }
-            ]
-          },
-          {
-            "title": "Open Syllables, Part 2/2",
-            "activities": [
               {
                 "name": "Open Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1740,7 +1730,7 @@
             ]
           },
           {
-            "title": "Consonant le Syllables, Part 1/2",
+            "title": "Consonant le Syllables",
             "activities": [
               {
                 "name": "Consonant le Syllables Video, Part 1/2",
@@ -1748,11 +1738,6 @@
                 "description": "In this lesson, you will learn the definition of the consonant le syllable, write down some examples of this syllable type, and write some words that contain this syllable type.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/64.mp4"]
               }
-            ]
-          },
-          {
-            "title": "Consonant le Syllables, Part 2/2",
-            "activities": [
               {
                 "name": "Consonant le Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1774,7 +1759,7 @@
             ]
           },
           {
-            "title": "R-Controlled Syllables, Part 1/2",
+            "title": "R-Controlled Syllables",
             "activities": [
               {
                 "name": "R-Controlled Syllables Video, Part 1/2",
@@ -1782,11 +1767,6 @@
                 "description": "In this lesson, you will learn the definition of the r-controlled syllable and write some words that contain this type of syllable.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/65a.mp4"]
               }
-            ]
-          },
-          {
-            "title": "R-Controlled Syllables, Part 2/2",
-            "activities": [
               {
                 "name": "R-Controlled Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1808,7 +1788,7 @@
             ]
           },
           {
-            "title": "Vowel-Consonant-E Syllables, Part 1/2",
+            "title": "Vowel-Consonant-E Syllables",
             "activities": [
               {
                 "name": "Vowel-Consonant-E Syllables Video, Part 1/2",
@@ -1816,11 +1796,6 @@
                 "description": "In this lesson, you will learn the definition of the vowel-consonant-e syllable, also known as the vce or magic e syllable, and write some words that contain this type of syllable.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/66.mp4"]
               }
-            ]
-          },
-          {
-            "title": "Vowel-Consonant-E Syllables, Part 2/2",
-            "activities": [
               {
                 "name": "Vowel-Consonant-E Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1842,7 +1817,7 @@
             ]
           },
           {
-            "title": "Vowel Team Syllables Video, Part 1/2",
+            "title": "Vowel Team Syllables Video",
             "activities": [
               {
                 "name": "Vowel Team Syllables Video, Part 1/2",
@@ -1850,11 +1825,6 @@
                 "description": "In this lesson, you will learn the definition of the vowel team syllable and write some words that contain this type of syllable.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/67.mp4"]
               }
-            ]
-          },
-          {
-            "title": "Vowel Team Syllables Video, Part 2/2",
-            "activities": [
               {
                 "name": "Vowel Team Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1870,7 +1840,7 @@
             ]
           },
           {
-            "title": "Review Lesson of Syllables, Part 1/2",
+            "title": "Review Lesson of Syllables",
             "activities": [
               {
                 "name": "Review Lesson of Syllables Video, Part 1/2",
@@ -1878,11 +1848,6 @@
                 "description": "In this lesson, you will review the definition of a syllable, the six syllable types, and rules for dividing syllables.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/68a.mp4"]
               }
-            ]
-          },
-          {
-            "title": "Review Lesson of Syllables, Part 2/2",
-            "activities": [
               {
                 "name": "Review Lesson of Syllables Video, Part 2/2",
                 "type": "Video",
@@ -1898,20 +1863,14 @@
             ]
           },
           {
-            "title": "Mastery Check",
+            "title": "Mastery Tests of Syllable Types",
             "activities": [
               {
                 "name": "Mastery test of syllable types",
                 "type": "Mastery Check",
                 "description": "Take the mastery test and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz7.html"]
+                "links": ["test-8.html"]
               },
-              {
-                "name": "Mastery test of 51 phonograms",
-                "type": "Mastery Check",
-                "description": "Take the mastery test and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz8.html"]
-              }
             ]
           }
         ]
