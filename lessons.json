@@ -1823,7 +1823,7 @@
                 "name": "Vowel Team Syllables Video, Part 1/2",
                 "type": "Video",
                 "description": "In this lesson, you will learn the definition of the vowel team syllable and write some words that contain this type of syllable.",
-                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/67.mp4"]
+                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/67a.mp4"]
               }
               {
                 "name": "Vowel Team Syllables Video, Part 2/2",
@@ -1836,6 +1836,12 @@
                 "type": "Assignment",
                 "description": "Use pages 14-18 of the linked printable to recite some phonogram sounds as well as read some words with closed, open, consonant le, r-controlled, vowel-consonant-e, and vowel team syllables.",
                 "links": ["https://archive.org/details/reading-words-and-phonograms/page/n13/mode/2up"]
+              }
+              {
+                "name": "Look for vowel team syllables",
+                "type": "Assignment",
+                "description": "Look for vowel team syllables in \"The Child's World First Reader.\"",
+                "links": ["https://archive.org/details/childsworldfirs01withgoog/page/n4/mode/2up"]
               }
             ]
           },
