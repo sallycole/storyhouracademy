@@ -1953,7 +1953,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use page 19 of the linked printable to read words spelled with the tch phonogram.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "With help, read \"The Little Toy Land of the Dutch\" in \"The Latch Key of My Bookhouse\"",
@@ -1982,7 +1982,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use page 19 of the linked printable to read words spelled with the tch and ph phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Listen to someone read \"Phaeton\" in \"Through Fairy Halls of My Bookhouse\"",
@@ -2005,7 +2005,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use page 19 of the linked printable to read words spelled with the tch, ph and rh phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Listen to someone read \"Sunny Rhymes for Happy Times\" by Olive Beaupré Miller",
@@ -2028,7 +2028,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, and gh phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Listen to someone read \"A Christmas Carol\" by Charles Dickens",
@@ -2054,7 +2054,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, and gn phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Listen to someone read \"Ten at One Stroke\" in \"Fairy Stories My Children Love Best of All\"",
@@ -2077,7 +2077,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, and kn phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Listen to someone read \"Tales of King Arthur and the Round Table\" by Andrew Lang",
@@ -2100,7 +2100,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, kn, and wr phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Listen to someone read \"The Burgess Animal Book for Children\"",
@@ -2123,7 +2123,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use pages 19-20 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, kn, wr, and dg phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Look for words you can read in \"Rhymes and Jingles\" by Mary Mapes Dodge",
@@ -2146,7 +2146,7 @@
                 "name": "Practice reading words",
                 "type": "Assignment",
                 "description": "Use pages 19-21 of the linked printable to read words spelled with the tch, ph, rh, gh, gn, kn, wr, dg, and aigh phonograms.",
-                "links": ["https://archive.org/details/reading-words-and-phonograms-story-hour-academy-v-3"]
+                "links": ["https://archive.org/details/reading-words-and-phonograms/page/n17/mode/2up"]
               },
               {
                 "name": "Look for words you can read in \"The Two Crabs\" by Aesop from \"In the Nursery of My Bookhouse\"",
@@ -2180,7 +2180,7 @@
                 "name": "Mastery Test of 60 Phonograms",
                 "type": "Mastery Check",
                 "description": "Take the mastery test and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz9.html"]
+                "links": ["test-9.html"]
               }
             ]
           }
