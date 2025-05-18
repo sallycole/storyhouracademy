@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review the definition of a syllable, the six syllable types, and rules for dividing syllables in this comprehensive video.">
+    <title>Story Hour Academy - Review Lesson of Syllables Video, Part 1/2</title>
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container video-template">
+        <div class="page-header">
+            <a href="/unit-6.html" class="unit-title-breadcrumb">Unit: Syllable Types</a>
+            <h1 class="title">Review Lesson of Syllables Video, Part 1/2</h1>
+        </div>
+        <div class="video-embed-container" style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 900px; margin: 0 auto;">
+            <video id="lessonVideo" controls style="width: 100%; max-width: 900px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); margin-bottom: 1rem;">
+                <source src="https://storyhouracademy.s3.us-east-1.amazonaws.com/68a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="playback-speed-controls" style="width: 100%; display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <span style="font-weight: 500;">Playback speed:</span>
+                <button type="button" class="speed-btn" data-rate="0.5">slow</button>
+                <button type="button" class="speed-btn active" data-rate="1">normal</button>
+                <button type="button" class="speed-btn" data-rate="1.5">fast</button>
+            </div>
+        </div>
+        <nav class="lesson-navigation" aria-label="Lesson navigation">
+            <a href="lesson-79.html" class="nav-button prev">Return to Lesson</a>
+        </nav>
+    </main>
+    <div id="footer"></div>
+    <style>
+    .playback-speed-controls {
+        margin-bottom: 2rem;
+    }
+    .speed-btn {
+        background: #fff;
+        color: #6b7280;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 999px;
+        padding: 0.35em 1.3em;
+        font-size: 1rem;
+        font-family: inherit;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        outline: none;
+        margin-right: 0.25em;
+    }
+    .speed-btn.active, .speed-btn:focus {
+        background: var(--secondary);
+        color: #fff;
+        border-color: var(--secondary);
+    }
+    .speed-btn:hover:not(.active) {
+        background: var(--secondary-light);
+        color: #6b7280;
+        border-color: #cbd5e1;
+    }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('lessonVideo');
+        var speedBtns = document.querySelectorAll('.speed-btn');
+        if (video && speedBtns.length) {
+            speedBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var rate = parseFloat(this.getAttribute('data-rate'));
+                    video.playbackRate = rate;
+                    speedBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
