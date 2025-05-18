@@ -2166,10 +2166,10 @@
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/82.mp4"]
               },
               {
-                "name": "Add 9 more cards to your phonogram flash cards. Make cards for tch, ph, rh, gh, gn, kn, wr, dg, and aigh.",
+                "name": "Make phonogram flashcards for tch, ph, rh, gh, gn, kn, wr, dg, and aigh",
                 "type": "Assignment",
-                "description": "Copy the cards in the Phonogram Review Video starting at the 5:04 timestamp.",
-                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/82.mp4"]
+                "description": "Copy the phonogram flashcards in the linked file below to make your next 9 phonogram flashcards.",
+                "links": ["https://archive.org/details/9-more-phonograms"]
               }
             ]
           },
