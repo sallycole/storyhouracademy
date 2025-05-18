@@ -1869,7 +1869,7 @@
             ]
           },
           {
-            "title": "Mastery Tests of Syllable Types",
+            "title": "Mastery Test of Syllable Types",
             "activities": [
               {
                 "name": "Mastery test of syllable types",
@@ -1919,7 +1919,7 @@
                 "name": "Mastery Test of 60 Phonograms",
                 "type": "Mastery Check",
                 "description": "Take the mastery test as a pretest and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz9.html"]
+                "links": ["pretest-9.html"]
               }
             ]
           },
