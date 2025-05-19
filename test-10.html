@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Free, self-paced reading and handwriting lessons for young learners">
-    <title>Story Hour Academy - Master Test of 60 Phonograms</title>
+    <title>Story Hour Academy - Mastery Test of 75 Phonograms</title>
     
     <!-- Styles and Scripts -->
     <link rel="stylesheet" href="/css/fonts.css?v=1">
@@ -16,7 +16,7 @@
 
     <main class="container">
         <div class="page-header">
-            <h1 class="title">Mastery Test of 60 Phonograms</h1>
+            <h1 class="title">Mastery Test of 75 Phonograms</h1>
             <p id="test-description" class="unit-description">Play the test directions and then click the "Start Test" button to start the test.</p>
         </div>
 
@@ -78,7 +78,7 @@
         </div>
 
         <nav class="lesson-navigation" aria-label="Lesson navigation">
-            <a href="lesson-94.html" class="nav-button prev">Return to Lesson</a>
+            <a href="lesson-82.html" class="nav-button prev">Return to Lesson</a>
             <a href="#" class="nav-button next" style="visibility: hidden">Next Lesson</a>
         </nav>
     </main>
@@ -91,6 +91,7 @@
             'ai/ay\neigh\naigh',
             'ar',
             'au\naw',
+            'augh',
             'b',
             'c',
             'ch',
@@ -98,14 +99,22 @@
             'd',
             'dg\nj',
             'e',
+            'ea',
             'ear',
+            'eau',
             'ee',
+            'ei',
             'er\nir\nur',
+            'eur',
+            'ew\neu',
+            'ey',
             'f\nph',
             'g',
             'gh',
+            'gu',
             'h',
             'i',
+            'ie',
             'igh',
             'l',
             'm',
@@ -113,9 +122,14 @@
             'ng',
             'o',
             'oa',
+            'oe',
             'oi\noy',
+            'oo',
             'or',
+            'ou',
+            'ough',
             'our',
+            'ow',
             'p',
             'qu',
             'r\nwr\nrh',
@@ -144,6 +158,7 @@
             'f',
             'g',
             'gh',
+            'gu',
             'h',
             'j',
             'l',
@@ -169,6 +184,7 @@
             'ear3',
             'longe',
             'erirur',
+            'eur',
             'longi',
             'longo',
             'oioy',
@@ -181,7 +197,19 @@
             'i',
             'o',
             'u',
-            'y'
+            'y',
+            'ea',
+            'ei',
+            'ey',
+            'ie',
+            'oe',
+            'ou',
+            'ow',
+            'oo',
+            'ew',
+            'augh',
+            'ough',
+            'eau'
         ];
 
         const soundToPhonogram = {
@@ -217,9 +245,6 @@
             'y': 'y',
             'z': 'z',
             'ch': 'ch',
-            'sh': 'sh',
-            'th': 'th',
-            'ng': 'ng',
             'longa': 'ai/ay/eigh/aigh',
             'longe': 'ee',
             'longi': 'igh',
@@ -232,7 +257,22 @@
             'or': 'or',
             'wor': 'wor',
             'ear3': 'ear',
-            'our2': 'our'
+            'our2': 'our',
+            'gu': 'gu',
+            'oe': 'oe',
+            'ou': 'ou',
+            'ow': 'ow',
+            'oo': 'oo',
+            'ew': 'ew/eu',
+            'eur': 'eur',
+            'ea': 'ea',
+            'eau': 'eau',
+            'ei': 'ei',
+            'ey': 'ey',
+            'ie': 'ie',
+            'augh': 'augh',
+            'ough': 'ough',
+            'tch': 'tch'
         };
 
         const phonogramToSound = {
@@ -281,9 +321,21 @@
             'wor': 'wor',
             'a': 'a',
             'e': 'e',
-            'i': 'i',
-            'o': 'o',
-            'u': 'u',
+            'gu': 'gu',
+            'oe': 'oe',
+            'ou': 'ou',
+            'ow': 'ow',
+            'oo': 'oo',
+            'ew\neu': 'ew',
+            'eur': 'eur',
+            'ea': 'ea',
+            'eau': 'eau',
+            'ei': 'ei',
+            'ey': 'ey',
+            'ie': 'ie',
+            'augh': 'augh',
+            'ough': 'ough',
+            'tch': 'tch',
             'y': 'y'
         };
 
@@ -299,6 +351,7 @@
             'gh': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/gh.mp3',
             'h': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/h.mp3',
             'i': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/i.mp3',
+            'j': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/j.mp3',
             'l': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/l.mp3',
             'm': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/m.mp3',
             'n': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/n.mp3',
@@ -332,7 +385,21 @@
             'or': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/orsound.mp3',
             'wor': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/worsound.mp3',
             'ear3': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/ear3sounds.mp3',
-            'our2': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/our2sounds.mp3'
+            'our2': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/sounds/our2sounds.mp3',
+            'gu': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/gu.mp3',
+            'oe': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/oe.mp3',
+            'ou': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ou.mp3',
+            'ow': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ow.mp3',
+            'oo': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/oo.mp3',
+            'ew': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ew.mp3',
+            'eur': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/eur.mp3',
+            'ea': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ea.mp3',
+            'eau': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/eau.mp3',
+            'ei': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ei.mp3',
+            'ey': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ey.mp3',
+            'ie': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ie.mp3',
+            'augh': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/augh.mp3',
+            'ough': 'https://storyhouracademy.s3.us-east-1.amazonaws.com/ough.mp3'
         };
 
         let remainingSounds = [];
@@ -517,11 +584,11 @@
         // Function to show final results
         function showFinalResults() {
             showScreen('resultsScreen');
-            const correct = results.filter(r => r.correct).length;
+            const correctCount = results.filter(r => r.correct).length;
             const resultsContent = document.getElementById('resultsContent');
             
             let resultsHTML = `
-                <p class="final-score">Final Score: ${correct}/${allSounds.length}</p>
+                <p class="final-score">Final Score: ${correctCount}/${allSounds.length}</p>
                 <div class="results-list">
             `;
             
@@ -530,14 +597,14 @@
             const incorrectResults = results.filter(r => !r.correct);
             
             // Define phonograms that have multiple sounds
-            const multiSoundPhonograms = ['x', 'c', 'th', 'ch', 'u', 'e', 'g', 'ear', 'a', 's', 'i', 'o', 'wh', 'y', 'our'];
+            const multiSoundPhonograms = ['x', 'c', 'th', 'ch', 'u', 'e', 'g', 'ear', 'a', 's', 'i', 'o', 'wh', 'y', 'our', 'gu', 'oe', 'ou', 'ow', 'oo', 'ew\neu', 'ea', 'eau', 'ei', 'ey', 'ie', 'augh', 'ough'];
             
             // Add correct answers section
             if (correctResults.length > 0) {
                 resultsHTML += `<h3>Correct Answers</h3>`;
                 
                 correctResults.forEach(result => {
-                    let displaySound = soundToPhonogram[result.sound];
+                    let displaySound = soundToPhonogram[result.sound] || result.sound;
                     if (result.sound === 'tch') displaySound = 'tch';
                     
                     let displaySelected = result.selected.includes('\n') ? 
@@ -565,7 +632,7 @@
                 resultsHTML += `<h3>Sounds that Need Practice</h3>`;
                 
                 incorrectResults.forEach(result => {
-                    let displaySound = soundToPhonogram[result.sound];
+                    let displaySound = soundToPhonogram[result.sound] || result.sound;
                     if (result.sound === 'tch') displaySound = 'tch';
                     
                     let displaySelected = result.selected.includes('\n') ? 
