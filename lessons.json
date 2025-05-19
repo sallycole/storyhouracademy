@@ -2196,7 +2196,7 @@
                 "name": "Mastery Test of 75 Phonograms",
                 "type": "Mastery Check",
                 "description": "Take the mastery test as a pretest and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz10.html"]
+                "links": ["pretest-10.html"]
               }
             ]
           },
@@ -2230,7 +2230,7 @@
                 "name": "Add a card for the gu phonogram to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the gu phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in “Good-Children Street” by Eugene Field from “Lullaby Land.\"",
@@ -2259,7 +2259,7 @@
                 "name": "Add a card for the oe phonogram to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the oe phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in \"The Tiptoes\" by Miriam Clark Potter from \"Rhymes of a Child's World\"",
@@ -2288,7 +2288,7 @@
                 "name": "Add a card for the ou phonogram to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ou phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in \"The Wind\" by Robert Louis Stevenson from \"Happy Hour Stories\"",
@@ -2317,7 +2317,7 @@
                 "name": "Add a card for the ow phonogram to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ow phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in \"One Afternoon\" by Laura E. Richards from \"Five Minute Stories\"",
@@ -2346,7 +2346,7 @@
                 "name": "Add a card for the oo phonogram to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the oo phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in \"The Heart of Oak Books - First Book\"",
@@ -2375,7 +2375,7 @@
                 "name": "Add a card for the ew phonogram to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ew phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in \"The Dove and the Ant\" by Eulalie Osgood Grover from \"The Folk-Lore Readers\"",
@@ -2404,7 +2404,7 @@
                 "name": "Add a card for eu and a card for eur to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the eu phonogram and a card for the eur phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Look for words you can read in \"The Little Mother Goose\" by Jessie Wilcox Smith or in \"The Little Wreath of Stories and Poems for Children\" by Caroline Gilman.",
@@ -2436,7 +2436,7 @@
                 "name": "Add a card for ea to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ea phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Read as many pages from \"As the Goose Flies\" by Katharine Pyle as you can.",
@@ -2465,7 +2465,7 @@
                 "name": "Add a card for eau to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the eau phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Read \"The Boy in Trouble About His Hat\" by Caroline Howard Gilman from \"A Gift Book of Stories and Poems for Children\"",
@@ -2494,7 +2494,7 @@
                 "name": "Add a card for ei to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ei phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Read as many poems as you can from \"Poems My Children Love Best of All\"",
@@ -2523,7 +2523,7 @@
                 "name": "Add a card for ey to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ey phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Read “Over in the Meadow” by Olive A. Wadsworth from “In the Nursery of My Bookhouse”",
@@ -2581,7 +2581,7 @@
                 "name": "Add a card for augh to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the augh phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Read as many pages as you can from \"In the Days of Giants\" by Abbie Farwell Brown",
@@ -2610,7 +2610,7 @@
                 "name": "Add a card for ough to your deck of phonogram cards",
                 "type": "Assignment",
                 "description": "Add a card for the ough phonogram to your deck of phonogram cards.",
-                "links": []
+                "links": ["https://archive.org/details/15-more-phonograms"]
               },
               {
                 "name": "Study the poem “I Take it You Already Know\" and then try to write your own poem using all 6 sounds of ough",
@@ -2626,13 +2626,7 @@
               {
                 "name": "Phonogram Review Video",
                 "type": "Video",
-                "description": "",
-                "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/101.mp4"]
-              },
-              {
-                "name": "Check that you have made 75 phonogram cards, one for each phonogram that we've studied.",
-                "type": "Assignment",
-                "description": "Sort your phonogram cards in the same order as in the Phonogram Review Video. Make sure you have all 75 phonogram cards.",
+                "description": "As you watch the video, sort your phonogram cards in the same order as in the video.",
                 "links": ["https://storyhouracademy.s3.us-east-1.amazonaws.com/101.mp4"]
               }
             ]
@@ -2644,7 +2638,7 @@
                 "name": "Mastery Test of 75 Phonograms",
                 "type": "Mastery Check",
                 "description": "Take the mastery test and show your teacher the results.",
-                "links": ["https://sallycole.github.io/storyhouracademy/quiz10.html"]
+                "links": ["test-10.html"]
               }
             ]
           }
