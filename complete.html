@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Congratulations on completing the Story Hour Academy curriculum!">
+    <meta name="robots" content="noindex">
+    <title>Story Hour Academy - Curriculum Completion</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    <style>
+        .completion-card {
+            display: flex;
+            margin-bottom: 2rem;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            flex-direction: row-reverse;
+        }
+        .completion-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .card-image {
+            flex: 0 0 200px;
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-content {
+            flex: 1;
+            padding: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .completion-card {
+                flex-direction: column;
+            }
+            .card-image {
+                width: 100%;
+                flex: 0 0 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">CONGRATULATIONS</h1>
+            <p class="unit-description">You have completed the Story Hour Academy curriculum!</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+            <!-- First Card - Image on right -->
+            <a href="https://www.google.com/maps/search/library+near+me/" class="completion-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-image">
+                    <img src="assets/images/library-image.png" alt="Child reading in a library">
+                </div>
+                <div class="card-content">
+                    <h2 style="font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--primary);">Your Next Adventure: The Library</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                        As a reward for your hard work and dedication, we encourage you to visit your local public library and check out books that interest you.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Second Card - Image on right -->
+            <a href="https://archive.org/search?query=subject%3A%22Juvenile+literature%22&sort=-downloads&and%5B%5D=year%3A%5B1880+TO+1929%5D" class="completion-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-image">
+                    <img src="assets/images/archive-image.png" alt="Copyright free books at archive.org">
+                </div>
+                <div class="card-content">
+                    <h2 style="font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--primary);">Read at Archive.org</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                        Archive.org has thousands of free books that you can read online. Copyright books may be borrowed online and older books in the public domain may be read without borrowing.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Third Card - Image on right -->
+            <a href="https://www.ixl.com/" class="completion-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-image">
+                    <img src="assets/images/ixl.png" alt="Child reading in a library">
+                </div>
+                <div class="card-content">
+                    <h2 style="font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--primary);">Consider an IXL Subscription</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                        Now that your reading skills are launched, consider an IXL subscription to further your education. My son uses IXL to study at this own pace, which is why I'm recommending it here.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Fourth Card - Image on right -->
+            <a href="https://www.turtlediary.com/" class="completion-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-image">
+                    <img src="assets/images/turtlediary.png" alt="Child reading in a library">
+                </div>
+                <div class="card-content">
+                    <h2 style="font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--primary);">Study at Turtle Diary</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                        As an alternative to IXL, study English Language Arts online at Turtle Diary for free. Just visit the site, sign up, and choose your grade level to get started.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html> 
