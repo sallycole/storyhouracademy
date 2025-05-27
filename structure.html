@@ -24,6 +24,11 @@
             background-color: white;
             border-radius: 12px;
             box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .unit-overview-header {
+            margin-bottom: var(--space-lg);
         }
         
         .unit-overview h2 {
@@ -33,6 +38,13 @@
             border-bottom: 1px solid var(--border);
             font-size: 1.75rem;
             letter-spacing: -0.01em;
+        }
+        
+        .unit-description-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-lg);
         }
         
         .unit-description {
@@ -67,8 +79,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: var(--space-md);
-            margin-bottom: var(--space-xl);
-            margin-top: var(--space-md);
+            margin-top: var(--space-lg);
+            margin-bottom: 0;
         }
         
         .lesson-block {
@@ -136,23 +148,29 @@
         }
         
         .unit-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--secondary);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: var(--space-lg);
-            transition: background-color 0.3s;
-            border: 2px solid var(--secondary);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            border: none;
             box-sizing: border-box;
+            min-width: 120px;
+            font-size: 0.95rem;
+            position: absolute;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
         }
         
         .unit-link:hover {
             background-color: var(--secondary-light);
-            color: white;
-            border-color: var(--secondary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
         /* Hero Section styles from homepage */
@@ -202,6 +220,26 @@
             border-color: var(--secondary-light);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .unit-description-wrapper {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            
+            .unit-link {
+                position: static;
+                display: block;
+                width: 100%;
+                margin-top: var(--space-md);
+                text-align: center;
+            }
+            
+            .lesson-grid {
+                padding-bottom: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -216,8 +254,10 @@
         <div class="structure-container">
             <!-- Unit 1 -->
             <div class="unit-overview">
-                <h2>Unit 1: Single-Sound Consonant Letters</h2>
-                <p class="unit-description">Unit 1 teaches sixteen single-sound consonant letters (b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z) and their corresponding sounds. Starting with consonants provides a solid foundation for beginning readers as these letters typically represent one consistent sound.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 1: Single-Sound Consonant Letters</h2>
+                    <p class="unit-description">Unit 1 teaches sixteen single-sound consonant letters (b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z) and their corresponding sounds. Starting with consonants provides a solid foundation for beginning readers as these letters typically represent one consistent sound.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -342,14 +382,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-1.html" class="unit-link">Go to Unit 1</a>
             </div>
             
             <!-- Unit 2 -->
             <div class="unit-overview">
-                <h2>Unit 2: Consonant Digraphs</h2>
-                <p class="unit-description">Unit 2 teaches six consonant digraphs (ck, ch, ng, sh, th, wh) which are pairs of letters that represent a single sound. After learning single-sound consonants, students are ready to learn consonant letter combinations that create unique sounds not represented by individual letters.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 2: Consonant Digraphs</h2>
+                    <p class="unit-description">Unit 2 teaches six consonant digraphs (ck, ch, ng, sh, th, wh) which are pairs of letters that represent a single sound. This gets students comfortable with the idea that two letters can work together to represent one sound even before they begin blending sounds together into words.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -414,14 +455,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-2.html" class="unit-link">Go to Unit 2</a>
             </div>
             
             <!-- Unit 3 -->
             <div class="unit-overview">
-                <h2>Unit 3: Multi-Letter Vowel Phonograms</h2>
-                <p class="unit-description">Unit 3 teaches nineteen multi-letter vowel phonograms (ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, ar, or, wor, ear, our) and their sounds. Learning these common vowel teams helps students decode many frequently used words and introduces the concept that multiple letters can work together to create vowel sounds.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 3: Multi-Letter Vowel Phonograms</h2>
+                    <p class="unit-description">Unit 3 teaches nineteen multi-letter vowel phonograms (ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, ar, or, wor, ear, our). All but two of these vowel phonograms were chosen for their 1:1 correspondence between symbol and sound. Students begin blending sounds into words in these lessons.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -558,14 +600,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-3.html" class="unit-link">Go to Unit 3</a>
             </div>
             
             <!-- Unit 4 -->
             <div class="unit-overview">
-                <h2>Unit 4: Vowel Letters and the Sounds They Represent</h2>
-                <p class="unit-description">Unit 4 teaches six vowel letters (a, e, i, o, u, y) and the multiple sounds each letter can represent in different words. Understanding that individual vowel letters can make multiple sounds is essential for decoding unfamiliar words and improving reading fluency.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 4: Vowel Letters and the Sounds They Represent</h2>
+                    <p class="unit-description">Unit 4 teaches six vowel letters (a, e, i, o, u, y) and the multiple sounds each letter can represent in different words. Understanding that individual vowel letters can make multiple sounds is essential for decoding unfamiliar words and improving reading fluency.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -630,14 +673,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-4.html" class="unit-link">Go to Unit 4</a>
             </div>
             
             <!-- Unit 5 -->
             <div class="unit-overview">
-                <h2>Unit 5: Multi-Sound Consonant Letters</h2>
-                <p class="unit-description">Unit 5 teaches four multi-sound consonant letters (c, g, s, x) and the different sounds each letter can make depending on context. Learning the rules for when consonants make different sounds helps students decode unfamiliar words with greater accuracy and confidence.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 5: Multi-Sound Consonant Letters</h2>
+                    <p class="unit-description">Unit 5 teaches four multi-sound consonant letters (c, g, s, x) and the different sounds each letter can make depending on context. Learning the rules for when consonants make different sounds helps students decode unfamiliar words with greater accuracy and confidence.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -690,14 +734,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-5.html" class="unit-link">Go to Unit 5</a>
             </div>
             
             <!-- Unit 6 -->
             <div class="unit-overview">
-                <h2>Unit 6: Syllable Types</h2>
-                <p class="unit-description">Unit 6 teaches the six syllable types: closed, open, consonant-le, r-controlled, vowel-consonant-e, and vowel team syllables. Understanding syllable types is critical for decoding multi-syllable words and helps students apply phonics knowledge to longer, more complex words.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 6: Syllable Types</h2>
+                    <p class="unit-description">Unit 6 teaches the six syllable types: closed, open, consonant-le, r-controlled, vowel-consonant-e, and vowel team syllables. Understanding syllable types is critical for decoding multi-syllable words and helps students apply phonics knowledge to longer, more complex words.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -762,14 +807,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-6.html" class="unit-link">Go to Unit 6</a>
             </div>
             
             <!-- Unit 7 -->
             <div class="unit-overview">
-                <h2>Unit 7: The Schwa Sound</h2>
-                <p class="unit-description">Unit 7 teaches about the schwa sound, which is the most common vowel sound in English, and how to identify it in words. Understanding the schwa sound helps students decode and spell words with unstressed syllables, which is crucial for reading and writing fluency.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 7: The Schwa Sound</h2>
+                    <p class="unit-description">Unit 7 teaches about the schwa sound, which is the most common vowel sound in English, and how to identify it in words. Understanding the schwa sound helps students decode and spell words with unstressed syllables, which is crucial for reading and writing fluency.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -780,14 +826,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-7.html" class="unit-link">Go to Unit 7</a>
             </div>
             
             <!-- Unit 8 -->
             <div class="unit-overview">
-                <h2>Unit 8: More Single-Sound Phonograms</h2>
-                <p class="unit-description">Unit 8 teaches nine more single-sound phonograms (tch, ph, rh, gh, gn, kn, wr, dg, aigh) that are less common but important for reading. Learning these additional phonograms expands students' decoding abilities and helps them read words with less common spelling patterns.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 8: More Single-Sound Phonograms</h2>
+                    <p class="unit-description">Unit 8 teaches nine more single-sound phonograms (tch, ph, rh, gh, gn, kn, wr, dg, aigh) that are less common but important for reading. Learning these additional phonograms expands students' decoding abilities and helps them read words with less common spelling patterns.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -870,14 +917,15 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-8.html" class="unit-link">Go to Unit 8</a>
             </div>
             
             <!-- Unit 9 -->
             <div class="unit-overview">
-                <h2>Unit 9: More Multi-Sound Phonograms</h2>
-                <p class="unit-description">Unit 9 teaches fifteen more multi-sound phonograms (gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei, ey, ie, augh, ough) to complete the curriculum. Mastering these final phonograms gives students the tools to decode almost any word they encounter and completes their foundational reading education.</p>
+                <div class="unit-overview-header">
+                    <h2>Unit 9: More Multi-Sound Phonograms</h2>
+                    <p class="unit-description">Unit 9 teaches fifteen more multi-sound phonograms (gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei, ey, ie, augh, ough) to complete the curriculum. Mastering these final phonograms gives students the tools to decode almost any word they encounter and completes their foundational reading education.</p>
+                </div>
                 
                 <h3>Lessons in this Unit:</h3>
                 <div class="lesson-grid">
@@ -996,20 +1044,19 @@
                         </a>
                     </div>
                 </div>
-                
                 <a href="unit-9.html" class="unit-link">Go to Unit 9</a>
             </div>
         </div>
-        
-        <!-- Call to Action Section from homepage -->
-        <section class="hero-section" style="margin-bottom: 0;">
-            <div class="hero-content">
-                <h2 class="hero-title" style="font-size: 2rem;">Ready to Begin?</h2>
-                <p class="hero-subtitle">Start your reading journey today with our proven curriculum. It's completely free and accessible anytime.</p>
-                <a href="unit-1.html" class="cta-button">Start with Unit 1</a>
-            </div>
-        </section>
     </main>
+    
+    <!-- Call to Action Section from homepage -->
+    <section class="hero-section" style="margin-bottom: 0;">
+        <div class="hero-content">
+            <h2 class="hero-title" style="font-size: 2rem;">Ready to Begin?</h2>
+            <p class="hero-subtitle">Start your reading journey today with our proven curriculum. It's completely free and accessible anytime.</p>
+            <a href="unit-1.html" class="cta-button">Start with Unit 1</a>
+        </div>
+    </section>
 
     <div id="footer"></div>
 
