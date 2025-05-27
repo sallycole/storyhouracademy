@@ -7,9 +7,10 @@
     <title>Story Hour Academy - Free Reading Curriculum</title>
     
     <!-- Styles and Scripts -->
-    <link rel="stylesheet" href="/css/fonts.css?v=1">
-    <link rel="stylesheet" href="/css/styles.css?v=1">
-    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="css/fonts.css?v=1">
+    <link rel="stylesheet" href="css/styles.css?v=1">
+    <script src="js/script.js" defer></script>
+    <!-- 
     <style>
         .hero-section {
             padding: 3rem 0;
@@ -213,6 +214,185 @@
             }
         }
     </style>
+    -->
+    <!-- Additional CSS for homepage classes that aren't in the external stylesheets -->
+    <style>
+        /* Homepage-specific styles */
+        .hero-section {
+            padding: 3rem 0;
+            background-color: var(--surface);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: var(--space-xl);
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+            border: 2px solid var(--secondary);
+            box-sizing: border-box;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-light);
+            color: white;
+            border-color: var(--secondary-light);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button.secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: var(--light-bg);
+            color: var(--primary);
+        }
+        
+        .feature-section {
+            padding: 2rem 0 4rem 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: var(--space-xl);
+        }
+        
+        /* Feature image styles */
+        .feature-image {
+            padding-top: 75%; /* 4:3 aspect ratio (3/4 = 0.75 or 75%) */
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+            width: 100%;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .feature-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-image img {
+            transform: scale(1.05);
+        }
+        
+        .feature-content {
+            padding: var(--space-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+        }
+        
+        .feature-description {
+            flex-grow: 1;
+            margin-bottom: var(--space-md);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+        
+        /* Remove testimonial styles since the section was removed */
+        /* .testimonial-section {
+            background-color: var(--surface);
+            padding: 4rem 0;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: var(--space-xl);
+            box-shadow: var(--shadow);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        } */
+        
+        /* Feature card layout improvements */
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
@@ -221,10 +401,10 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">Story Hour Academy</h1>
-                <p class="hero-subtitle">A comprehensive, free reading curriculum designed to help children master reading with confidence. Our step-by-step approach includes pretests, engaging exercises, word-level reading, classic literature, and mastery checks.</p>
+                <h1 class="hero-title">Teach Your Child to Read</h1>
+                <p class="hero-subtitle">Our comprehensive, free reading curriculum helps students master beginning reading skills in 112 online lessons. Our step-by-step approach includes pretests, engaging exercises, decodable reading, classic literature, and mastery checks.</p>
                 <div>
-                    <a href="unit-1.html" class="cta-button">Start Learning</a>
+                    <a href="unit-1.html" class="cta-button">Start Here</a>
                 </div>
             </div>
         </section>
@@ -235,83 +415,68 @@
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-image">
-                        <img src="assets/images/image.png" alt="Student taking a pretest">
+                        <img src="assets/images/home/systematic-instruction-home.png" alt="Step-by-step curriculum structure">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Systematic Instruction</h3>
+                        <p class="feature-description">Our carefully structured and fully transparent sequence of lessons teaches students the decoding skills they need to begin reading independently.</p>
+                        <a href="unit-9.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; box-sizing: border-box;">See Structure</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="assets/images/home/pretests-home.png" alt="Student taking a pretest">
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Pretests</h3>
-                        <p class="feature-description">Each unit begins with a pretest. Immediate and clear feedback shows each student what knowledge they already have and what they stillneed to learn.</p>
-                        <a href="lesson-1.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">See Example</a>
+                        <p class="feature-description">Each unit begins with a pretest that provides immediate feedback, which students can use to determine which lessons in the unit to skip and which to study.</p>
+                        <a href="lesson-1.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; box-sizing: border-box;">See Example</a>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-image">
-                        <img src="assets/images/image.png" alt="Interactive online exercises">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Interactive Exercises</h3>
-                        <p class="feature-description">Engaging online activities reinforce learning through practice. Our interactive exercises reinforce the concepts that students are learning.</p>
-                        <a href="video-3.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Try Activities</a>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-image">
-                        <img src="assets/images/image.png" alt="Word-level reading practice">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Word-Level Reading Materials</h3>
-                        <p class="feature-description">Lessons include materials where students can practice read words with only the phonograms that students have been taught.</p>
-                        <a href="lesson-13.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-image">
-                        <img src="assets/images/image.png" alt="Classic literature selections">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Literature Selections</h3>
-                        <p class="feature-description">Enjoy carefully chosen classic literature. In early lessons, students will ask for stories and poems to be read aloud to them. As students progress, they will be able to read the stories and poems themselves.</p>
-                        <a href="lesson-3.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Browse Books</a>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-image">
-                        <img src="assets/images/image.png" alt="Mastery checks and tests">
+                        <img src="assets/images/home/mastery-checks-home.png" alt="Mastery checks and tests">
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Mastery Checks</h3>
                         <p class="feature-description">A mastery check at the end of each unit ensures that students are mastering beginning reading knowledge before moving on. These checks provide clear evidence of progress.</p>
-                        <a href="lesson-20.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">View Tests</a>
+                        <a href="lesson-20.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; box-sizing: border-box;">View Tests</a>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-image">
-                        <img src="assets/images/image.png" alt="Step-by-step curriculum structure">
+                        <img src="assets/images/home/interactive-exercises-home.png" alt="Interactive online exercises">
                     </div>
                     <div class="feature-content">
-                        <h3 class="feature-title">Systematic Instruction</h3>
-                        <p class="feature-description">Our carefully structured sequence of lessons builds the decoding skills that are critical for reading independently.</p>
-                        <a href="unit-9.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">See Structure</a>
+                        <h3 class="feature-title">Interactive Exercises</h3>
+                        <p class="feature-description">Engaging online activities reinforce learning through practice. Our interactive exercises reinforce the concepts that students are learning.</p>
+                        <a href="video-3.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; box-sizing: border-box;">Try Activities</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Testimonial Section -->
-        <section class="testimonial-section">
-            <h2 class="section-title">What Parents & Teachers Say</h2>
-            <div class="testimonial-container">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Story Hour Academy transformed my daughter's relationship with reading. The structured approach and engaging activities kept her motivated, and the mastery checks gave us confidence that she was truly learning. Now she reads independently every day!"</p>
-                    <p class="testimonial-author">— Sarah, Parent</p>
+                
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="assets/images/home/decodable-reading-materials-home.png" alt="Word-level reading practice">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Decodable Reading Material</h3>
+                        <p class="feature-description">Lessons include materials where students can practice reading words with only the phonograms that students have been taught.</p>
+                        <a href="lesson-13.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; box-sizing: border-box;">Learn More</a>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"As a homeschool teacher, I've tried many reading curricula, but Story Hour Academy stands out for its comprehensive approach and quality literature selections. The pretests and mastery checks make it easy to track progress and ensure nothing is missed."</p>
-                    <p class="testimonial-author">— Michael, Homeschool Educator</p>
+                
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="assets/images/home/literature-selections-home.png" alt="Classic literature selections">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Literature Selections</h3>
+                        <p class="feature-description">Enjoy carefully chosen classic literature. In early lessons, students will need to be read to. Soon, they will be reading the selections on their own.</p>
+                        <a href="lesson-3.html" class="cta-button secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; box-sizing: border-box;">Browse Books</a>
+                    </div>
                 </div>
             </div>
         </section>
