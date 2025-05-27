@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Overview of Story Hour Academy's reading curriculum structure, including unit descriptions, rationales, and lesson lists.">
+    <title>Story Hour Academy - Curriculum Structure</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    
+    <style>
+        .structure-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .unit-overview {
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl);
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .unit-overview h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--border);
+            font-size: 1.75rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .unit-description {
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        
+        .unit-overview h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .unit-overview h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+            opacity: 0.3;
+        }
+        
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            margin-top: var(--space-md);
+        }
+        
+        .lesson-block {
+            background-color: var(--surface);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .lesson-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-color: rgba(0,0,0,0.08);
+        }
+        
+        .lesson-block a {
+            display: flex;
+            flex-direction: column;
+            color: var(--text);
+            text-decoration: none;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        
+        .lesson-content {
+            padding: var(--space-md);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            min-height: 80px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+            background-image: linear-gradient(to bottom, #ffffff, #f8f9fa);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .lesson-label {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.4rem;
+            text-align: center;
+            font-weight: 400;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .lesson-block a:hover .lesson-content {
+            color: var(--primary);
+            background-image: linear-gradient(to bottom, #f8f9fa, #f0f2f5);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: var(--space-xl) 0;
+        }
+        
+        .unit-link {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: var(--space-lg);
+            transition: background-color 0.3s;
+            border: 2px solid var(--secondary);
+            box-sizing: border-box;
+        }
+        
+        .unit-link:hover {
+            background-color: var(--secondary-light);
+            color: white;
+            border-color: var(--secondary-light);
+        }
+        
+        /* Hero Section styles from homepage */
+        .hero-section {
+            padding: 3rem 0;
+            background-color: var(--surface);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: var(--space-xl);
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+            border: 2px solid var(--secondary);
+            box-sizing: border-box;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-light);
+            color: white;
+            border-color: var(--secondary-light);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">Curriculum Structure</h1>
+            <p class="unit-description">An overview of our complete reading curriculum with unit descriptions, rationales,<br>and lesson lists.</p>
+        </div>
+        
+        <div class="structure-container">
+            <!-- Unit 1 -->
+            <div class="unit-overview">
+                <h2>Unit 1: Single-Sound Consonant Letters</h2>
+                <p class="unit-description">Unit 1 teaches sixteen single-sound consonant letters (b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z) and their corresponding sounds. Starting with consonants provides a solid foundation for beginning readers as these letters typically represent one consistent sound.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-1.html">
+                            <div class="lesson-content">Single-Sound Consonants Pretest</div>
+                            <div class="lesson-label">Lesson 1</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-2.html">
+                            <div class="lesson-content">Introduction to Single-Sound Consonants</div>
+                            <div class="lesson-label">Lesson 2</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-3.html">
+                            <div class="lesson-content">Letter b</div>
+                            <div class="lesson-label">Lesson 3</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-4.html">
+                            <div class="lesson-content">Letter d</div>
+                            <div class="lesson-label">Lesson 4</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-5.html">
+                            <div class="lesson-content">Letter f</div>
+                            <div class="lesson-label">Lesson 5</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-6.html">
+                            <div class="lesson-content">Letter h</div>
+                            <div class="lesson-label">Lesson 6</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-7.html">
+                            <div class="lesson-content">Letter j</div>
+                            <div class="lesson-label">Lesson 7</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-8.html">
+                            <div class="lesson-content">Letter k</div>
+                            <div class="lesson-label">Lesson 8</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-9.html">
+                            <div class="lesson-content">Letter l</div>
+                            <div class="lesson-label">Lesson 9</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-10.html">
+                            <div class="lesson-content">Letter m</div>
+                            <div class="lesson-label">Lesson 10</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-11.html">
+                            <div class="lesson-content">Letter n</div>
+                            <div class="lesson-label">Lesson 11</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-12.html">
+                            <div class="lesson-content">Letter p</div>
+                            <div class="lesson-label">Lesson 12</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-13.html">
+                            <div class="lesson-content">Phonogram qu</div>
+                            <div class="lesson-label">Lesson 13</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-14.html">
+                            <div class="lesson-content">Letter r</div>
+                            <div class="lesson-label">Lesson 14</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-15.html">
+                            <div class="lesson-content">Letter t</div>
+                            <div class="lesson-label">Lesson 15</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-16.html">
+                            <div class="lesson-content">Letter v</div>
+                            <div class="lesson-label">Lesson 16</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-17.html">
+                            <div class="lesson-content">Letter w</div>
+                            <div class="lesson-label">Lesson 17</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-18.html">
+                            <div class="lesson-content">Letter z</div>
+                            <div class="lesson-label">Lesson 18</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-19.html">
+                            <div class="lesson-content">Review of Single-Sound Consonants</div>
+                            <div class="lesson-label">Lesson 19</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-20.html">
+                            <div class="lesson-content">Single-Sound Consonants Mastery Tests</div>
+                            <div class="lesson-label">Lesson 20</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-1.html" class="unit-link">Go to Unit 1</a>
+            </div>
+            
+            <!-- Unit 2 -->
+            <div class="unit-overview">
+                <h2>Unit 2: Consonant Digraphs</h2>
+                <p class="unit-description">Unit 2 teaches six consonant digraphs (ck, ch, ng, sh, th, wh) which are pairs of letters that represent a single sound. After learning single-sound consonants, students are ready to learn consonant letter combinations that create unique sounds not represented by individual letters.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-21.html">
+                            <div class="lesson-content">Consonant Digraphs Pretest</div>
+                            <div class="lesson-label">Lesson 21</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-22.html">
+                            <div class="lesson-content">Introduction to Consonant Digraphs</div>
+                            <div class="lesson-label">Lesson 22</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-23.html">
+                            <div class="lesson-content">Phonogram ck</div>
+                            <div class="lesson-label">Lesson 23</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-24.html">
+                            <div class="lesson-content">Phonogram ch</div>
+                            <div class="lesson-label">Lesson 24</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-25.html">
+                            <div class="lesson-content">Phonogram ng</div>
+                            <div class="lesson-label">Lesson 25</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-26.html">
+                            <div class="lesson-content">Phonogram sh</div>
+                            <div class="lesson-label">Lesson 26</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-27.html">
+                            <div class="lesson-content">Phonogram th</div>
+                            <div class="lesson-label">Lesson 27</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-28.html">
+                            <div class="lesson-content">Phonogram wh</div>
+                            <div class="lesson-label">Lesson 28</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-29.html">
+                            <div class="lesson-content">Review of Consonant Digraphs</div>
+                            <div class="lesson-label">Lesson 29</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-30.html">
+                            <div class="lesson-content">Consonant Digraphs Mastery Test</div>
+                            <div class="lesson-label">Lesson 30</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-2.html" class="unit-link">Go to Unit 2</a>
+            </div>
+            
+            <!-- Unit 3 -->
+            <div class="unit-overview">
+                <h2>Unit 3: Multi-Letter Vowel Phonograms</h2>
+                <p class="unit-description">Unit 3 teaches nineteen multi-letter vowel phonograms (ai, ay, eigh, ee, igh, oa, au, aw, oi, oy, ui, er, ir, ur, ar, or, wor, ear, our) and their sounds. Learning these common vowel teams helps students decode many frequently used words and introduces the concept that multiple letters can work together to create vowel sounds.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-31.html">
+                            <div class="lesson-content">Pretest of Multi-Letter Vowel Phonograms</div>
+                            <div class="lesson-label">Lesson 31</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-32.html">
+                            <div class="lesson-content">Introduction to Multi-Letter Vowel Phonograms</div>
+                            <div class="lesson-label">Lesson 32</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-33.html">
+                            <div class="lesson-content">Vowel Phonogram ai</div>
+                            <div class="lesson-label">Lesson 33</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-34.html">
+                            <div class="lesson-content">Vowel Phonogram ay</div>
+                            <div class="lesson-label">Lesson 34</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-35.html">
+                            <div class="lesson-content">Vowel Phonogram eigh</div>
+                            <div class="lesson-label">Lesson 35</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-36.html">
+                            <div class="lesson-content">Vowel Phonogram ee</div>
+                            <div class="lesson-label">Lesson 36</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-37.html">
+                            <div class="lesson-content">Vowel Phonogram igh</div>
+                            <div class="lesson-label">Lesson 37</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-38.html">
+                            <div class="lesson-content">Vowel Phonogram oa</div>
+                            <div class="lesson-label">Lesson 38</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-39.html">
+                            <div class="lesson-content">Vowel Phonogram au</div>
+                            <div class="lesson-label">Lesson 39</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-40.html">
+                            <div class="lesson-content">Vowel Phonogram aw</div>
+                            <div class="lesson-label">Lesson 40</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-41.html">
+                            <div class="lesson-content">Vowel Phonogram oi</div>
+                            <div class="lesson-label">Lesson 41</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-42.html">
+                            <div class="lesson-content">Vowel Phonogram oy</div>
+                            <div class="lesson-label">Lesson 42</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-43.html">
+                            <div class="lesson-content">Vowel Phonogram ui</div>
+                            <div class="lesson-label">Lesson 43</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-44.html">
+                            <div class="lesson-content">Vowel Phonogram er</div>
+                            <div class="lesson-label">Lesson 44</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-45.html">
+                            <div class="lesson-content">Vowel Phonogram ir</div>
+                            <div class="lesson-label">Lesson 45</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-46.html">
+                            <div class="lesson-content">Vowel Phonogram ur</div>
+                            <div class="lesson-label">Lesson 46</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-47.html">
+                            <div class="lesson-content">Vowel Phonogram ar</div>
+                            <div class="lesson-label">Lesson 47</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-48.html">
+                            <div class="lesson-content">Vowel Phonograms or and wor</div>
+                            <div class="lesson-label">Lesson 48</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-49.html">
+                            <div class="lesson-content">Vowel Phonogram ear</div>
+                            <div class="lesson-label">Lesson 49</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-50.html">
+                            <div class="lesson-content">Vowel Phonogram our</div>
+                            <div class="lesson-label">Lesson 50</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-51.html">
+                            <div class="lesson-content">Review of Multi-Letter Vowel Phonograms</div>
+                            <div class="lesson-label">Lesson 51</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-52.html">
+                            <div class="lesson-content">Mastery Test of Multi-Letter Vowel Phonograms</div>
+                            <div class="lesson-label">Lesson 52</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-3.html" class="unit-link">Go to Unit 3</a>
+            </div>
+            
+            <!-- Unit 4 -->
+            <div class="unit-overview">
+                <h2>Unit 4: Vowel Letters and the Sounds They Represent</h2>
+                <p class="unit-description">Unit 4 teaches six vowel letters (a, e, i, o, u, y) and the multiple sounds each letter can represent in different words. Understanding that individual vowel letters can make multiple sounds is essential for decoding unfamiliar words and improving reading fluency.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-53.html">
+                            <div class="lesson-content">Pretest of 25 Vowel Phonograms</div>
+                            <div class="lesson-label">Lesson 53</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-54.html">
+                            <div class="lesson-content">Introduction to Vowel Letters and the Sounds They Represent</div>
+                            <div class="lesson-label">Lesson 54</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-55.html">
+                            <div class="lesson-content">Letter a</div>
+                            <div class="lesson-label">Lesson 55</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-56.html">
+                            <div class="lesson-content">Letter e</div>
+                            <div class="lesson-label">Lesson 56</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-57.html">
+                            <div class="lesson-content">Letter i</div>
+                            <div class="lesson-label">Lesson 57</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-58.html">
+                            <div class="lesson-content">Letter o</div>
+                            <div class="lesson-label">Lesson 58</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-59.html">
+                            <div class="lesson-content">Letter u</div>
+                            <div class="lesson-label">Lesson 59</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-60.html">
+                            <div class="lesson-content">Letter y</div>
+                            <div class="lesson-label">Lesson 60</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-61.html">
+                            <div class="lesson-content">Review of Vowel Letters and the Sounds They Represent</div>
+                            <div class="lesson-label">Lesson 61</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-62.html">
+                            <div class="lesson-content">Mastery Test of 25 Vowel Phonograms</div>
+                            <div class="lesson-label">Lesson 62</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-4.html" class="unit-link">Go to Unit 4</a>
+            </div>
+            
+            <!-- Unit 5 -->
+            <div class="unit-overview">
+                <h2>Unit 5: Multi-Sound Consonant Letters</h2>
+                <p class="unit-description">Unit 5 teaches four multi-sound consonant letters (c, g, s, x) and the different sounds each letter can make depending on context. Learning the rules for when consonants make different sounds helps students decode unfamiliar words with greater accuracy and confidence.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-63.html">
+                            <div class="lesson-content">Phonics Pretests</div>
+                            <div class="lesson-label">Lesson 63</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-64.html">
+                            <div class="lesson-content">Introduction to Multi-Sound Consonant Letters</div>
+                            <div class="lesson-label">Lesson 64</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-65.html">
+                            <div class="lesson-content">Letter c</div>
+                            <div class="lesson-label">Lesson 65</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-66.html">
+                            <div class="lesson-content">Letter g</div>
+                            <div class="lesson-label">Lesson 66</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-67.html">
+                            <div class="lesson-content">Letter s</div>
+                            <div class="lesson-label">Lesson 67</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-68.html">
+                            <div class="lesson-content">Letter x</div>
+                            <div class="lesson-label">Lesson 68</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-69.html">
+                            <div class="lesson-content">Review of Alphabet Letters and the Sounds They Make</div>
+                            <div class="lesson-label">Lesson 69</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-70.html">
+                            <div class="lesson-content">Phonics Mastery Tests</div>
+                            <div class="lesson-label">Lesson 70</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-5.html" class="unit-link">Go to Unit 5</a>
+            </div>
+            
+            <!-- Unit 6 -->
+            <div class="unit-overview">
+                <h2>Unit 6: Syllable Types</h2>
+                <p class="unit-description">Unit 6 teaches the six syllable types: closed, open, consonant-le, r-controlled, vowel-consonant-e, and vowel team syllables. Understanding syllable types is critical for decoding multi-syllable words and helps students apply phonics knowledge to longer, more complex words.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-71.html">
+                            <div class="lesson-content">Syllable Types Pretest</div>
+                            <div class="lesson-label">Lesson 71</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-72.html">
+                            <div class="lesson-content">Introduction to Syllables</div>
+                            <div class="lesson-label">Lesson 72</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-73.html">
+                            <div class="lesson-content">Closed Syllables</div>
+                            <div class="lesson-label">Lesson 73</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-74.html">
+                            <div class="lesson-content">Open Syllables</div>
+                            <div class="lesson-label">Lesson 74</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-75.html">
+                            <div class="lesson-content">Consonant le Syllables</div>
+                            <div class="lesson-label">Lesson 75</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-76.html">
+                            <div class="lesson-content">R-Controlled Syllables</div>
+                            <div class="lesson-label">Lesson 76</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-77.html">
+                            <div class="lesson-content">Vowel-Consonant-E Syllables</div>
+                            <div class="lesson-label">Lesson 77</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-78.html">
+                            <div class="lesson-content">Vowel Team Syllables</div>
+                            <div class="lesson-label">Lesson 78</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-79.html">
+                            <div class="lesson-content">Review of Syllables</div>
+                            <div class="lesson-label">Lesson 79</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-80.html">
+                            <div class="lesson-content">Mastery Test of Syllable Types</div>
+                            <div class="lesson-label">Lesson 80</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-6.html" class="unit-link">Go to Unit 6</a>
+            </div>
+            
+            <!-- Unit 7 -->
+            <div class="unit-overview">
+                <h2>Unit 7: The Schwa Sound</h2>
+                <p class="unit-description">Unit 7 teaches about the schwa sound, which is the most common vowel sound in English, and how to identify it in words. Understanding the schwa sound helps students decode and spell words with unstressed syllables, which is crucial for reading and writing fluency.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-81.html">
+                            <div class="lesson-content">The Schwa Sound</div>
+                            <div class="lesson-label">Lesson 81</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-7.html" class="unit-link">Go to Unit 7</a>
+            </div>
+            
+            <!-- Unit 8 -->
+            <div class="unit-overview">
+                <h2>Unit 8: More Single-Sound Phonograms</h2>
+                <p class="unit-description">Unit 8 teaches nine more single-sound phonograms (tch, ph, rh, gh, gn, kn, wr, dg, aigh) that are less common but important for reading. Learning these additional phonograms expands students' decoding abilities and helps them read words with less common spelling patterns.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-82.html">
+                            <div class="lesson-content">Pretest of 60 Phonograms</div>
+                            <div class="lesson-label">Lesson 82</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-83.html">
+                            <div class="lesson-content">Introduction to More Single-Sound Phonograms</div>
+                            <div class="lesson-label">Lesson 83</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-84.html">
+                            <div class="lesson-content">Phonogram tch</div>
+                            <div class="lesson-label">Lesson 84</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-85.html">
+                            <div class="lesson-content">Phonogram ph</div>
+                            <div class="lesson-label">Lesson 85</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-86.html">
+                            <div class="lesson-content">Phonogram rh</div>
+                            <div class="lesson-label">Lesson 86</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-87.html">
+                            <div class="lesson-content">Phonogram gh</div>
+                            <div class="lesson-label">Lesson 87</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-88.html">
+                            <div class="lesson-content">Phonogram gn</div>
+                            <div class="lesson-label">Lesson 88</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-89.html">
+                            <div class="lesson-content">Phonogram kn</div>
+                            <div class="lesson-label">Lesson 89</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-90.html">
+                            <div class="lesson-content">Phonogram wr</div>
+                            <div class="lesson-label">Lesson 90</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-91.html">
+                            <div class="lesson-content">Phonogram dg</div>
+                            <div class="lesson-label">Lesson 91</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-92.html">
+                            <div class="lesson-content">Phonogram aigh</div>
+                            <div class="lesson-label">Lesson 92</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-93.html">
+                            <div class="lesson-content">Phonogram Review</div>
+                            <div class="lesson-label">Lesson 93</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-94.html">
+                            <div class="lesson-content">Mastery Test of 60 Phonograms</div>
+                            <div class="lesson-label">Lesson 94</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-8.html" class="unit-link">Go to Unit 8</a>
+            </div>
+            
+            <!-- Unit 9 -->
+            <div class="unit-overview">
+                <h2>Unit 9: More Multi-Sound Phonograms</h2>
+                <p class="unit-description">Unit 9 teaches fifteen more multi-sound phonograms (gu, oe, ou, ow, oo, ew, eu, eur, ea, eau, ei, ey, ie, augh, ough) to complete the curriculum. Mastering these final phonograms gives students the tools to decode almost any word they encounter and completes their foundational reading education.</p>
+                
+                <h3>Lessons in this Unit:</h3>
+                <div class="lesson-grid">
+                    <div class="lesson-block">
+                        <a href="lesson-95.html">
+                            <div class="lesson-content">Pretest of 75 Phonograms</div>
+                            <div class="lesson-label">Lesson 95</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-96.html">
+                            <div class="lesson-content">Introduction to More Multi-Sound Phonograms</div>
+                            <div class="lesson-label">Lesson 96</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-97.html">
+                            <div class="lesson-content">Phonogram gu</div>
+                            <div class="lesson-label">Lesson 97</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-98.html">
+                            <div class="lesson-content">Phonogram oe</div>
+                            <div class="lesson-label">Lesson 98</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-99.html">
+                            <div class="lesson-content">Phonogram ou</div>
+                            <div class="lesson-label">Lesson 99</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-100.html">
+                            <div class="lesson-content">Phonogram ow</div>
+                            <div class="lesson-label">Lesson 100</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-101.html">
+                            <div class="lesson-content">Phonogram oo</div>
+                            <div class="lesson-label">Lesson 101</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-102.html">
+                            <div class="lesson-content">Phonogram ew</div>
+                            <div class="lesson-label">Lesson 102</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-103.html">
+                            <div class="lesson-content">Phonograms eu and eur</div>
+                            <div class="lesson-label">Lesson 103</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-104.html">
+                            <div class="lesson-content">Phonogram ea</div>
+                            <div class="lesson-label">Lesson 104</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-105.html">
+                            <div class="lesson-content">Phonogram eau</div>
+                            <div class="lesson-label">Lesson 105</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-106.html">
+                            <div class="lesson-content">Phonogram ei</div>
+                            <div class="lesson-label">Lesson 106</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-107.html">
+                            <div class="lesson-content">Phonogram ey</div>
+                            <div class="lesson-label">Lesson 107</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-108.html">
+                            <div class="lesson-content">Phonogram ie</div>
+                            <div class="lesson-label">Lesson 108</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-109.html">
+                            <div class="lesson-content">Phonogram augh</div>
+                            <div class="lesson-label">Lesson 109</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-110.html">
+                            <div class="lesson-content">Phonogram ough</div>
+                            <div class="lesson-label">Lesson 110</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-111.html">
+                            <div class="lesson-content">Phonogram Review</div>
+                            <div class="lesson-label">Lesson 111</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="lesson-112.html">
+                            <div class="lesson-content">Mastery Test of 75 Phonograms</div>
+                            <div class="lesson-label">Lesson 112</div>
+                        </a>
+                    </div>
+                    <div class="lesson-block">
+                        <a href="complete.html">
+                            <div class="lesson-content">Complete the Curriculum</div>
+                            <div class="lesson-label">Completion</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="unit-9.html" class="unit-link">Go to Unit 9</a>
+            </div>
+        </div>
+        
+        <!-- Call to Action Section from homepage -->
+        <section class="hero-section" style="margin-bottom: 0;">
+            <div class="hero-content">
+                <h2 class="hero-title" style="font-size: 2rem;">Ready to Begin?</h2>
+                <p class="hero-subtitle">Start your reading journey today with our proven curriculum. It's completely free and accessible anytime.</p>
+                <a href="unit-1.html" class="cta-button">Start with Unit 1</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html> 
