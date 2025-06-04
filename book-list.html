@@ -126,6 +126,12 @@
                 padding: var(--space-md);
             }
         }
+        
+        .lesson-story {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
@@ -134,7 +140,7 @@
     <main class="container">
         <div class="page-header">
             <h1 class="title">Book List</h1>
-            <p class="description">A complete list of books used in our reading curriculum</p>
+            <p class="description">A complete list of the books used in our reading curriculum</p>
         </div>
         
         <div class="books-container">
@@ -147,8 +153,8 @@
                     <thead>
                         <tr>
                             <th data-sort="title" class="active asc">Title</th>
-                            <th data-sort="author">Author</th>
-                            <th data-sort="publishDate">First Published</th>
+                            <th data-sort="author">Author or Editor</th>
+                            <th data-sort="publishDate">Publication Date</th>
                             <th data-sort="lessonNumber">Lesson</th>
                         </tr>
                     </thead>
@@ -222,25 +228,130 @@
                 title: "The Farm Yard Alphabet",
                 author: "Edward Dalziel",
                 publishDate: 1867,
-                lessonNumber: 2,
-                lessonLink: "lesson-2.html",
+                lessons: [
+                    { number: 2, link: "lesson-2.html" }
+                ],
                 bookLink: "https://archive.org/details/childscolouredgi00dalziala/page/n7/mode/2up"
             },
             {
                 title: "The Baby's Opera",
                 author: "Walter Crane",
                 publishDate: 1900,
-                lessonNumber: 3,
-                lessonLink: "lesson-3.html",
+                lessons: [
+                    { number: 3, link: "lesson-3.html" }
+                ],
                 bookLink: "https://archive.org/details/babyquotsopera00cran/page/4/mode/2up"
             },
             {
                 title: "Ring O' Roses",
                 author: "L. Leslie Brooke",
                 publishDate: 1922,
-                lessonNumber: 4,
-                lessonLink: "lesson-4.html",
+                lessons: [
+                    { number: 4, link: "lesson-4.html" }
+                ],
                 bookLink: "https://archive.org/details/ringorosesnurser00broo/page/n5/mode/2up"
+            },
+            {
+                title: "In the Nursery of My Bookhouse",
+                author: "Olive Beaupré Miller",
+                publishDate: 1925,
+                lessons: [
+                    { number: 5, link: "lesson-5.html" },
+                    { number: 17, link: "lesson-17.html" }
+                ],
+                bookLink: "https://archive.org/details/mybookhouseinnur0000unse/page/n5/mode/2up"
+            },
+            {
+                title: "Mother Goose in Prose",
+                author: "L. Frank Baum",
+                publishDate: 1901,
+                lessons: [
+                    { number: 6, link: "lesson-6.html" },
+                    { number: 8, link: "lesson-8.html" },
+                    { number: 9, link: "lesson-9.html" }
+                ],
+                bookLink: "https://archive.org/details/mothergooseinpro00baum/page/n5/mode/2up"
+            },
+            {
+                title: "The Red Fairy Book",
+                author: "Andrew Lang",
+                publishDate: 1890,
+                lessons: [
+                    { number: 7, link: "lesson-7.html" }
+                ],
+                bookLink: "https://archive.org/details/redfairybook00langiala/redfairybook00langiala/page/n9/mode/2up"
+            },
+            {
+                title: "Complete Version of ye Three Blind Mice",
+                author: "John W. Ivimey",
+                publishDate: 1909,
+                lessons: [
+                    { number: 10, link: "lesson-10.html" }
+                ],
+                bookLink: "https://archive.org/details/completeversiono00ivim/page/n5/mode/2up"
+            },
+            {
+                title: "Raggedy Ann Stories",
+                author: "Johnny Gruelle",
+                publishDate: 1918,
+                lessons: [
+                    { number: 11, link: "lesson-11.html" }
+                ],
+                bookLink: "https://archive.org/details/raggedy-ann-stories/page/n5/mode/2up"
+            },
+            {
+                title: "The Tale of Pigling Bland",
+                author: "Beatrix Potter",
+                publishDate: 1913,
+                lessons: [
+                    { number: 12, link: "lesson-12.html" }
+                ],
+                bookLink: "https://archive.org/details/taleofpiglingbla00beat/page/n7/mode/2up"
+            },
+            {
+                title: "The Nursery 'Alice'",
+                author: "Lewis Carroll",
+                publishDate: 1889,
+                lessons: [
+                    { number: 13, link: "lesson-13.html" }
+                ],
+                bookLink: "https://archive.org/details/the-nursery-alice/page/n13/mode/2up"
+            },
+            {
+                title: "Lullaby-Land",
+                author: "Eugene Field",
+                publishDate: 1892,
+                lessons: [
+                    { number: 14, link: "lesson-14.html" }
+                ],
+                bookLink: "https://archive.org/details/bwb_P9-CSE-078/page/n7/mode/2up"
+            },
+            {
+                title: "Alice's Adventures in Wonderland",
+                author: "Lewis Carroll",
+                publishDate: 1928,
+                lessons: [
+                    { number: 15, link: "lesson-15.html" }
+                ],
+                bookLink: "https://archive.org/details/alicesadventures00carr_25/page/n5/mode/2up"
+            },
+            {
+                title: "Over in the Meadow",
+                author: "Olive A. Wadsworth",
+                publishDate: 1878,
+                lessons: [
+                    { number: 16, link: "lesson-16.html" }
+                ],
+                bookLink: "https://archive.org/details/overinmeadow00wads/page/n5/mode/2up"
+            },
+            {
+                title: "The Wonderful Wizard of Oz",
+                author: "L. Frank Baum",
+                publishDate: 1900,
+                lessons: [
+                    { number: 18, link: "lesson-18.html" }
+                ],
+                bookLink: "https://archive.org/details/wonderfulwizardo00baumiala/page/n3/mode/2up"
             }
         ];
         
@@ -303,11 +414,17 @@
                 
                 booksToRender.forEach(book => {
                     const row = document.createElement('tr');
+                    
+                    // Create lesson links HTML - just numbers separated by commas
+                    let lessonsHTML = book.lessons.map(lesson => 
+                        `<a href="${lesson.link}">${lesson.number}</a>`
+                    ).join(', ');
+                    
                     row.innerHTML = `
                         <td class="book-title"><a href="${book.bookLink}" target="_blank">${book.title}</a></td>
                         <td>${book.author}</td>
                         <td>${book.publishDate}</td>
-                        <td><a href="${book.lessonLink}">Lesson ${book.lessonNumber}</a></td>
+                        <td>${lessonsHTML}</td>
                     `;
                     tableBody.appendChild(row);
                 });
@@ -318,9 +435,12 @@
                 return [...booksToSort].sort((a, b) => {
                     let comparison = 0;
                     
-                    // Handle different data types
-                    if (column === 'publishDate' || column === 'lessonNumber') {
+                    // Handle different data types and special cases
+                    if (column === 'publishDate') {
                         comparison = a[column] - b[column];
+                    } else if (column === 'lessonNumber') {
+                        // Sort by the first lesson number in the array
+                        comparison = a.lessons[0].number - b.lessons[0].number;
                     } else {
                         const valueA = a[column].toUpperCase();
                         const valueB = b[column].toUpperCase();
@@ -343,10 +463,15 @@
                 
                 query = query.toLowerCase();
                 return booksToFilter.filter(book => {
+                    // Check if any of the lesson details match the query
+                    const lessonsMatch = book.lessons.some(lesson => {
+                        return ('lesson ' + lesson.number).includes(query);
+                    });
+                    
                     return (
                         book.title.toLowerCase().includes(query) ||
                         book.author.toLowerCase().includes(query) ||
-                        ('lesson ' + book.lessonNumber).includes(query)
+                        lessonsMatch
                     );
                 });
             }
