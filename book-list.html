@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A complete list of books used in the Story Hour Academy reading curriculum, sortable by title, author, or publish date.">
+    <title>Story Hour Academy - Book List</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    
+    <style>
+        .books-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .books-table-container {
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl);
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+        
+        .books-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-md);
+        }
+        
+        .books-table th, 
+        .books-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .books-table th {
+            background-color: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            user-select: none;
+        }
+        
+        .books-table th:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .books-table th.active {
+            color: var(--primary);
+        }
+        
+        .books-table th.active::after {
+            content: '';
+            display: inline-block;
+            margin-left: 0.5rem;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+        
+        .books-table th.active.asc::after {
+            border-bottom: 5px solid var(--primary);
+        }
+        
+        .books-table th.active.desc::after {
+            border-top: 5px solid var(--primary);
+        }
+        
+        .books-table tr {
+            transition: background-color 0.2s;
+        }
+        
+        .books-table tbody tr:hover {
+            background-color: var(--surface);
+        }
+        
+        .book-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .filter-section {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .filter-input {
+            width: 100%;
+            padding: var(--space-md);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .filter-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.2);
+        }
+        
+        .no-results {
+            padding: var(--space-lg);
+            text-align: center;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .books-table th, 
+            .books-table td {
+                padding: var(--space-sm);
+                font-size: 0.9rem;
+            }
+            
+            .books-table-container {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">Book List</h1>
+            <p class="description">A complete list of books used in our reading curriculum</p>
+        </div>
+        
+        <div class="books-container">
+            <div class="books-table-container">
+                <div class="filter-section">
+                    <input type="text" id="bookFilter" class="filter-input" placeholder="Search by title, author, or keyword...">
+                </div>
+                
+                <table class="books-table" id="booksTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="title" class="active asc">Title</th>
+                            <th data-sort="author">Author</th>
+                            <th data-sort="publishDate">First Published</th>
+                            <th data-sort="lessonNumber">Lesson</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Book entries will be inserted by JavaScript -->
+                    </tbody>
+                </table>
+                <div id="noResults" class="no-results" style="display: none;">No books matching your search criteria.</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+        
+        // Book list data
+        const books = [
+            {
+                title: "The Farm Yard Alphabet",
+                author: "Edward Dalziel",
+                publishDate: 1867,
+                lessonNumber: 2,
+                lessonLink: "lesson-2.html",
+                bookLink: "https://archive.org/details/childscolouredgi00dalziala/page/n7/mode/2up"
+            },
+            {
+                title: "The Baby's Opera",
+                author: "Walter Crane",
+                publishDate: 1900,
+                lessonNumber: 3,
+                lessonLink: "lesson-3.html",
+                bookLink: "https://archive.org/details/babyquotsopera00cran/page/4/mode/2up"
+            },
+            {
+                title: "Ring O' Roses",
+                author: "L. Leslie Brooke",
+                publishDate: 1922,
+                lessonNumber: 4,
+                lessonLink: "lesson-4.html",
+                bookLink: "https://archive.org/details/ringorosesnurser00broo/page/n5/mode/2up"
+            }
+        ];
+        
+        // Sort and display functions
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.querySelector('#booksTable tbody');
+            const tableHeaders = document.querySelectorAll('#booksTable th');
+            const filterInput = document.getElementById('bookFilter');
+            const noResultsElement = document.getElementById('noResults');
+            
+            let sortColumn = 'title';
+            let sortDirection = 'asc';
+            
+            // Initial render
+            renderBooks(books);
+            
+            // Add click event to table headers
+            tableHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const column = header.dataset.sort;
+                    
+                    // If clicking the same header, toggle direction
+                    if (sortColumn === column) {
+                        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        sortColumn = column;
+                        sortDirection = 'asc';
+                    }
+                    
+                    // Update active class on headers
+                    tableHeaders.forEach(h => {
+                        h.classList.remove('active', 'asc', 'desc');
+                    });
+                    header.classList.add('active', sortDirection);
+                    
+                    // Sort and re-render
+                    const filteredBooks = filterBooks(books, filterInput.value);
+                    const sortedBooks = sortBooks(filteredBooks, sortColumn, sortDirection);
+                    renderBooks(sortedBooks);
+                });
+            });
+            
+            // Add filter functionality
+            filterInput.addEventListener('input', () => {
+                const filteredBooks = filterBooks(books, filterInput.value);
+                const sortedBooks = sortBooks(filteredBooks, sortColumn, sortDirection);
+                renderBooks(sortedBooks);
+            });
+            
+            // Function to render books
+            function renderBooks(booksToRender) {
+                tableBody.innerHTML = '';
+                
+                if (booksToRender.length === 0) {
+                    noResultsElement.style.display = 'block';
+                    return;
+                }
+                
+                noResultsElement.style.display = 'none';
+                
+                booksToRender.forEach(book => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="book-title"><a href="${book.bookLink}" target="_blank">${book.title}</a></td>
+                        <td>${book.author}</td>
+                        <td>${book.publishDate}</td>
+                        <td><a href="${book.lessonLink}">Lesson ${book.lessonNumber}</a></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+            
+            // Function to sort books
+            function sortBooks(booksToSort, column, direction) {
+                return [...booksToSort].sort((a, b) => {
+                    let comparison = 0;
+                    
+                    // Handle different data types
+                    if (column === 'publishDate' || column === 'lessonNumber') {
+                        comparison = a[column] - b[column];
+                    } else {
+                        const valueA = a[column].toUpperCase();
+                        const valueB = b[column].toUpperCase();
+                        
+                        if (valueA < valueB) {
+                            comparison = -1;
+                        } else if (valueA > valueB) {
+                            comparison = 1;
+                        }
+                    }
+                    
+                    // Handle sort direction
+                    return direction === 'asc' ? comparison : -comparison;
+                });
+            }
+            
+            // Function to filter books
+            function filterBooks(booksToFilter, query) {
+                if (!query) return booksToFilter;
+                
+                query = query.toLowerCase();
+                return booksToFilter.filter(book => {
+                    return (
+                        book.title.toLowerCase().includes(query) ||
+                        book.author.toLowerCase().includes(query) ||
+                        ('lesson ' + book.lessonNumber).includes(query)
+                    );
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
