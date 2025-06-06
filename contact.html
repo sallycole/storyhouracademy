@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Story Hour Academy - Share your experiences with our reading curriculum and provide feedback.">
+    <title>Contact - Story Hour Academy</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .contact-section {
+            margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-section h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--border);
+            font-size: 1.75rem;
+        }
+        
+        .contact-section p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--primary-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: var(--surface);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            align-self: flex-start;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+        
+        .cf-turnstile {
+            margin: var(--space-md) 0;
+        }
+        
+        /* Optional success message */
+        .success-message {
+            padding: var(--space-lg);
+            background-color: #e6f7e9;
+            border-left: 4px solid #52c41a;
+            margin-bottom: var(--space-lg);
+            border-radius: 0 6px 6px 0;
+            display: none;
+        }
+        
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: var(--space-lg);
+            }
+            
+            .submit-button {
+                width: 100%;
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">Contact Me</h1>
+            <p class="subtitle">Share your Story Hour Academy experience</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-section">
+                <h2>I'd Love to Hear from You</h2>
+                <p>How is beginning reading instruction going for you and your children? I'm genuinely interested in hearing about your journey with Story Hour Academy. Your feedback helps me improve the curriculum and create resources that truly serve beginning readers and their families.</p>
+                
+                <p>Whether you have questions, suggestions, success stories, or areas where you'd like more support, please reach out. Every message helps make Story Hour Academy better for everyone.</p>
+                
+                <form action="https://formspree.io/f/mrbkegwd" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <!-- Honeypot (spam trap) -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <!-- Turnstile anti-bot -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAABgQmC99McQoBY1o"></div>
+                    
+                    <!-- Optional redirect after submit -->
+                    <input type="hidden" name="_redirect" value="https://storyhouracademy.org/thanks.html">
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+    </script>
+    
+    <!-- Cloudflare Turnstile script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
+</html> 

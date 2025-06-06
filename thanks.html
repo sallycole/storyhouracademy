@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for contacting Story Hour Academy - Your message has been received.">
+    <title>Thank You - Story Hour Academy</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    
+    <style>
+        .thanks-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .thanks-section {
+            margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .thanks-section h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            font-size: 1.75rem;
+        }
+        
+        .thanks-section p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        
+        .thanks-icon {
+            width: 100px;
+            height: 100px;
+            margin: var(--space-lg) auto;
+            background-color: var(--secondary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: var(--space-lg);
+        }
+        
+        .action-button:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+        
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .thanks-section {
+                padding: var(--space-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">Thank You!</h1>
+            <p class="subtitle">Your message has been received</p>
+        </div>
+        
+        <div class="thanks-container">
+            <div class="thanks-section">
+                <div class="thanks-icon">
+                    <i class="fas fa-check" aria-hidden="true"></i>
+                </div>
+                
+                <h2>Message Sent Successfully</h2>
+                <p>Thank you for reaching out! I truly appreciate you taking the time to share your thoughts, experiences, or questions about Story Hour Academy.</p>
+                
+                <p>Your feedback is valuable and helps improve the curriculum for everyone. I'll review your message and respond as soon as possible.</p>
+                
+                <p>In the meantime, feel free to continue exploring the curriculum and resources available on the site.</p>
+                
+                <a href="/" class="action-button">Return to Homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html> 
