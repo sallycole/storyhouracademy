@@ -663,6 +663,50 @@ footer {
         width: 100%;
         display: block;
     }
+
+    .activity-card-literature {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        background: var(--surface);
+        overflow: hidden;
+    }
+    .activity-card-literature .activity-image,
+    .activity-card-literature .activity-content {
+        width: 100%;
+    }
+    .activity-card-literature .activity-image {
+        max-height: 200px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .activity-card-literature .activity-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+    .activity-card-literature .activity-content {
+        padding: var(--space-md);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    .activity-card-literature .activity-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-sm);
+        line-height: 1.2;
+        word-break: break-word;
+    }
+    .activity-card-literature .activity-links {
+        max-width: 100%;
+        margin-top: var(--space-sm);
+    }
 }
 
 /* Accessibility */
