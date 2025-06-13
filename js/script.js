@@ -37,6 +37,7 @@ function initializeHeader() {
         }
     });
     
+    // Handle dropdowns for both desktop and mobile
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const content = dropdown.querySelector('.dropdown-content');
@@ -45,9 +46,19 @@ function initializeHeader() {
         
         toggle.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation(); // Prevent event from bubbling up
+            
             const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
             toggle.setAttribute('aria-expanded', !isExpanded);
             dropdown.classList.toggle('active');
+            
+            // Close other dropdowns
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                    otherDropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
         });
 
         content.addEventListener('keydown', (e) => {
@@ -58,16 +69,4 @@ function initializeHeader() {
             }
         });
     });
-
-    // Only handle clicks for mobile
-    if (window.innerWidth <= 768) {
-        dropdowns.forEach(dropdown => {
-            const toggle = dropdown.querySelector('.dropdown-toggle');
-            
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            });
-        });
-    }
 }

@@ -137,6 +137,9 @@ header {
     padding: var(--space-xs) var(--space-sm);
     border-radius: 6px;
     transition: var(--transition);
+    font-size: 1.125rem;
+    font-family: var(--font-body);
+    font-weight: 500;
 }
 
 .dropdown-content {
@@ -512,6 +515,8 @@ footer {
         transform: translateX(100%);
         transition: transform var(--transition);
         z-index: 1000;
+        overflow-y: auto;
+        align-items: center;
     }
 
     .nav-links.active {
@@ -520,24 +525,55 @@ footer {
 
     .dropdown {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .dropdown-toggle {
-        width: 100%;
+        width: auto;
+        min-width: 0;
         justify-content: center;
-        padding: var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
+        border: none;
+        border-radius: 6px;
+        background: none;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        font-size: 1.125rem;
+        font-family: var(--font-body);
+        font-weight: 500;
+    }
+
+    .dropdown-toggle::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        transition: transform var(--transition);
+        margin-left: 0.5em;
+        font-size: 1em;
+    }
+
+    .dropdown.active .dropdown-toggle::after {
+        transform: rotate(180deg);
     }
 
     .dropdown-content {
         position: static;
         box-shadow: none;
-        margin-top: 0;
+        margin-top: var(--space-xs);
         min-width: 100%;
         opacity: 1;
         transform: none;
         pointer-events: auto;
-        visibility: hidden;
+        visibility: visible;
         display: none;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: var(--space-xs) 0;
+        align-items: center;
     }
 
     .dropdown-content::before {
@@ -545,7 +581,6 @@ footer {
     }
 
     .dropdown.active .dropdown-content {
-        visibility: visible;
         display: block;
     }
 
@@ -553,6 +588,19 @@ footer {
         padding: var(--space-sm);
         text-align: center;
         border-top: 1px solid var(--border);
+        width: 100%;
+        display: block;
+    }
+
+    .dropdown-content a:first-child {
+        border-top: none;
+    }
+
+    .nav-links a {
+        text-align: center;
+        width: 100%;
+        display: block;
+        font-size: 1.125rem;
     }
 
     .menu-toggle {
@@ -601,6 +649,19 @@ footer {
 
     .activity-title {
         font-size: 1.25rem;
+    }
+
+    .dropdown-toggle.link-style {
+        font-size: 1.125rem;
+        font-family: var(--font-body);
+        font-weight: 500;
+        color: var(--text);
+        background: none;
+        border: none;
+        padding: var(--space-sm) var(--space-md);
+        text-align: center;
+        width: 100%;
+        display: block;
     }
 }
 
