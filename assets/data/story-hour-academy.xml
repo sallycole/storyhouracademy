@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curriculum>
+    <name>Story Hour Academy</name>
+    <link>https://storyhouracademy.org</link>
+    <publisher>Sally Cole</publisher>
+    <description>Story Hour Academy is a comprehensive, free reading curriculum that helps students master beginning reading skills in 112 online lessons. Its step-by-step approach includes pretests, engaging exercises, decodable reading, classic literature, and mastery checks.</description>
+    <grade_levels>
+        <grade_level>K</grade_level>
+<grade_level>1</grade_level>
+<grade_level>2</grade_level>
+    </grade_levels>
+    <tasks>
+        <task>
+            <title>Single-Sound Consonants Pretest</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-1</url>
+        </task>
+        <task>
+            <title>Introduction to Single-Sound Consonants</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-2</url>
+        </task>
+        <task>
+            <title>Letter B</title>
+            <description></description>
+            <action>Practice</action>
+            <url>https://www.storyhouracademy.org/lesson-3</url>
+        </task>
+        <task>
+            <title>Letter D</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-4</url>
+        </task>
+        <task>
+            <title>Letter F</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-5</url>
+        </task>
+        <task>
+            <title>Letter H</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-6</url>
+        </task>
+        <task>
+            <title>Letter J</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-7</url>
+        </task>
+        <task>
+            <title>Letter K</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-8</url>
+        </task>
+        <task>
+            <title>Letter L</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-9</url>
+        </task>
+        <task>
+            <title>Letter M</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-10</url>
+        </task>
+        <task>
+            <title>Letter N</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-11</url>
+        </task>
+        <task>
+            <title>Letter P</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-12</url>
+        </task>
+        <task>
+            <title>Phonogram Qu</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-13</url>
+        </task>
+        <task>
+            <title>Letter R</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-14</url>
+        </task>
+        <task>
+            <title>Letter T</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-15</url>
+        </task>
+        <task>
+            <title>Letter V</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-16</url>
+        </task>
+        <task>
+            <title>Letter W</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-17</url>
+        </task>
+        <task>
+            <title>Letter Z</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-18</url>
+        </task>
+        <task>
+            <title>Review of Single-Sound Consonants</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-19</url>
+        </task>
+        <task>
+            <title>Single-Sound Consonants Mastery Test</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-20</url>
+        </task>
+        <task>
+            <title>Consonant Digraphs Pretest</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-21</url>
+        </task>
+        <task>
+            <title>Introduction to Consonant Digraphs</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-22</url>
+        </task>
+        <task>
+            <title>Phonogram ck</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-23</url>
+        </task>
+        <task>
+            <title>Phonogram ch</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-24</url>
+        </task>
+        <task>
+            <title>Phonogram ng</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-25</url>
+        </task>
+        <task>
+            <title>Phonogram sh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-26</url>
+        </task>
+        <task>
+            <title>Phonogram th</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-27</url>
+        </task>
+        <task>
+            <title>Phonogram wh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-28</url>
+        </task>
+        <task>
+            <title>Review of Consonant Digraphs</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-29</url>
+        </task>
+        <task>
+            <title>Consonant Digraphs Mastery Test</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-30</url>
+        </task>
+        <task>
+            <title>Consonant Digraphs Mastery Test</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-30</url>
+        </task>
+        <task>
+            <title>Pretest of Multi-Letter Vowel Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-31</url>
+        </task>
+        <task>
+            <title>Introduction to Multi-Letter Vowel Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-32</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ai</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-33</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ay</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-34</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram eigh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-35</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ee</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-36</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram igh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-37</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram oa</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-38</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram au</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-39</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram aw</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-40</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram oi</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-41</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram oy</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-42</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ui</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-43</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram er</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-44</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ir</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-45</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ur</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-46</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ar</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-47</url>
+        </task>
+        <task>
+            <title>Vowel Phonograms or and wor</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-48</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram ear</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-49</url>
+        </task>
+        <task>
+            <title>Vowel Phonogram our</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-50</url>
+        </task>
+        <task>
+            <title>Review of Multi-Letter Vowel Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-51</url>
+        </task>
+        <task>
+            <title>Mastery Test of Multi-Letter Vowel Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-52</url>
+        </task>
+        <task>
+            <title>Pretest of 25 Vowel Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-53</url>
+        </task>
+        <task>
+            <title>Introduction to Vowel Letters and the Sounds They Make</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-54</url>
+        </task>
+        <task>
+            <title>Letter A</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-55</url>
+        </task>
+        <task>
+            <title>Letter E</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-56</url>
+        </task>
+        <task>
+            <title>Letter I</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-57</url>
+        </task>
+        <task>
+            <title>Letter O</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-58</url>
+        </task>
+        <task>
+            <title>Letter U</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-59</url>
+        </task>
+        <task>
+            <title>Letter Y</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-60</url>
+        </task>
+        <task>
+            <title>Review of the Vowel Letters and the Sounds They Make</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-61</url>
+        </task>
+        <task>
+            <title>Mastery Test of 25 Vowel Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-62</url>
+        </task>
+        <task>
+            <title>Two Phonics Pretests</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-63</url>
+        </task>
+        <task>
+            <title>Introduction to Multi-Sound Consonant Letters</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-64</url>
+        </task>
+        <task>
+            <title>Letter C</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-65</url>
+        </task>
+        <task>
+            <title>Letter G</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-66</url>
+        </task>
+        <task>
+            <title>Letter S</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-67</url>
+        </task>
+        <task>
+            <title>Letter X</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-68</url>
+        </task>
+        <task>
+            <title>Review of Alphabet Letters and the Sounds They Make</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-69</url>
+        </task>
+        <task>
+            <title>Two Phonics Mastery Tests</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-70</url>
+        </task>
+        <task>
+            <title>Pretest of Syllable Types</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-71</url>
+        </task>
+        <task>
+            <title>Introduction to Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-72</url>
+        </task>
+        <task>
+            <title>Closed Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-73</url>
+        </task>
+        <task>
+            <title>Open Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-74</url>
+        </task>
+        <task>
+            <title>Consonant LE Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-75</url>
+        </task>
+        <task>
+            <title>R-Controlled Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-76</url>
+        </task>
+        <task>
+            <title>Vowel-Consonant-E Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-77</url>
+        </task>
+        <task>
+            <title>Vowel Team Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-78</url>
+        </task>
+        <task>
+            <title>Review Lesson of Syllables</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-79</url>
+        </task>
+        <task>
+            <title>Mastery Test of Syllable Types</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-80</url>
+        </task>
+        <task>
+            <title>The Schwa Sound</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-81</url>
+        </task>
+        <task>
+            <title>Pretest of 60 Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-82</url>
+        </task>
+        <task>
+            <title>Introduction to More Single-Sound Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-83</url>
+        </task>
+        <task>
+            <title>Phonogram tch</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-84</url>
+        </task>
+        <task>
+            <title>Phonogram ph</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-85</url>
+        </task>
+        <task>
+            <title>Phonogram rh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-86</url>
+        </task>
+        <task>
+            <title>Phonogram gh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-87</url>
+        </task>
+        <task>
+            <title>Phonogram gn</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-88</url>
+        </task>
+        <task>
+            <title>Phonogram kn</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-89</url>
+        </task>
+        <task>
+            <title>Phonogram wr</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-90</url>
+        </task>
+        <task>
+            <title>Phonogram dg</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-91</url>
+        </task>
+        <task>
+            <title>Phonogram aigh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-92</url>
+        </task>
+        <task>
+            <title>Phonogram Review</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-93</url>
+        </task>
+        <task>
+            <title>Mastery Test of 60 Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-94</url>
+        </task>
+        <task>
+            <title>Pretest of 75 Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-95</url>
+        </task>
+        <task>
+            <title>Introduction to More Multi-Sound Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-96</url>
+        </task>
+        <task>
+            <title>Phonogram gu</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-97</url>
+        </task>
+        <task>
+            <title>Phonogram oe</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-98</url>
+        </task>
+        <task>
+            <title>Phonogram ou</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-99</url>
+        </task>
+        <task>
+            <title>Phonogram ow</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-100</url>
+        </task>
+        <task>
+            <title>Phonogram oo</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-101</url>
+        </task>
+        <task>
+            <title>Phonogram ew</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-102</url>
+        </task>
+        <task>
+            <title>Phonograms eu and eur</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-103</url>
+        </task>
+        <task>
+            <title>Phonogram ea</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-104</url>
+        </task>
+        <task>
+            <title>Phonogram eau</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-105</url>
+        </task>
+        <task>
+            <title>Phonogram ei</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-106</url>
+        </task>
+        <task>
+            <title>Phonogram ey</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-107</url>
+        </task>
+        <task>
+            <title>Phonogram ie</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-108</url>
+        </task>
+        <task>
+            <title>Phonogram augh</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-109</url>
+        </task>
+        <task>
+            <title>Phonogram Review</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-111</url>
+        </task>
+        <task>
+            <title>Mastery Test of 75 Phonograms</title>
+            <description></description>
+            <action>Do</action>
+            <url>https://www.storyhouracademy.org/lesson-112</url>
+        </task>
+    </tasks>
+</curriculum>
