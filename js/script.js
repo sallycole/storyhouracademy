@@ -1,3 +1,12 @@
+// GoatCounter Analytics
+(function() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//gc.zgo.at/count.js';
+    script.setAttribute('data-goatcounter', 'https://storyhour.goatcounter.com/count');
+    document.head.appendChild(script);
+})();
+
 // Load header and footer
 fetch('includes/header.html')
     .then(res => res.text())
