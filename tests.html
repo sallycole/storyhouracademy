@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pretests and Mastery Tests for every set of Story Hour Academy reading lessons.">
+    <meta name="description" content="Story Hour Academy Pretests and Mastery Tests for diagnosing where a student needs the most help.">
     <title>Story Hour Academy - Tests</title>
     
     <!-- Styles and Scripts -->
     <link rel="stylesheet" href="/css/fonts.css?v=1">
     <link rel="stylesheet" href="/css/styles.css?v=1">
     <script src="/js/script.js" defer></script>
-    
     <style>
-        .tests-list { list-style: none; padding: 0; margin: 2rem auto; max-width: 900px; }
-        .test-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; background: var(--surface); }
-        .test-topic { font-size: 1.1rem; }
-        .test-links { display: flex; gap: 0.5rem; flex-shrink: 0; }
-        .test-links .cta-button { padding: 0.5rem 1.2rem; font-size: 0.9rem; margin: 0; }
-        @media (max-width: 768px) { .test-row { flex-direction: column; align-items: flex-start; } }
+        .test-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .test-column { display: flex; flex-direction: column; gap: 0.5rem; }
+        @media (max-width: 768px) { .test-columns { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -26,80 +22,250 @@
     <main class="container">
         <div class="page-header">
             <h1 class="title">Tests</h1>
-            <p class="subtitle">Each set has a Pretest and a Mastery Test covering the same material. Take the Pretest to see which lessons to study, then take the Mastery Test to show what you have learned.</p>
+            <p class="unit-description">Use these tests for diagnostic information to find where a student needs the most help.<br>Each Pretest and Mastery Test pair covers the same material.</p>
         </div>
-        <ul class="tests-list">
-                <li class="test-row">
-                    <span class="test-topic">Single-Sound Consonants (lowercase)</span>
-                    <span class="test-links">
-                        <a href="pretest-1.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-1.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">Single-Sound Consonants (uppercase)</span>
-                    <span class="test-links">
-                        <a href="pretest-2.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-2.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">Single-Sound Consonants and Consonant Digraphs</span>
-                    <span class="test-links">
-                        <a href="pretest-3.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-3.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">Multi-Letter Vowel Phonograms</span>
-                    <span class="test-links">
-                        <a href="pretest-4.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-4.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">25 Vowel Phonograms</span>
-                    <span class="test-links">
-                        <a href="pretest-5.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-5.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">Alphabet Letters and their Associated Sounds</span>
-                    <span class="test-links">
-                        <a href="pretest-6.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-6.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">51 Phonograms</span>
-                    <span class="test-links">
-                        <a href="pretest-7.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-7.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">Syllable Types</span>
-                    <span class="test-links">
-                        <a href="pretest-8.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-8.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">60 Phonograms</span>
-                    <span class="test-links">
-                        <a href="pretest-9.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-9.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-                <li class="test-row">
-                    <span class="test-topic">75 Phonograms</span>
-                    <span class="test-links">
-                        <a href="pretest-10.html" class="cta-button secondary">Pretest</a>
-                        <a href="test-10.html" class="cta-button">Mastery Test</a>
-                    </span>
-                </li>
-        </ul>
+
+        <div class="activities-container">
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Single-Sound Consonants (lowercase)</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-1.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-1.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Single-Sound Consonants (uppercase)</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-2.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-2.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Single-Sound Consonants and Consonant Digraphs</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-3.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-3.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Multi-Letter Vowel Phonograms</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-4.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-4.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">25 Vowel Phonograms</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-5.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-5.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Alphabet Letters and their Associated Sounds</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-6.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-6.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">51 Phonograms</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-7.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-7.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">Syllable Types</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-8.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-8.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">60 Phonograms</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-9.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-9.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-header">
+                    <h2 class="activity-title">75 Phonograms</h2>
+                </div>
+                <div class="test-columns">
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Pretest</strong>: Take before the lessons to see what the student already knows.</p>
+                        <div class="activity-links">
+                            <a href="pretest-10.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Pretest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-column">
+                        <p class="activity-description"><strong>Mastery Test</strong>: Take after the lessons to confirm the material is mastered.</p>
+                        <div class="activity-links">
+                            <a href="test-10.html" class="activity-link">
+                                <i class="fas fa-arrow-right"></i> Start Mastery Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
     </main>
 
     <div id="footer"></div>
@@ -158,4 +324,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
