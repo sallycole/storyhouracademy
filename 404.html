@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found - Story Hour Academy">
+    <title>Page Not Found - Story Hour Academy</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <link rel="canonical" href="https://www.storyhouracademy.org/404">
+    <script src="/js/script.js" defer></script>
+    
+    <style>
+        .error-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: var(--space-sm);
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .error-message {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: var(--space-xl);
+            line-height: 1.6;
+        }
+        
+        .home-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: 2px solid var(--secondary);
+        }
+        
+        .home-button:hover {
+            background-color: var(--secondary-light);
+            border-color: var(--secondary-light);
+            color: white;
+        }
+        
+        .suggestions {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--border);
+        }
+        
+        .suggestions h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            font-size: 1.25rem;
+        }
+        
+        .suggestions-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-sm);
+        }
+        
+        .suggestions-list a {
+            color: var(--secondary);
+            text-decoration: none;
+            padding: var(--space-xs) var(--space-sm);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .suggestions-list a:hover {
+            background-color: var(--surface);
+            border-color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">The page you are looking for does not exist or has been moved. Please check the URL or return to the homepage to find what you need.</p>
+            <a href="/" class="home-button">Go to Homepage</a>
+            
+            <div class="suggestions">
+                <h3>Try these pages instead:</h3>
+                <ul class="suggestions-list">
+                    <li><a href="/unit-1">Unit 1: Single-Sound Consonants</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/tests">Tests</a></li>
+                    <li><a href="/book-list">Book List</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('/includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                initializeHeader();
+            });
+
+        fetch('/includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html>
