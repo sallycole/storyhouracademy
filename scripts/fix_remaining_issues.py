@@ -145,7 +145,6 @@ SHORT_DESC_FIXES = {
 
 LESSON_DUPLICATE_FIXES = {
     "lesson1.html": ("Lesson 1: Unit 1 Pretest", "Take the Unit 1 pretest for single-sound consonants to identify which lessons to study."),
-    "game-1.html": ("Letter B Sound Game Level 1", "Interactive game Level 1 to practice identifying the letter b and its sound."),
 }
 
 
@@ -242,7 +241,7 @@ def main():
                 print(f"Fixed short desc: {filepath}")
                 updated += 1
     
-    # Fix lesson1.html and game-1.html duplicates
+    # Fix lesson1.html duplicate
     for filepath, (title, desc) in LESSON_DUPLICATE_FIXES.items():
         if os.path.exists(filepath):
             if update_html_file(filepath, title, desc):
