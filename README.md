@@ -35,7 +35,15 @@
 
 ## License
 
-- **Content**: All content is in the public domain and may be freely used, modified, and distributed without restriction.
+This repository uses two licenses to provide the most permissive terms possible:
+
+- **Content** (lessons, text, tests, games content, images, audio): Dedicated to the public domain under [CC0 1.0 Universal](LICENSE-CONTENT). You may copy, modify, distribute, and use the content for any purpose, commercial or not, without asking permission.
+
+- **Source Code** (HTML, CSS, JavaScript, scripts): Licensed under the [MIT License](LICENSE). You may use, modify, and distribute the code freely.
+
+Some images and audio were created with AI assistance. Third-party content (such as fonts and libraries) remains under its original license.
+
+For more details, see the [License page](https://www.storyhouracademy.org/license) on the website.
 
 ## Acknowledgments
 
