@@ -151,7 +151,9 @@ def validate_files() -> Tuple[List[str], int]:
             issues.append(f"MISSING HTML LANG: {filename}")
         
         # Check noindex is only on specific pages
-        is_noindex_page = filename in ['404.html', 'complete.html', 'thanks.html']
+        # Game pages (game1.html through game39.html) are noindexed to avoid being search entry points
+        is_game_page = bool(re.match(r'^game\d+\.html$', filename))
+        is_noindex_page = filename in ['404.html', 'complete.html', 'thanks.html'] or is_game_page
         if info['has_noindex'] and not is_noindex_page:
             issues.append(f"UNEXPECTED NOINDEX: {filename}")
         elif not info['has_noindex'] and is_noindex_page:

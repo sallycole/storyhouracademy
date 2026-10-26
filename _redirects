@@ -1,0 +1,7 @@
+# Redirect removed duplicate game page to the canonical URL
+# Using 301 permanent redirect
+# Note: Cloudflare Pages strips .html extensions automatically, so we redirect
+# both /game-1 and /game-1.html to ensure all paths are covered
+
+/game-1.html  /game1  301
+/game-1       /game1  301
