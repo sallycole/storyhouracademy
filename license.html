@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://www.storyhouracademy.org/license">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Story Hour Academy content is public domain under CC0 1.0. Copy, share, and use lessons, text, images, and audio for any purpose.">
+    <title>License and Permissions | Story Hour Academy</title>
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="/css/fonts.css?v=1">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <script src="/js/script.js" defer></script>
+    
+    <style>
+        .license-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        .license-section {
+            margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .license-section h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--border);
+            font-size: 1.75rem;
+        }
+        
+        .license-section p {
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        
+        .license-section ul {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+        
+        .license-section li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+        
+        .license-box {
+            background-color: var(--surface);
+            border-left: 4px solid var(--secondary);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .license-box h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+            font-size: 1.25rem;
+        }
+        
+        .license-box p {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .license-link {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .license-link:hover {
+            color: var(--secondary-light);
+        }
+    </style>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="License and Permissions | Story Hour Academy">
+    <meta property="og:description" content="Story Hour Academy content is public domain under CC0 1.0. Copy, share, and use lessons, text, images, and audio for any purpose.">
+    <meta property="og:url" content="https://www.storyhouracademy.org/license">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Story Hour Academy">
+    <meta property="og:image" content="https://www.storyhouracademy.org/assets/images/home/systematic-instruction-home.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="License and Permissions | Story Hour Academy">
+    <meta name="twitter:description" content="Story Hour Academy content is public domain under CC0 1.0. Copy, share, and use lessons, text, images, and audio for any purpose.">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="title">License and Permissions</h1>
+            <p class="subtitle">You are free to use Story Hour Academy content</p>
+        </div>
+        
+        <div class="license-container">
+            <div class="license-section">
+                <h2>Content License</h2>
+                <p>All lessons, text, tests, games content, images, and audio on this site are dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="license-link" target="_blank" rel="noopener noreferrer">CC0 1.0 Universal</a>.</p>
+                
+                <div class="license-box">
+                    <h3>What this means for you</h3>
+                    <p>You can copy, change, share, and use Story Hour Academy content for any purpose, including commercial use, without asking permission. No attribution is required.</p>
+                </div>
+                
+                <p>Some images and audio on this site were created with AI assistance.</p>
+                
+                <p>See the full legal text: <a href="https://github.com/storyhouracademy/storyhouracademy.github.io/blob/main/LICENSE-CONTENT" class="license-link" target="_blank" rel="noopener noreferrer">LICENSE-CONTENT</a></p>
+            </div>
+            
+            <div class="license-section">
+                <h2>Source Code License</h2>
+                <p>The source code for this website (HTML, CSS, JavaScript, and scripts) is available under the <a href="https://opensource.org/licenses/MIT" class="license-link" target="_blank" rel="noopener noreferrer">MIT License</a>.</p>
+                
+                <p>You may use, modify, and distribute the code freely, provided you include the copyright notice.</p>
+                
+                <p>See the full legal text: <a href="https://github.com/storyhouracademy/storyhouracademy.github.io/blob/main/LICENSE" class="license-link" target="_blank" rel="noopener noreferrer">LICENSE</a></p>
+            </div>
+            
+            <div class="license-section">
+                <h2>Third-Party Content</h2>
+                <p>This site uses third-party fonts and libraries that remain under their original licenses.</p>
+                
+                <p>Videos hosted on YouTube follow YouTube's terms of service unless marked otherwise. Literature selections sourced from LibriVox and archive.org are in the public domain.</p>
+            </div>
+            
+            <div class="license-section">
+                <h2>Questions</h2>
+                <p>If you have questions about using Story Hour Academy content, feel free to <a href="/contact" class="license-link">contact us</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        fetch('includes/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Initialize header functionality after content is loaded
+                initializeHeader();
+            });
+
+        fetch('includes/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function initializeHeader() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Only handle clicks for mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html>
