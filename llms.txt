@@ -6,28 +6,28 @@
 
 Lesson content, images, and audio on this site are dedicated to the public domain under Creative Commons Zero (CC0) 1.0 Universal. You may copy, modify, and use this content for any purpose without permission or attribution. The source code (Hypertext Markup Language, Cascading Style Sheets, JavaScript) is available under the Massachusetts Institute of Technology (MIT) No Attribution license. Third-party material such as YouTube videos, fonts, and libraries remains under its original license.
 
-- [License](/license): Full licensing details and permissions
+- [License](https://www.storyhouracademy.org/license): Full licensing details and permissions
 
 ## Main Pages
 
-- [Home](/): Introduction to the curriculum and its features
-- [Curriculum Structure](/structure): Overview of all 9 units and 112 lessons
-- [Tests](/tests): Pretests for diagnostic assessment and mastery tests for progress checks
-- [Book List](/book-list): Classic literature selections used throughout the curriculum
+- [Home](https://www.storyhouracademy.org/): Introduction to the curriculum and its features
+- [Curriculum Structure](https://www.storyhouracademy.org/structure): Overview of all 9 units and 112 lessons
+- [Tests](https://www.storyhouracademy.org/tests): Pretests for diagnostic assessment and mastery tests for progress checks
+- [Book List](https://www.storyhouracademy.org/book-list): Classic literature selections used throughout the curriculum
 
 ## Units
 
-- [Unit 1: Single-Sound Consonants](/unit-1): Letters b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z
-- [Unit 2: Consonant Digraphs](/unit-2): Phonograms ch, ck, ng, sh, th, wh
-- [Unit 3: Multi-Letter Vowel Phonograms](/unit-3): Phonograms like ai, ay, ar, ee, oa, oi, or, and more
-- [Unit 4: Vowel Letters](/unit-4): The vowel letters a, e, i, o, u, y and their sounds
-- [Unit 5: Multi-Sound Consonant Letters](/unit-5): Letters c, g, s, x and their multiple sounds
-- [Unit 6: Syllable Types](/unit-6): Closed, open, vowel-consonant-e, vowel team, r-controlled, consonant-le
-- [Unit 7: The Schwa Sound](/unit-7): Understanding the schwa vowel sound
-- [Unit 8: More Single-Sound Phonograms](/unit-8): Additional phonograms like dg, ph, gh, gn, kn, wr
-- [Unit 9: More Multi-Sound Phonograms](/unit-9): Advanced phonograms including ea, ew, oo, ou, ow
+- [Unit 1: Single-Sound Consonants](https://www.storyhouracademy.org/unit-1): Letters b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z
+- [Unit 2: Consonant Digraphs](https://www.storyhouracademy.org/unit-2): Phonograms ch, ck, ng, sh, th, wh
+- [Unit 3: Multi-Letter Vowel Phonograms](https://www.storyhouracademy.org/unit-3): Phonograms like ai, ay, ar, ee, oa, oi, or, and more
+- [Unit 4: Vowel Letters](https://www.storyhouracademy.org/unit-4): The vowel letters a, e, i, o, u, y and their sounds
+- [Unit 5: Multi-Sound Consonant Letters](https://www.storyhouracademy.org/unit-5): Letters c, g, s, x and their multiple sounds
+- [Unit 6: Syllable Types](https://www.storyhouracademy.org/unit-6): Closed, open, vowel-consonant-e, vowel team, r-controlled, consonant-le
+- [Unit 7: The Schwa Sound](https://www.storyhouracademy.org/unit-7): Understanding the schwa vowel sound
+- [Unit 8: More Single-Sound Phonograms](https://www.storyhouracademy.org/unit-8): Additional phonograms like dg, ph, gh, gn, kn, wr
+- [Unit 9: More Multi-Sound Phonograms](https://www.storyhouracademy.org/unit-9): Advanced phonograms including ea, ew, oo, ou, ow
 
 ## About
 
-- [About](/about): The story behind Story Hour Academy and its mission
-- [Contact](/contact): Send feedback or questions
+- [About](https://www.storyhouracademy.org/about): The story behind Story Hour Academy and its mission
+- [Contact](https://www.storyhouracademy.org/contact): Send feedback or questions
