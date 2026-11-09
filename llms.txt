@@ -1,33 +1,171 @@
 # Story Hour Academy
 
-> Story Hour Academy is a free, self-paced reading curriculum that teaches phonics and beginning reading skills to children through 112 online lessons. Built on structured literacy principles and the Science of Reading, it includes video instruction, interactive exercises, decodable reading materials, classic literature selections, pretests, and mastery tests. The curriculum covers phonograms, handwriting, consonants, vowels, digraphs, syllable types, and more.
+> Story Hour Academy is a free, self-paced reading curriculum that teaches phonics and beginning reading skills to children through 112 online lessons. Built on structured literacy principles and the Science of Reading, it includes video instruction, interactive exercises, decodable reading materials, classic literature selections, pretests, and mastery tests. Lesson content, images, and audio are dedicated to the public domain under Creative Commons Zero (CC0) 1.0 Universal. The source code is available under the Massachusetts Institute of Technology (MIT) No Attribution license. Third-party material such as YouTube videos remains under its original license.
 
-## Licensing
+## Sitemaps
 
-Lesson content, images, and audio on this site are dedicated to the public domain under Creative Commons Zero (CC0) 1.0 Universal. You may copy, modify, and use this content for any purpose without permission or attribution. The source code (Hypertext Markup Language, Cascading Style Sheets, JavaScript) is available under the Massachusetts Institute of Technology (MIT) No Attribution license. Third-party material such as YouTube videos, fonts, and libraries remains under its original license.
+- [XML Sitemap](https://www.storyhouracademy.org/sitemap.xml): Includes all crawlable and indexable pages.
 
-- [License](/license): Full licensing details and permissions
+## Pages
 
-## Main Pages
-
-- [Home](/): Introduction to the curriculum and its features
-- [Curriculum Structure](/structure): Overview of all 9 units and 112 lessons
-- [Tests](/tests): Pretests for diagnostic assessment and mastery tests for progress checks
-- [Book List](/book-list): Classic literature selections used throughout the curriculum
+- [Homepage](https://www.storyhouracademy.org/): Free, comprehensive reading curriculum with 112 lessons. Includes pretests, interactive exercises, decodable reading, classic literature, and mastery tests.
+- [Curriculum Structure](https://www.storyhouracademy.org/structure): Overview of Story Hour Academy's 9 units and 112 lessons covering phonograms, consonants, vowels, digraphs, syllable types, and more.
+- [Tests](https://www.storyhouracademy.org/tests): Diagnostic pretests and mastery tests for phonics and reading skills. Identify where students need help with consonants, vowels, phonograms, and syllable types.
+- [Book List](https://www.storyhouracademy.org/book-list): Complete list of classic literature used in the Story Hour Academy reading curriculum, sortable by title, author, or publication date.
+- [Lesson List](https://www.storyhouracademy.org/list): Complete list of all 112 lessons in the Story Hour Academy free reading curriculum.
+- [About](https://www.storyhouracademy.org/about): Learn how Story Hour Academy began as a solution for teaching children to read. Free curriculum created by a parent for parents and educators.
+- [Contact](https://www.storyhouracademy.org/contact): Contact Story Hour Academy to share your experience with our free reading curriculum or provide feedback.
+- [License](https://www.storyhouracademy.org/license): Story Hour Academy content is public domain under CC0 1.0. Copy, share, and use lessons, text, images, and audio for any purpose.
+- [Audio Lesson: Consonant Sounds](https://www.storyhouracademy.org/audio-1): Audio lesson for learning single-sound consonant letters and their pronunciation.
+- [Curriculum Complete](https://www.storyhouracademy.org/complete): Congratulations on completing the Story Hour Academy reading curriculum! Explore next steps for continued learning.
 
 ## Units
 
-- [Unit 1: Single-Sound Consonants](/unit-1): Letters b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z
-- [Unit 2: Consonant Digraphs](/unit-2): Phonograms ch, ck, ng, sh, th, wh
-- [Unit 3: Multi-Letter Vowel Phonograms](/unit-3): Phonograms like ai, ay, ar, ee, oa, oi, or, and more
-- [Unit 4: Vowel Letters](/unit-4): The vowel letters a, e, i, o, u, y and their sounds
-- [Unit 5: Multi-Sound Consonant Letters](/unit-5): Letters c, g, s, x and their multiple sounds
-- [Unit 6: Syllable Types](/unit-6): Closed, open, vowel-consonant-e, vowel team, r-controlled, consonant-le
-- [Unit 7: The Schwa Sound](/unit-7): Understanding the schwa vowel sound
-- [Unit 8: More Single-Sound Phonograms](/unit-8): Additional phonograms like dg, ph, gh, gn, kn, wr
-- [Unit 9: More Multi-Sound Phonograms](/unit-9): Advanced phonograms including ea, ew, oo, ou, ow
+- [Unit 1: Single-Sound Consonants](https://www.storyhouracademy.org/unit-1): Learn 16 single-sound consonant letters (b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z) and their sounds in this free reading curriculum.
+- [Unit 2: Consonant Digraphs](https://www.storyhouracademy.org/unit-2): Learn six consonant digraphs (ck, ch, ng, sh, th, wh) that represent single sounds in this free reading curriculum.
+- [Unit 3: Multi-Letter Vowel Phonograms](https://www.storyhouracademy.org/unit-3): Learn 19 multi-letter vowel phonograms and start blending sounds into words in this free reading curriculum.
+- [Unit 4: Vowel Letters](https://www.storyhouracademy.org/unit-4): Learn vowel letters a, e, i, o, u, y and the multiple sounds each can represent in this free reading curriculum.
+- [Unit 5: Multi-Sound Consonant Letters](https://www.storyhouracademy.org/unit-5): Learn multi-sound consonant letters c, g, s, x and the sounds they make in different contexts.
+- [Unit 6: Syllable Types](https://www.storyhouracademy.org/unit-6): Learn six syllable types: closed, open, consonant-le, r-controlled, vowel-consonant-e, and vowel team.
+- [Unit 7: The Schwa Sound](https://www.storyhouracademy.org/unit-7): Learn about the schwa sound, the most common vowel sound in English, and identify it in words.
+- [Unit 8: More Single-Sound Phonograms](https://www.storyhouracademy.org/unit-8): Learn nine more single-sound phonograms (tch, ph, rh, gh, gn, kn, wr, dg, aigh) for advanced reading.
+- [Unit 9: More Multi-Sound Phonograms](https://www.storyhouracademy.org/unit-9): Learn 15 more multi-sound phonograms to complete the Story Hour Academy reading curriculum.
 
-## About
+## Lessons
 
-- [About](/about): The story behind Story Hour Academy and its mission
-- [Contact](/contact): Send feedback or questions
+- [Lesson 1: Unit 1 Pretest](https://www.storyhouracademy.org/lesson1): Take the Unit 1 pretest for single-sound consonants to identify which lessons to study.
+- [Lesson 1: Single-Sound Consonants Pretest](https://www.storyhouracademy.org/lesson-1): Take the pretest for single-sound consonants to identify which lessons to study.
+- [Lesson 2: Introduction to Single-Sound Consonants](https://www.storyhouracademy.org/lesson-2): Introduction to 16 single-sound consonant letters and their sounds.
+- [Lesson 3: Letter B](https://www.storyhouracademy.org/lesson-3): Learn about the letter b, its sound, and how to write it.
+- [Lesson 4: Letter D](https://www.storyhouracademy.org/lesson-4): Learn about the letter d, its sound, and how to write it.
+- [Lesson 5: Letter F](https://www.storyhouracademy.org/lesson-5): Learn about the letter f, its sound, and how to write it.
+- [Lesson 6: Letter H](https://www.storyhouracademy.org/lesson-6): Learn about the letter h, its sound, and how to write it.
+- [Lesson 7: Letter J](https://www.storyhouracademy.org/lesson-7): Learn about the letter j, its sound, and how to write it.
+- [Lesson 8: Letter K](https://www.storyhouracademy.org/lesson-8): Learn about the letter k, its sound, and how to write it.
+- [Lesson 9: Letter L](https://www.storyhouracademy.org/lesson-9): Learn about the letter l, its sound, and how to write it.
+- [Lesson 10: Letter M](https://www.storyhouracademy.org/lesson-10): Learn about the letter m, its sound, and how to write it.
+- [Lesson 11: Letter N](https://www.storyhouracademy.org/lesson-11): Learn about the letter n, its sound, and how to write it.
+- [Lesson 12: Letter P](https://www.storyhouracademy.org/lesson-12): Learn about the letter p, its sound, and how to write it.
+- [Lesson 13: Phonogram QU](https://www.storyhouracademy.org/lesson-13): Learn about the phonogram qu, its sound, and how to write it.
+- [Lesson 14: Letter R](https://www.storyhouracademy.org/lesson-14): Learn about the letter r, its sound, and how to write it.
+- [Lesson 15: Letter T](https://www.storyhouracademy.org/lesson-15): Learn about the letter t, its sound, and how to write it.
+- [Lesson 16: Letter V](https://www.storyhouracademy.org/lesson-16): Learn about the letter v, its sound, and how to write it.
+- [Lesson 17: Letter W](https://www.storyhouracademy.org/lesson-17): Learn about the letter w, its sound, and how to write it.
+- [Lesson 18: Letter Z](https://www.storyhouracademy.org/lesson-18): Learn about the letter z, its sound, and how to write it.
+- [Lesson 19: Review of Single-Sound Consonants](https://www.storyhouracademy.org/lesson-19): Review all 16 single-sound consonant letters from Unit 1.
+- [Lesson 20: Single-Sound Consonants Mastery Tests](https://www.storyhouracademy.org/lesson-20): Take mastery tests for single-sound consonants in lowercase and uppercase.
+- [Lesson 21: Consonant Digraphs Pretest](https://www.storyhouracademy.org/lesson-21): Take the pretest for consonant digraphs to identify which lessons to study.
+- [Lesson 22: Introduction to Consonant Digraphs](https://www.storyhouracademy.org/lesson-22): Introduction to six consonant digraph phonograms: ck, ch, ng, sh, th, wh.
+- [Lesson 23: Phonogram CK](https://www.storyhouracademy.org/lesson-23): Learn the digraph ck, the sound it makes, and how to write it.
+- [Lesson 24: Phonogram CH](https://www.storyhouracademy.org/lesson-24): Learn the digraph ch, the sound it makes, and how to write it.
+- [Lesson 25: Phonogram NG](https://www.storyhouracademy.org/lesson-25): Learn the digraph ng, the sound it makes, and how to write it.
+- [Lesson 26: Phonogram SH](https://www.storyhouracademy.org/lesson-26): Learn the digraph sh, the sound it makes, and how to write it.
+- [Lesson 27: Phonogram TH](https://www.storyhouracademy.org/lesson-27): Learn the digraph th, the sound it makes, and how to write it.
+- [Lesson 28: Phonogram WH](https://www.storyhouracademy.org/lesson-28): Learn the digraph wh, the sound it makes, and how to write it.
+- [Lesson 29: Review of Consonant Digraphs](https://www.storyhouracademy.org/lesson-29): Review all six consonant digraph phonograms from Unit 2.
+- [Lesson 30: Consonant Digraphs Mastery Test](https://www.storyhouracademy.org/lesson-30): Take the mastery test to demonstrate your knowledge of consonant digraphs.
+- [Lesson 31: Multi-Letter Vowel Phonograms Pretest](https://www.storyhouracademy.org/lesson-31): Take the pretest for multi-letter vowel phonograms.
+- [Lesson 32: Multi-Letter Vowel Phonograms Intro](https://www.storyhouracademy.org/lesson-32): Introduction to 19 multi-letter vowel phonograms and blending.
+- [Lesson 33: Vowel Phonogram AI](https://www.storyhouracademy.org/lesson-33): Learn the vowel phonogram ai, its sound, and how to use it in words.
+- [Lesson 34: Vowel Phonogram AY](https://www.storyhouracademy.org/lesson-34): Learn the vowel phonogram ay, its sound, and how to use it in words.
+- [Lesson 35: Vowel Phonogram EIGH](https://www.storyhouracademy.org/lesson-35): Learn the vowel phonogram eigh, its sound, and how to use it in words.
+- [Lesson 36: Vowel Phonogram EE](https://www.storyhouracademy.org/lesson-36): Learn the vowel phonogram ee, its sound, and how to use it in words.
+- [Lesson 37: Vowel Phonogram IGH](https://www.storyhouracademy.org/lesson-37): Learn the vowel phonogram igh, its sound, and how to use it in words.
+- [Lesson 38: Vowel Phonogram OA](https://www.storyhouracademy.org/lesson-38): Learn the vowel phonogram oa, its sound, and how to use it in words.
+- [Lesson 39: Vowel Phonogram AU](https://www.storyhouracademy.org/lesson-39): Learn the vowel phonogram au, its sound, and how to use it in words.
+- [Lesson 40: Vowel Phonogram AW](https://www.storyhouracademy.org/lesson-40): Learn the vowel phonogram aw, its sound, and how to use it in words.
+- [Lesson 41: Vowel Phonogram OI](https://www.storyhouracademy.org/lesson-41): Learn the vowel phonogram oi, its sound, and how to use it in words.
+- [Lesson 42: Vowel Phonogram OY](https://www.storyhouracademy.org/lesson-42): Learn the vowel phonogram oy, its sound, and how to use it in words.
+- [Lesson 43: Vowel Phonogram UI](https://www.storyhouracademy.org/lesson-43): Learn the vowel phonogram ui, its sound, and how to use it in words.
+- [Lesson 44: Vowel Phonogram ER](https://www.storyhouracademy.org/lesson-44): Learn the vowel phonogram er, its sound, and how to use it in words.
+- [Lesson 45: Vowel Phonogram IR](https://www.storyhouracademy.org/lesson-45): Learn the vowel phonogram ir, its sound, and how to use it in words.
+- [Lesson 46: Vowel Phonogram UR](https://www.storyhouracademy.org/lesson-46): Learn the vowel phonogram ur, its sound, and how to use it in words.
+- [Lesson 47: Vowel Phonogram AR](https://www.storyhouracademy.org/lesson-47): Learn the vowel phonogram ar, its sound, and how to use it in words.
+- [Lesson 48: Vowel Phonograms OR and WOR](https://www.storyhouracademy.org/lesson-48): Learn the vowel phonograms or and wor, their sounds, and usage.
+- [Lesson 49: Vowel Phonogram EAR](https://www.storyhouracademy.org/lesson-49): Learn the vowel phonogram ear, its sound, and how to use it in words.
+- [Lesson 50: Vowel Phonogram OUR](https://www.storyhouracademy.org/lesson-50): Learn the vowel phonogram our, its sound, and how to use it in words.
+- [Lesson 51: Multi-Letter Vowel Phonograms Review](https://www.storyhouracademy.org/lesson-51): Review all 19 multi-letter vowel phonograms from Unit 3.
+- [Lesson 52: Vowel Phonograms Mastery Test](https://www.storyhouracademy.org/lesson-52): Take the mastery test for multi-letter vowel phonograms.
+- [Lesson 53: 25 Vowel Phonograms Pretest](https://www.storyhouracademy.org/lesson-53): Take the pretest covering all 25 vowel phonograms.
+- [Lesson 54: Introduction to Vowel Letters](https://www.storyhouracademy.org/lesson-54): Learn about vowel letters and the multiple sounds they represent.
+- [Lesson 55: Letter A](https://www.storyhouracademy.org/lesson-55): Learn about the letter a and all the sounds it can represent in words.
+- [Lesson 56: Letter E](https://www.storyhouracademy.org/lesson-56): Learn about the letter e and all the sounds it can represent in words.
+- [Lesson 57: Letter I](https://www.storyhouracademy.org/lesson-57): Learn about the letter i and all the sounds it can represent in words.
+- [Lesson 58: Letter O](https://www.storyhouracademy.org/lesson-58): Learn about the letter o and all the sounds it can represent in words.
+- [Lesson 59: Letter U](https://www.storyhouracademy.org/lesson-59): Learn about the letter u and all the sounds it can represent in words.
+- [Lesson 60: Letter Y](https://www.storyhouracademy.org/lesson-60): Learn about the letter y and all the sounds it can represent in words.
+- [Lesson 61: Review of Vowel Letters](https://www.storyhouracademy.org/lesson-61): Review all vowel letters and the sounds they represent.
+- [Lesson 62: 25 Vowel Phonograms Mastery Test](https://www.storyhouracademy.org/lesson-62): Take the mastery test for all 25 vowel phonograms.
+- [Lesson 63: Phonics Pretests](https://www.storyhouracademy.org/lesson-63): Take pretests for multi-sound consonant letters c, g, s, and x to identify areas for study.
+- [Lesson 64: Introduction to Multi-Sound Consonants](https://www.storyhouracademy.org/lesson-64): Learn about consonant letters c, g, s, x and their multiple sounds.
+- [Lesson 65: Letter C](https://www.storyhouracademy.org/lesson-65): Learn the two sounds of letter c and when each sound is used.
+- [Lesson 66: Letter G](https://www.storyhouracademy.org/lesson-66): Learn the two sounds of letter g and when each sound is used.
+- [Lesson 67: Letter S](https://www.storyhouracademy.org/lesson-67): Learn the two sounds of letter s and when each sound is used.
+- [Lesson 68: Letter X](https://www.storyhouracademy.org/lesson-68): Learn the sounds of letter x and when each sound is used.
+- [Lesson 69: Review of Alphabet Letters](https://www.storyhouracademy.org/lesson-69): Review all alphabet letters and the sounds they make.
+- [Lesson 70: Phonics Mastery Tests](https://www.storyhouracademy.org/lesson-70): Take mastery tests for alphabet letters and 51 phonograms.
+- [Lesson 71: Syllable Types Pretest](https://www.storyhouracademy.org/lesson-71): Take the pretest to assess your knowledge of syllable types.
+- [Lesson 72: Introduction to Syllables](https://www.storyhouracademy.org/lesson-72): Learn about syllables and the six syllable types in English.
+- [Lesson 73: Closed Syllables](https://www.storyhouracademy.org/lesson-73): Learn about closed syllables and practice identifying them in words.
+- [Lesson 74: Open Syllables](https://www.storyhouracademy.org/lesson-74): Learn about open syllables and practice identifying them in words.
+- [Lesson 75: Consonant-LE Syllables](https://www.storyhouracademy.org/lesson-75): Learn about consonant-le syllables and practice identifying them.
+- [Lesson 76: R-Controlled Syllables](https://www.storyhouracademy.org/lesson-76): Learn about r-controlled syllables and practice identifying them.
+- [Lesson 77: Vowel-Consonant-E Syllables](https://www.storyhouracademy.org/lesson-77): Learn about vowel-consonant-e syllables and practice identifying them.
+- [Lesson 78: Vowel Team Syllables](https://www.storyhouracademy.org/lesson-78): Learn about vowel team syllables and practice identifying them.
+- [Lesson 79: Review of Syllables](https://www.storyhouracademy.org/lesson-79): Review all six syllable types before taking the Unit 6 mastery test.
+- [Lesson 80: Syllable Types Mastery Test](https://www.storyhouracademy.org/lesson-80): Take the mastery test to demonstrate your knowledge of the six syllable types.
+- [Lesson 81: The Schwa Sound](https://www.storyhouracademy.org/lesson-81): Learn about the schwa sound and how to identify it in words.
+- [Lesson 82: 60 Phonograms Pretest](https://www.storyhouracademy.org/lesson-82): Take the pretest for 60 phonograms to assess knowledge of all phonograms learned in Units 1 through 8.
+- [Lesson 83: More Single-Sound Phonograms Intro](https://www.storyhouracademy.org/lesson-83): Learn nine more single-sound phonograms for advanced reading.
+- [Lesson 84: Phonogram TCH](https://www.storyhouracademy.org/lesson-84): Learn the phonogram tch, its sound, and how to use it in words.
+- [Lesson 85: Phonogram PH](https://www.storyhouracademy.org/lesson-85): Learn the phonogram ph, its sound, and how to use it in words.
+- [Lesson 86: Phonogram RH](https://www.storyhouracademy.org/lesson-86): Learn the phonogram rh, its sound, and how to use it in words.
+- [Lesson 87: Phonogram GH](https://www.storyhouracademy.org/lesson-87): Learn the phonogram gh, its sound, and how to use it in words.
+- [Lesson 88: Phonogram GN](https://www.storyhouracademy.org/lesson-88): Learn the phonogram gn, its sound, and how to use it in words.
+- [Lesson 89: Phonogram KN](https://www.storyhouracademy.org/lesson-89): Learn the phonogram kn, its sound, and how to use it in words.
+- [Lesson 90: Phonogram WR](https://www.storyhouracademy.org/lesson-90): Learn the phonogram wr, its sound, and how to use it in words.
+- [Lesson 91: Phonogram DG](https://www.storyhouracademy.org/lesson-91): Learn the phonogram dg, its sound, and how to use it in words.
+- [Lesson 92: Phonogram AIGH](https://www.storyhouracademy.org/lesson-92): Learn the phonogram aigh, its sound, and how to use it in words.
+- [Lesson 93: Phonogram Review](https://www.storyhouracademy.org/lesson-93): Review all 60 phonograms learned in Units 1 through 8 before taking the mastery test.
+- [Lesson 94: 60 Phonograms Mastery Test](https://www.storyhouracademy.org/lesson-94): Take the mastery test to demonstrate knowledge of all 60 phonograms from the curriculum.
+- [Lesson 95: 75 Phonograms Pretest](https://www.storyhouracademy.org/lesson-95): Take the pretest for all 75 phonograms from the complete Story Hour Academy reading curriculum.
+- [Lesson 96: More Multi-Sound Phonograms Intro](https://www.storyhouracademy.org/lesson-96): Learn 15 more multi-sound phonograms to complete the curriculum.
+- [Lesson 97: Phonogram GU](https://www.storyhouracademy.org/lesson-97): Learn the phonogram gu, its sounds, and how to use it in words.
+- [Lesson 98: Phonogram OE](https://www.storyhouracademy.org/lesson-98): Learn the phonogram oe, its sounds, and how to use it in words.
+- [Lesson 99: Phonogram OU](https://www.storyhouracademy.org/lesson-99): Learn the phonogram ou, its sounds, and how to use it in words.
+- [Lesson 100: Phonogram OW](https://www.storyhouracademy.org/lesson-100): Learn the phonogram ow, its sounds, and how to use it in words.
+- [Lesson 101: Phonogram OO](https://www.storyhouracademy.org/lesson-101): Learn the phonogram oo, its sounds, and how to use it in words.
+- [Lesson 102: Phonogram EW](https://www.storyhouracademy.org/lesson-102): Learn the phonogram ew, its sounds, and how to use it in words.
+- [Lesson 103: Phonograms EU and EUR](https://www.storyhouracademy.org/lesson-103): Learn the phonograms eu and eur, their sounds, and usage.
+- [Lesson 104: Phonogram EA](https://www.storyhouracademy.org/lesson-104): Learn the phonogram ea, its sounds, and how to use it in words.
+- [Lesson 105: Phonogram EAU](https://www.storyhouracademy.org/lesson-105): Learn the phonogram eau, its sounds, and how to use it in words.
+- [Lesson 106: Phonogram EI](https://www.storyhouracademy.org/lesson-106): Learn the phonogram ei, its sounds, and how to use it in words.
+- [Lesson 107: Phonogram EY](https://www.storyhouracademy.org/lesson-107): Learn the phonogram ey, its sounds, and how to use it in words.
+- [Lesson 108: Phonogram IE](https://www.storyhouracademy.org/lesson-108): Learn the phonogram ie, its sounds, and how to use it in words.
+- [Lesson 109: Phonogram AUGH](https://www.storyhouracademy.org/lesson-109): Learn the phonogram augh, its sounds, and how to use it in words.
+- [Lesson 110: Phonogram OUGH](https://www.storyhouracademy.org/lesson-110): Learn the phonogram ough, its many sounds, and how to use it.
+- [Lesson 111: Phonogram Review](https://www.storyhouracademy.org/lesson-111): Review all 75 phonograms from the complete curriculum.
+- [Lesson 112: 75 Phonograms Mastery Test](https://www.storyhouracademy.org/lesson-112): Take the final mastery test for all 75 phonograms.
+
+## Assessments
+
+- [Pretest: Single-Sound Consonants (Lowercase)](https://www.storyhouracademy.org/pretest-1): Pretest 16 single-sound consonant letters in lowercase: b, d, f, h, j, k, l, m, n, p, qu, r, t, v, w, z.
+- [Mastery Test: Single-Sound Consonants (Lowercase)](https://www.storyhouracademy.org/test-1): Mastery test for 16 single-sound consonant letters in lowercase.
+- [Pretest: Single-Sound Consonants (Uppercase)](https://www.storyhouracademy.org/pretest-2): Pretest 16 single-sound consonant letters in uppercase: B, D, F, H, J, K, L, M, N, P, Qu, R, T, V, W, Z.
+- [Mastery Test: Single-Sound Consonants (Uppercase)](https://www.storyhouracademy.org/test-2): Mastery test for 16 single-sound consonant letters in uppercase.
+- [Pretest: Consonants and Consonant Digraphs](https://www.storyhouracademy.org/pretest-3): Pretest 21 single-sound consonants and consonant digraphs including ch, ng, sh, th, wh.
+- [Mastery Test: Consonants and Consonant Digraphs](https://www.storyhouracademy.org/test-3): Mastery test for 21 single-sound consonants and consonant digraphs.
+- [Pretest: Multi-Letter Vowel Phonograms](https://www.storyhouracademy.org/pretest-4): Pretest multi-letter vowel phonograms: ai, ay, eigh, ar, au, aw, ear, ee, er, ir, ur, igh, oa, oi, oy, or, our, ui, wor.
+- [Mastery Test: Multi-Letter Vowel Phonograms](https://www.storyhouracademy.org/test-4): Mastery test for multi-letter vowel phonograms including ai, ay, ee, igh, oa, and r-controlled vowels.
+- [Pretest: 25 Vowel Phonograms](https://www.storyhouracademy.org/pretest-5): Pretest 25 vowel phonograms including single vowel letters and multi-letter vowel teams.
+- [Mastery Test: 25 Vowel Phonograms](https://www.storyhouracademy.org/test-5): Mastery test covering 25 vowel phonograms including single vowels and multi-letter vowel teams.
+- [Pretest: Alphabet Letters and Sounds](https://www.storyhouracademy.org/pretest-6): Pretest all 26 alphabet letters (a through z) and their associated sounds.
+- [Mastery Test: Alphabet Letters and Sounds](https://www.storyhouracademy.org/test-6): Mastery test for all 26 alphabet letters and their sounds.
+- [Pretest: 51 Phonograms](https://www.storyhouracademy.org/pretest-7): Pretest 51 phonograms: all alphabet letters plus consonant digraphs and vowel phonograms.
+- [Mastery Test: 51 Phonograms](https://www.storyhouracademy.org/test-7): Mastery test for all 51 phonograms including alphabet letters, consonant digraphs, and vowel phonograms.
+- [Pretest: Syllable Types](https://www.storyhouracademy.org/pretest-8): Pretest identifying the six syllable types across 36 words.
+- [Mastery Test: Syllable Types](https://www.storyhouracademy.org/test-8): Mastery test for identifying the six syllable types.
+- [Pretest: 60 Phonograms](https://www.storyhouracademy.org/pretest-9): Pretest 60 phonograms including tch, ph, gh, gn, kn, wr, rh, dg, aigh.
+- [Mastery Test: 60 Phonograms](https://www.storyhouracademy.org/test-9): Mastery test for 60 phonograms including tch, ph, gh, gn, kn, wr, rh, dg, and aigh phonograms.
+- [Pretest: 75 Phonograms](https://www.storyhouracademy.org/pretest-10): Pretest all 75 phonograms from the complete Story Hour Academy curriculum.
+- [Mastery Test: 75 Phonograms](https://www.storyhouracademy.org/test-10): Mastery test for all 75 phonograms from the complete curriculum.
