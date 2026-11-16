@@ -33,6 +33,13 @@
 - Stable internet connection for streaming videos and audio.
 - Optional: Printer for downloadable worksheets (linked in lessons).
 
+## Close the Gaps
+
+Every pretest and mastery test shows a **Close the Gaps** section under the results. It builds a custom curriculum file from the items the student missed: the lessons that teach those sounds or syllable types, in lesson order, followed by the next pretest. Families can download the file and import it into [Lesson Hollow](https://lessonhollow.com). The file is made in the browser, and nothing about the student is saved or sent.
+
+- Code and mapping data: `js/close-the-gaps.js` and `css/close-the-gaps.css`
+- Check the mapping against the test and lesson pages: `node scripts/check_close_the_gaps.cjs [output-folder]`
+
 ## License
 
 This repository uses two licenses to provide the most permissive terms possible:

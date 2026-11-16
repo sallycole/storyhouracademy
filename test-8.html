@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/fonts.css?v=1">
     <link rel="stylesheet" href="/css/styles.css?v=2">
     <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="/css/close-the-gaps.css?v=1">
+    <script src="/js/close-the-gaps.js?v=1" defer></script>
     <style>
         .game-container {
             background: var(--background);
@@ -498,6 +500,15 @@
                     </div>
                 </div>
             `;
+            // Close the Gaps: build a custom plan from the syllable types in missed words
+            if (window.CloseTheGaps) {
+                const missedTypes = [];
+                incorrectWords.forEach(w => {
+                    const entry = words.find(x => x.word === w);
+                    if (entry) missedTypes.push(...entry.types);
+                });
+                CloseTheGaps.show('test-8', missedTypes);
+            }
         }
         function startGame() {
             document.getElementById('startScreen').classList.remove('visible');
