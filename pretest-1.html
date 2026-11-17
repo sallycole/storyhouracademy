@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/fonts.css?v=1">
     <link rel="stylesheet" href="/css/styles.css?v=2">
     <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="/css/close-the-gaps.css?v=1">
+    <script src="/js/close-the-gaps.js?v=1" defer></script>
 
     <!-- Open Graph -->
     <meta property="og:title" content="Pretest: Single-Sound Consonants (Lowercase) | Story Hour Academy">
@@ -92,7 +94,7 @@
         </div>
 
         <nav class="lesson-navigation" aria-label="Lesson navigation">
-            <a href="lesson-1" class="nav-button prev">Return to Lesson</a>
+            <a href="unit-1" class="nav-button prev">Back to Unit 1: Single-Sound Consonants</a>
             <a href="#" class="nav-button next" style="visibility: hidden">Next Lesson</a>
         </nav>
     </main>
@@ -258,6 +260,11 @@
             
             resultsHTML += '</div>';
             resultsContent.innerHTML = resultsHTML;
+
+            // Close the Gaps: build a custom plan from the missed sounds
+            if (window.CloseTheGaps) {
+                CloseTheGaps.show('pretest-1', results.filter(r => !r.correct).map(r => r.sound));
+            }
 
             // Add click listeners to play sound
             document.querySelectorAll('.ipa-sound-btn').forEach(btn => {

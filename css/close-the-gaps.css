@@ -1,0 +1,73 @@
+/* Close the Gaps section under test results */
+.close-gaps {
+    max-width: 640px;
+    margin: var(--space-xl, 3rem) auto 0;
+    padding: var(--space-lg, 2rem);
+    background: var(--surface, #f8fafc);
+    border: 1px solid var(--border, #e2e8f0);
+    border-top: 4px solid var(--secondary, #14b8a6);
+    border-radius: 12px;
+    text-align: left;
+    color: var(--text, #1e293b);
+    font-size: 1.05rem;
+}
+.close-gaps:empty {
+    display: none;
+}
+.close-gaps p {
+    margin: 0 0 var(--space-sm, 1rem);
+    line-height: 1.6;
+}
+.close-gaps a {
+    color: var(--text, #1e293b);
+    text-decoration: underline;
+    text-decoration-color: var(--secondary, #14b8a6);
+    text-underline-offset: 3px;
+}
+.close-gaps a:hover {
+    color: var(--secondary, #14b8a6);
+}
+.close-gaps-title {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 1.75rem;
+    margin: 0 0 var(--space-sm, 1rem);
+    text-align: left;
+}
+.close-gaps-subtitle {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 1.3rem;
+    margin: var(--space-lg, 2rem) 0 var(--space-xs, 0.5rem);
+}
+.close-gaps-list,
+.close-gaps-steps,
+.close-gaps-next {
+    margin: 0 0 var(--space-md, 1.5rem) 1.5rem;
+    padding: 0;
+}
+.close-gaps-list li,
+.close-gaps-steps li,
+.close-gaps-next li {
+    margin: 0.35rem 0;
+    padding-left: 0.25rem;
+    line-height: 1.5;
+}
+.close-gaps-list .close-gaps-test a {
+    font-weight: 600;
+}
+.close-gaps-actions {
+    display: flex;
+    justify-content: center;
+    margin: var(--space-md, 1.5rem) 0;
+}
+.close-gaps-note {
+    color: var(--text-light, #64748b);
+    font-size: 0.95rem;
+    margin-top: var(--space-md, 1.5rem);
+}
+@media (max-width: 576px) {
+    .close-gaps {
+        padding: var(--space-md, 1.5rem) var(--space-sm, 1rem);
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
